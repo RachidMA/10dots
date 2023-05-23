@@ -1,0 +1,33 @@
+$orange1: rgb(232, 179, 115);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 60px;
+    width: 100vw;
+    background-color: $orange1;
+
+    display: flex;
+    align-items: center;
+}
+
+.header a {
+    width: 80px;
+}
+
+.footer{
+    height: 40px;
+    width: 100vw;
+    background-color: $orange1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    height: calc(100vh - 100px);
+}
