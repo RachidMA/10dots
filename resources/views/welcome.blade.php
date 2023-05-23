@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends ('site.layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h2>First change</h2>
-</body>
-
-</html>
+@section('content')
+    <h1>Welcome to 10dots</h1>
+@endsection
