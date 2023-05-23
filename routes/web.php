@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\JobController;
+
+use App\Http\Controllers\HomepageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +18,12 @@ use App\Http\Controllers\JobController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 
 //Route for show all jobs
 Route::get('/jobs', [JobController::class,'show'])->name('showAll-jobs');
+
+Route::get('/', [HomepageController::class, 'show'])->name("homepage");
+
