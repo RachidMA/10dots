@@ -14,6 +14,7 @@
 
         <div class="wrapper">
         @yield ('content')
+        @yield ('userDetails')
         </div>
 
         @include("site.footer")
