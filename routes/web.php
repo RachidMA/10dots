@@ -6,6 +6,8 @@ use App\Http\Controllers\JobController;
 
 use App\Http\Controllers\HomepageController;
 
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,5 @@ Route::get('/jobs', [JobController::class,'show'])->name('showAll-jobs');
 
 
 
+//Routes for users
+Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
