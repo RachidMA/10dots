@@ -8,7 +8,7 @@ use App\Models\Job;
 class JobController extends Controller
 {
 
-    // public function show(){
+    // public function showAllJobs(){
     //     return view('welcome');
     // }
     public function search(Request $request)
