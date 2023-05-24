@@ -33,8 +33,8 @@ class JobsSeeder extends Seeder
                 // Retrieve a random city based on the selected country ID
                 $city = DB::table('cities')->where('country_id', $countryId)->pluck('name')->random();
 
-                $priceMin = rand(1000, 5000); // Random minimum price
-                $priceMax = rand($priceMin + 1000, $priceMin + 5000); // Random maximum price
+                $priceMin = rand(10, 50); // Random minimum price
+                $priceMax = rand($priceMin + 100, $priceMin + 500); // Random maximum price
 
                 DB::table('jobs')->insert([
                     'first_name' => $firstName,
@@ -43,7 +43,8 @@ class JobsSeeder extends Seeder
                     'country' => $country,
                     'city' => $city,
                     'job_title' => $category . ' job' . $i,
-                    'price_range' => $priceMin . '-' . $priceMax,
+                    'min_price' => $priceMin,
+                    'max_price' => $priceMax,
                     'image_url' => 'https://example.com/' . $lastName . '-image.jpg',
                     'user_id' => $userId,
                     'category_id' => DB::table('categories')->where('name', $category)->value('id'),
