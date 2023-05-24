@@ -29,5 +29,5 @@ $orange1: rgb(232, 179, 115);
 }
 
 .wrapper {
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
 }
