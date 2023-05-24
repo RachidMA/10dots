@@ -18,12 +18,13 @@ use App\Http\Controllers\HomepageController;
 |
 */
 
+//Landing Page Routes
+Route::get('/', [HomepageController::class, 'show'])->name("homepage");
 
 
 
-
-//Route for show all jobs
+//Routes for jobs
 Route::get('/jobs', [JobController::class,'show'])->name('showAll-jobs');
 
-Route::get('/', [HomepageController::class, 'show'])->name("homepage");
+
 
