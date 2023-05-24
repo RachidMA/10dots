@@ -13,25 +13,42 @@ class JobController extends Controller
     // }
     public function search(Request $request)
     {
-        $job = $request->input('keyword'); //this keyword is for the form 'name= job'
+        $info = [
+            'job' => 'required',     
+            'city' => 'required',   
+            'country' => 'required',
+        ];
+        $request->validate($info);
+
+        $job = $request->input('job'); //these are for the form 'name= job'
         $city = $request->input('city');
         $country = $request->input('country');
+        $minPrice = $request->input('price_min');
+        $maxPrice = $request->input('price_max');
         
-        $query = Job::query();  
+        $query = Job::where('job_title', 'like', '%' . $job . '%')
+                    ->where('city',$city )
+                    ->where('country', $country);  
 
-        if($job){
-            $query->where('job_title', 'like', '%' . $job . '%');
-        }
-        if($city){
-            $query->where('city', 'like', '%' . $city . '%');
-        }
-        if($country){
-            $query->where('country', 'like', '%'  . $country. '%');
-        }
+        if (!empty($minPrice) && !empty($maxPrice)) 
+        {
+            $query->whereBetween('price', [$minPrice, $maxPrice]);
+        }            
+        // if($job && $city && $country ){
+            // $query->where('job_title', 'like', '%' . $job . '%')
+            //     ->where('city',$city )
+            //     ->where('country', $country);
+        // }
 
         $searchResult = $query->get();
 
-        return view ('job_searchresults', $searchResult);
+        if(!$searchResult){
+            return view ('job_searchresults', $searchResult);
+        } else {
+            return view ( 'welcome' )->with( 'No Details found. Try to search again !' );
+        }
+
+        
     }
     
 }
