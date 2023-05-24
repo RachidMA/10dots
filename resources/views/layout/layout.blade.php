@@ -12,13 +12,13 @@
 <body>
     <div class="container">
 
-        @include("site.header")
+        @include("layout.header")
 
         <div class="wrapper">
             @yield ('content')
         </div>
 
-        @include("site.footer")
+        @include("layout.footer")
 
     </div>
 </body>
