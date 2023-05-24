@@ -9,6 +9,5 @@ class JobController extends Controller
 
     // public function show(){
     //     return view('welcome');
-    // }
-
+    // 
 }
