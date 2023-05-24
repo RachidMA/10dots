@@ -1,6 +1,6 @@
 @extends ('site.layout')
 
-@section('userDetails')
+@section('content')
 
 <h1>Details page for clicked profile</h1>
 
