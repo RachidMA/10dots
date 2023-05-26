@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 //Landing Page Routes
 Route::get('/', [HomepageController::class, 'show'])->name("homepage");
 
-Route::view('/form', 'Testing.Job_search_form');
+
 
 //Routes for jobs
 Route::get('/jobs', [JobController::class, 'showAllJobs'])->name('showAll-jobs');
