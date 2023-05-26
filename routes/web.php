@@ -31,4 +31,4 @@ Route::get('/jobs', [JobController::class,'show'])->name('showAll-jobs');
 
 
 //Routes for users
-Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
+Route::get('/user/{id}', [UserController::class, 'show'])->name('showDetails');
