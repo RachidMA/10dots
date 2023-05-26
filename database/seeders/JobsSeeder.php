@@ -30,6 +30,8 @@ class JobsSeeder extends Seeder
                 $firstName = $faker->firstName;
                 $lastName = $faker->lastName;
 
+
+
                 // Retrieve a random city based on the selected country ID
                 $city = DB::table('cities')->where('country_id', $countryId)->pluck('name')->random();
 
