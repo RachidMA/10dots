@@ -28,7 +28,7 @@ Route::get('/', [HomepageController::class, 'show'])->name("homepage");
 //Routes for jobs
 Route::get('/jobs', [JobController::class,'showAllJobs'])->name('showAll-jobs');
 Route::get('/search-form',[JobController::class, 'showForm'])->name('search-form');
-Route::post('/search-job/{id}', [JobController::class, 'search'])->name('search-result');
+Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 
 
 
