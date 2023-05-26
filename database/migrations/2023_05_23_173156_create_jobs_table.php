@@ -15,10 +15,12 @@ return new class extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('phone');
             $table->string('address');
             $table->string('country');
             $table->string('city');
             $table->string('job_title');
+            $table->text('description');
             $table->string('price_range');
             $table->string('image_url');
             $table->unsignedInteger('user_id');
