@@ -7,9 +7,11 @@
 <h1 class="fw-light">Search result</h1>
     <div class="test">
 
-        <p>Name: {{ $job->job_title}}</p> 
-        <p>Email: {{ $job->city}}</p>
-        <p>Message: {{ $job->country}}</p>
+        <p>Job: {{ $job->job_title}}</p> 
+        <p>City: {{ $job->city}}</p>
+        <p>Country: {{ $job->country}}</p>
 
     </div>
-    @endforeach
+@endforeach
+
+@endsection
