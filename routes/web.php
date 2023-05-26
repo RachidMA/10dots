@@ -34,8 +34,13 @@ Route::post('/search-job', [JobController::class, 'search'])->name('search-resul
 
 
 //Routes for users
+
 Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
 
 
 //AUTHENTICATION ROUTES
+
+Route::get('/user}', [UserController::class, 'show'])->name('showUserDetails');
+Route::get('/user/{id}', [UserController::class, 'showCard'])->name('showCard');
+
 Auth::routes();
