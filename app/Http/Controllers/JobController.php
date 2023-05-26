@@ -23,8 +23,7 @@ class JobController extends Controller
     $job = $request->input('job');
     $city = $request->input('city');
     $country = $request->input('country');
-    $minPrice = $request->input('price_min');
-    $maxPrice = $request->input('price_max');
+
 
     $query = Job::query();
 
@@ -33,17 +32,15 @@ class JobController extends Controller
             ->where('city', $city)
             ->where('country', $country);
 
-        if ($minPrice && $maxPrice) {
-            $query->whereBetween('price', [$minPrice, $maxPrice]);
-        }
 
         $searchResult = $query->get();
 
         if ($searchResult->isEmpty()) {
             return view('job_searchresults', ['searchResult' => $searchResult]);
-        } else {
-            return redirect()->back()->with('error', 'No details found. Try to search again!');
-        }
+        // CAN BE USEFUL FOR LATER, IF NOT DELETE
+        // } else {
+        //     return redirect()->back()->with('error', 'No details found. Try to search again!');
+        // }
     } else {
         return redirect()->back()->with('error', 'Please provide all required fields!');
     }
