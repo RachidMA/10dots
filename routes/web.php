@@ -35,12 +35,7 @@ Route::post('/search-job', [JobController::class, 'search'])->name('search-resul
 
 //Routes for users
 Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
-Auth::routes();
 
 
 //AUTHENTICATION ROUTES
 Auth::routes();
-
-
-
-Route::get('/user/{id}', [UserController::class, 'show'])->name('showDetails');
