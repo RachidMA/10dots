@@ -43,4 +43,5 @@ class JobController extends Controller
         // // return redirect()->back()->with('error', 'No details found. Try to search again!');
         // }
     }
+
 }
