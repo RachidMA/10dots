@@ -7,7 +7,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\HomepageController;
 
 use App\Http\Controllers\UserController;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +26,19 @@ Route::get('/', [HomepageController::class, 'show'])->name("homepage");
 
 
 //Routes for jobs
-Route::get('/jobs', [JobController::class,'showAllJobs'])->name('showAll-jobs');
-Route::get('/search-form',[JobController::class, 'showForm'])->name('search-form');
+
+Route::get('/jobs', [JobController::class, 'showAllJobs'])->name('showAll-jobs');
+Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 
 
 
 //Routes for users
 Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
