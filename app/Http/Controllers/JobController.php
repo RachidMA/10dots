@@ -11,34 +11,36 @@ class JobController extends Controller
     // public function showAllJobs(){
     //     return view('welcome');
     // }
-    public function showForm(){
+    public function showForm()
+    {
         return view('testing.Job_search_form');
     }
     public function search(Request $request)
-{
-    $info = [
-        'job' => 'required',
-        'city' => 'required',
-        'country' => 'required',
-    ];
-    $request->validate($info);
+    {
+        $info = [
+            'job' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+        ];
+        $request->validate($info);
 
-    $job = $request->input('job');
-    $city = $request->input('city');
-    $country = $request->input('country');
+        $job = $request->input('job');
+        $city = $request->input('city');
+        $country = $request->input('country');
 
 
         $query = Job::where('job_title', 'like', '%' . $job . '%')
-                    ->where('city', $city)
-                    ->where('country', $country);
+            ->where('city', $city)
+            ->where('country', $country);
         $searchResult = $query->get();
+
 
         return view('testing.Jobstesting', ['searchResult' => $searchResult]);
         // if($searchResult->isEmpty()){
         //     return redirect()->back()->with('error', 'No details found. Try to search again!');
         // }else {
-        
+
         // // return redirect()->back()->with('error', 'No details found. Try to search again!');
         // }
-        }
     }
+}
