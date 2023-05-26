@@ -37,11 +37,10 @@ Route::post('/search-job', [JobController::class, 'search'])->name('search-resul
 Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//AUTHENTICATION ROUTES
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::get('/user/{id}', [UserController::class, 'show'])->name('showDetails');
-
