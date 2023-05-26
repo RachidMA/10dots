@@ -29,6 +29,8 @@ class JobsSeeder extends Seeder
                 $countryId = $countries[$country];
                 $firstName = $faker->firstName;
                 $lastName = $faker->lastName;
+                $description = $faker->sentence(50);
+                $phone_number = $faker->phoneNumber();
 
 
 
@@ -41,10 +43,12 @@ class JobsSeeder extends Seeder
                 DB::table('jobs')->insert([
                     'first_name' => $firstName,
                     'last_name' => $lastName,
+                    'phone' => $phone_number,
                     'address' => '123 Main St',
                     'country' => $country,
                     'city' => $city,
                     'job_title' => $category . ' job' . $i,
+                    'description' => $description,
                     'min_price' => $priceMin,
                     'max_price' => $priceMax,
                     'image_url' => 'https://example.com/' . $lastName . '-image.jpg',
