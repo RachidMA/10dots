@@ -8,8 +8,10 @@
     <div class="test">
 
         <p>Job: {{ $job->job_title}}</p> 
+        <p>name: {{$job->first_name}} {{$job->last_name}}</p>
+        <p>adress: {{ $job->address}}</p>
         <p>City: {{ $job->city}}</p>
-        <p>Country: {{ $job->country}}</p>
+        <p>country: {{ $job->country}}</p>
 
     </div>
 @endforeach
