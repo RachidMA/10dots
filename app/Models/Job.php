@@ -11,8 +11,25 @@ class Job extends Model
     use HasFactory;
 
     protected $table = 'jobs';
-
-    protected $fillable = ['title', 'user_id'];
+    //Create job form contains in total 9 inputs plus how they charge per houre as slide input
+    // protected $fillable = ['title', 'user_id'];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'phone',
+        'address',
+        'country',
+        'city',
+        'job_title ',
+        'description',
+        'min_price',
+        'max_price',
+        'image_url',
+        'user_id',
+        'category_id',
+        'created_at',
+        'updated_at'
+    ];
 
     public function user()
     {
