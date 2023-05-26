@@ -32,8 +32,13 @@ class JobController extends Controller
                     ->where('city', $city)
                     ->where('country', $country);
         $searchResult = $query->get();
-        // return ('hello');
-        return view('site.job_searchresults', ['job' => $job, 'city' => $city, 'country' => $country]);
-        // return redirect()->back()->with('error', 'No details found. Try to search again!');
+
+        return view('site.job_searchresults', ['searchResult' => $searchResult,'job' => $job, 'city' => $city, 'country' => $country]);
+        // if($searchResult->isEmpty()){
+        //     return redirect()->back()->with('error', 'No details found. Try to search again!');
+        // }else {
+        
+        // // return redirect()->back()->with('error', 'No details found. Try to search again!');
+        // }
         }
-        }
+    }
