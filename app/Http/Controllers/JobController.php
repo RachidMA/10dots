@@ -12,43 +12,42 @@ class JobController extends Controller
     //     return view('welcome');
     // }
     public function search(Request $request)
-    {
-        $info = [
-            'job' => 'required',     
-            'city' => 'required',   
-            'country' => 'required',
-        ];
-        $request->validate($info);
+{
+    $info = [
+        'job' => 'required',
+        'city' => 'required',
+        'country' => 'required',
+    ];
+    $request->validate($info);
 
-        $job = $request->input('job'); //these are for the form 'name= job'
-        $city = $request->input('city');
-        $country = $request->input('country');
-        $minPrice = $request->input('price_min');
-        $maxPrice = $request->input('price_max');
-        
-        $query = Job::where('job_title', 'like', '%' . $job . '%')
-                    ->where('city',$city )
-                    ->where('country', $country);  
+    $job = $request->input('job');
+    $city = $request->input('city');
+    $country = $request->input('country');
+    $minPrice = $request->input('price_min');
+    $maxPrice = $request->input('price_max');
 
-        if (!empty($minPrice) && !empty($maxPrice)) 
-        {
+    $query = Job::query();
+
+    if ($job && $city && $country) {
+        $query->where('job_title', 'like', '%' . $job . '%')
+            ->where('city', $city)
+            ->where('country', $country);
+
+        if ($minPrice && $maxPrice) {
             $query->whereBetween('price', [$minPrice, $maxPrice]);
-        }            
-        // if($job && $city && $country ){
-            // $query->where('job_title', 'like', '%' . $job . '%')
-            //     ->where('city',$city )
-            //     ->where('country', $country);
-        // }
+        }
 
         $searchResult = $query->get();
 
-        if(!$searchResult){
-            return view ('job_searchresults', $searchResult);
+        if ($searchResult->isEmpty()) {
+            return view('job_searchresults', ['searchResult' => $searchResult]);
         } else {
-            return view ( 'welcome' )->with( 'No Details found. Try to search again !' );
+            return redirect()->back()->with('error', 'No details found. Try to search again!');
         }
-
-        
+    } else {
+        return redirect()->back()->with('error', 'Please provide all required fields!');
     }
+}
+
     
 }
