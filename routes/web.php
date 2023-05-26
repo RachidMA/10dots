@@ -23,10 +23,11 @@ use App\Http\Controllers\UserController;
 //Landing Page Routes
 Route::get('/', [HomepageController::class, 'show'])->name("homepage");
 
-Route::view('/form','Testing.Job_search_form');
+
 
 //Routes for jobs
 Route::get('/jobs', [JobController::class,'showAllJobs'])->name('showAll-jobs');
+Route::get('/search-form',[JobController::class, 'showForm'])->name('search-form');
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 
 
