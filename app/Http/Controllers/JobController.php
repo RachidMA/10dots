@@ -7,10 +7,23 @@ use App\Models\Job;
 
 class JobController extends Controller
 {
+    public function showFeaturedJobs(Request $request){
 
-    // public function showAllJobs(){
-    //     return view('welcome');
-    // }
+        $job = $request->input('job');
+        $city = $request->input('city');
+        $country = $request->input('country');
+        $category = $request->input('category');
+
+        $features = Job::where('job_title', $job )
+        ->where('city', $city)
+        ->where('country', $country)
+        ->where('category_id', $category)
+        ->limit(6)
+        ->get();
+
+        // dd ($feature);
+        return view('welcome',[ 'features' => $features ]);
+    }
 
     public function showForm()
     {
@@ -44,7 +57,7 @@ class JobController extends Controller
         dd($suggestedJobs);
 
 
-        //Uncomment if the view is in order bcoz the file here is for testing purpose only
+        //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
     //     if ($searchResult->isEmpty()) {
     //         return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
