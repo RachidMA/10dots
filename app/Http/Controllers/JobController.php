@@ -11,6 +11,7 @@ class JobController extends Controller
     // public function showAllJobs(){
     //     return view('welcome');
     // }
+
     public function showForm()
     {
         return view('testing.Job_search_form');
@@ -38,7 +39,7 @@ class JobController extends Controller
         ->limit(5) //limit to 5 can put more
         ->get();
 
-        //Instead of returning the view this is use to see if im catching something from database
+        //Instead of returning the view this is used to see if Im catching something from database
         dd($searchResult);
         dd($suggestedJobs);
 
