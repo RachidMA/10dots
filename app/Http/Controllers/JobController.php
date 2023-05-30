@@ -28,23 +28,11 @@ class JobController extends Controller
         $city = $request->input('city');
         $country = $request->input('country');
 
-
-        // $query = Job::where('job_title', 'like', '%' . $job . '%')
-        //     ->where('city', $city)
-        //     ->where('country', $country);
-        // $searchResult = $query->get();
         $searchResult = Job::where('job_title', 'like', '%' . $job . '%')
         ->where('city', $city)
         ->where('country', $country)
         ->get();
 
-        // return view('testing.Jobstesting', ['searchResult' => $searchResult]);
-        // if($searchResult->isEmpty()){
-        //     return redirect()->back()->with('error', 'No details found. Try to search again!');
-        // }else {
-
-        // // return redirect()->back()->with('error', 'No details found. Try to search again!');
-        // }
         if ($searchResult->isEmpty()) {
             return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
         } else {
