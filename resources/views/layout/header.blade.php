@@ -1,8 +1,8 @@
 <!-- <div class="header">
     <a href="#">Home</a>
-    <a href="#">Job Details</a>
+    <a href="{{route('jobs')}}">Jobs</a>
     <a href="#">link</a>
-<<<<<<< HEAD
+
 </div> -->
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">

@@ -159,4 +159,16 @@ class JobController extends Controller
 
         // return redirect('site.userDashoard')->with('success', 'Job created successfully');
     }
+
+    public function jobs (Request $request) {
+        $jobId = Job::all()->take(10);
+        
+        return view ('testing.jobs_all_test')->with('jobs', $jobId);
+    }
+
+    public function jobDetails (Request $request) {
+        $job = Job::find($request->id);
+        dd($job);
+        
+    }
 }

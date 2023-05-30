@@ -10,6 +10,7 @@
 
 
 <!-- this is the featured jobs/task -->
+
 @foreach ($features as $job)
 <h1 class="fw-light">Featured task</h1>
 <div class="featuredJob">
