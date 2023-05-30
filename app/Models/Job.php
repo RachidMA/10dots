@@ -35,4 +35,10 @@ class Job extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    //Job belongs to a category
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
