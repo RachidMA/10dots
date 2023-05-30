@@ -29,6 +29,9 @@ Route::get('/', [JobController::class, 'showFeaturedJobs'])->name('featured-jobs
 Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 
+// Routes to get jobs
+Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
+Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
 
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)

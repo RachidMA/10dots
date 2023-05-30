@@ -9,12 +9,13 @@
 </div>
 
 
+
 <!-- JEAN: this is the featured jobs/task -->
 <h1 class="fw-light">Featured task</h1>
 @foreach ($featuredJobs as $job)
 <div class="featuredJob">
-    <p>Category: {{ $job->category->name}}</p> 
-    <p>Job: {{ $job->job_title}}</p> 
+    <p>Category: {{ $job->category->name}}</p>
+    <p>Job: {{ $job->job_title}}</p>
     <p>name: {{$job->first_name}} {{$job->last_name}}</p>
     <p>adress: {{ $job->address}}</p>
     <p>City: {{ $job->city}}</p>
