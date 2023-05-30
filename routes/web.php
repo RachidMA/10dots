@@ -35,7 +35,9 @@ Route::post('/search-job', [JobController::class, 'search'])->name('search-resul
 
 //Routes for users
 Route::get('/user}', [UserController::class, 'show'])->name('showUserDetails');
-Route::get('/user/{id}', [UserController::class, 'show'])->name('showCard');
+Route::get('/user/{id}', [UserController::class, 'showCard'])->name('showCard');
+Route::get('/review', [UserController::class, 'showReview'])->name('review');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
