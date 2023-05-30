@@ -33,10 +33,18 @@ class JobController extends Controller
         ->where('country', $country)
         ->get();
 
+        $suggestedJobs = Job::where('city', '!=', $city)
+        ->orWhere('country', '!=', $country)
+        ->limit(5)
+        ->get();
+
+        // dd($suggestedCategories);
+
+
         if ($searchResult->isEmpty()) {
             return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
         } else {
-            return view('testing.Jobstesting', ['searchResult' => $searchResult]);
+            return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
         }
     }
 
