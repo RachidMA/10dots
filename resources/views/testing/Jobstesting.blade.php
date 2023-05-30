@@ -1,7 +1,11 @@
 @extends ('layout.layout')
 
 @section('content')
-
+<!-- @if(session('error'))
+    <script>
+        alert('{{ session('error') }}');
+    </script>
+@endif -->
 <!-- put code here -->
 @foreach($searchResult as $job)
 <h1 class="fw-light">Search result</h1>
@@ -15,5 +19,6 @@
 
     </div>
 @endforeach
+
 
 @endsection
