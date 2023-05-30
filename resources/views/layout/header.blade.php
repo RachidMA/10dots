@@ -1,6 +1,6 @@
 <!-- <div class="header">
     <a href="#">Home</a>
-    <a href="{{route('jobs')}}">Jobs</a>
+    <a href="#">Jobs</a>
     <a href="#">link</a>
 
 </div> -->
