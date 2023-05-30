@@ -2,24 +2,7 @@
 
 @section('content')
 
-<h1>Details page for clicked profile</h1>
-
-<div>
-@foreach($users as $user)
-
-    <p>Doer image: {{ $job->image_url}}</p> 
-    <p>Doer name: {{$job->first_name}} </p>
-    <p>Doer address: {{ $job->address}}</p>
-    <p>Doer phone: {{ $job->phone}}</p>
-    <p>Doer email: {{ $job->email}}</p>
-    
-@endforeach
-</div>
-
-<button type="submit" name = "submit" id="submit" >Send Request</button>
-
-<div>
-    <h1>Leave a review</h1>
+<h1>Leave a review</h1>
 
     <form method= "POST" action= "/leave-review" >
       @csrf
@@ -46,6 +29,5 @@
     <button type="submit" name = "submit" id="submit" >Submit</button>
 
     </form>
-</div>
 
 @endsection

@@ -33,18 +33,14 @@ Route::post('/search-job', [JobController::class, 'search'])->name('search-resul
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
+    //Routes for users
+    Route::get('/{id}', [UserController::class, 'show'])->name('showUserDetails');
+    Route::get('/{id}', [UserController::class, 'showCard'])->name('showCard');
     Route::get('/create-job', [JobController::class, 'createJob'])->name('create-job');
     Route::post('/store-job', [JobController::class, 'storeJob'])->name('store-job');
 });
 
-//Routes for users
-
-Route::get('/user/{id}', [UserController::class, 'show'])->name('showUserDetails');
 
 
 //AUTHENTICATION ROUTES
-
-Route::get('/user}', [UserController::class, 'show'])->name('showUserDetails');
-Route::get('/user/{id}', [UserController::class, 'showCard'])->name('showCard');
-
 Auth::routes();
