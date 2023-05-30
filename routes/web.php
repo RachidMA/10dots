@@ -32,6 +32,8 @@ Route::post('/search-job', [JobController::class, 'search'])->name('search-resul
 // Routes to get jobs
 Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
+Route::get('/update-form', [JobController::class, 'editJob'])->name('jobEdit');
+Route::get('/update-form/{id}', [JobController::class, 'updateJob'])->name('jobUpdate');
 
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
