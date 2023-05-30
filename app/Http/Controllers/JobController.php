@@ -2,30 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+
 use Illuminate\Http\Request;
 use App\Models\Job;
+use App\Models\Category;
+
 
 class JobController extends Controller
 {
+    // ======JEAN: From showFeaturedJobs to Search=====//
     public function showFeaturedJobs(Request $request){
 
-        $job = $request->input('job');
-        $city = $request->input('city');
-        $country = $request->input('country');
-        $category = $request->input('category');
-
-        $features = Job::where('job_title', $job )
-        ->where('city', $city)
-        ->where('country', $country)
-        ->where('category_id', $category)
+        $featuredJobs = Job::inRandomOrder()
         ->limit(6)
         ->get();
 
-        // dd ($feature);
-        return view('welcome',[ 'features' => $features ]);
+        // dd ($featuredJobs);
+        return view('welcome',[ 'featuredJobs' => $featuredJobs]);
     }
-
     public function showForm()
     {
         return view('testing.Job_search_form');
@@ -54,9 +48,8 @@ class JobController extends Controller
         ->get();
 
         //Instead of returning the view this is used to see if Im catching something from database
-        dd($searchResult);
-        dd($suggestedJobs);
-
+        // dd($searchResult);
+        // dd($suggestedJobs);
         // dd($searchResult);
 
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
@@ -67,6 +60,8 @@ class JobController extends Controller
     //         return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
     //     }
     }
+
+
 
     //RACHID:CREATE JOB BY AUTHENTICATED USER
     public function createJob(Request $request)
