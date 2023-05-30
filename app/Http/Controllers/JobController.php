@@ -35,17 +35,21 @@ class JobController extends Controller
 
         $suggestedJobs = Job::where('city', '!=', $city)
         ->orWhere('country', '!=', $country)
-        ->limit(5)
+        ->limit(5) //limit to 5 can put more
         ->get();
 
-        // dd($suggestedCategories);
+        //Instead of returning the view this is use to see if im catching something from database
+        dd($searchResult);
+        dd($suggestedJobs);
 
 
-        if ($searchResult->isEmpty()) {
-            return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
-        } else {
-            return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
-        }
+        //Uncomment if the view is in order bcoz the file here is for testing purpose only
+
+    //     if ($searchResult->isEmpty()) {
+    //         return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+    //     } else {
+    //         return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+    //     }
     }
 
 }
