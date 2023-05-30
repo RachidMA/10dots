@@ -5,6 +5,11 @@ $orange1: rgb(232, 179, 115);
     padding: 0;
 }
 
+body{
+    overflow-x: hidden;
+    height: 100%;
+}
+
 .header{
     height: 60px;
     width: 100vw;
@@ -28,6 +33,13 @@ $orange1: rgb(232, 179, 115);
     align-items: center;
 }
 
-.wrapper {
-    min-height: calc(100vh - 100px);
+.css_wrapper {
+    height: 100%;
+    flex: 1;
+}
+
+.css_container {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
 }
