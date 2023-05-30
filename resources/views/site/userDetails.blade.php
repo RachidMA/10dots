@@ -5,7 +5,7 @@
 <h1>Details page for clicked profile</h1>
 
 <div>
-@foreach($users as $user)
+@foreach($jobs as $job)
 
     <p>Doer image: {{ $job->image_url}}</p> 
     <p>Doer name: {{$job->first_name}} </p>
