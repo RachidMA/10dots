@@ -168,7 +168,8 @@ class JobController extends Controller
     }
 
     public function editJob () {
-        return view ('testing.Job_update_form');
+        $jobId = Job::all()->take(10);
+        return view ('testing.Job_update_form')->with('jobs', $jobId);
     }
 
     public function updateJob () {
