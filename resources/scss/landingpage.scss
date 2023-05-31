@@ -14,15 +14,22 @@
 }
 
 @mixin landing_row {
-    grid-column: 2/12;
+    grid-column: 1/15;
     height: fit-content;
     min-height: 20vh;
-    // border: 10PX solid black;
-    align-self: center;
+    border: 5PX solid green;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(12,1fr) 0.5fr;
 }
 
 .landing_row_1 {
     @include landing_row;
+    padding: 128px 0 72px 0;
+
+    .welcome_div {
+        grid-column: 2/14;
+    }
     #welcome {
         font-size: 50pt;
     }
@@ -34,25 +41,21 @@
 
 .landing_row_2 {
     @include landing_row;
-    grid-column: 1/13;
-    display: grid;
-    grid-template-columns: 0.5fr repeat(10,1fr) 0.5fr;
-    background: radial-gradient(circle,$light_orange 62%, transparent 60%);
-    background-size: 200px;
+    background: radial-gradient(circle,$light_orange 70.7%, transparent 60%);
+    background-size: 200px 200px;
     background-repeat: repeat-x;
-    background-position: left;
+    background-position: left center;
     
     form {
-        grid-column: 2/12;
+        grid-column: 2/14;
         background-color: $grey02;
-        width: auto;
         box-sizing: border-box;
         padding: 3em;
         border-radius: 1em;
 
         width: fit-content;
         min-width: 50vw;
-        box-shadow: 0 5px 3px $grey03 ;
+        box-shadow: 0 5px 3px $grey03;
     }
 
     div {
@@ -89,5 +92,21 @@
         justify-self: flex-end;
         margin-left: auto;
         margin-right: 0.5em;
+    }
+}
+
+.landing_row_3 {
+    @include landing_row;
+    H3{
+        grid-column: 2/14;
+        grid-row: 1;
+    }
+    P {
+        grid-column: 2/6;
+        grid-row: 2;
+    }
+    .helpout {
+        grid-column: 8/14;
+        grid-row: 2;
     }
 }
