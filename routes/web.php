@@ -24,8 +24,9 @@ Route::prefix('/home')->group(function () {
     Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
 });
 
-
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //=================Routes for jobs (JEAN)====================//
 Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
