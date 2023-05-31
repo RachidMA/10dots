@@ -159,14 +159,26 @@ class JobController extends Controller
         dd($job);
     }
 
-
     public function editJob()
     {
-        $jobId = Job::all()->take(10);
-        return view('testing.Job_update_form')->with('jobs', $jobId);
+        $edit = Job::all();
+        return view('testing.Job_edit_form' )->with('doers', $edit);
     }
 
-    public function updateJob()
+    // public function updateJob()
+    // {
+    //     //
+    // }
+
+    public function list (Request $request)
     {
+        $jobs=Job::all();
+        return view('testing.Job_edit_form' )->with('doers', $jobs);
+    }
+
+     public function delete(Request $request) {
+        $data = Job::find($request->id);
+        $data->delete();
+        return redirect('list');
     }
 }
