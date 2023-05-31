@@ -1,4 +1,18 @@
-$orange1: rgb(232, 179, 115);
+$ten_dot_orange: #FF7F0A;
+$light_orange: #FF922E;
+$white: #FFFF;
+$black: #252525;
+
+$grey00: #F5F5F5;
+$grey01: #EBEBEB;
+$grey02: #D9D9D9;
+$grey03: #B8B6B6;
+$grey04: #9F9F9F;
+$grey05: #706E6E;
+$grey06: #444444;
+
+@import 'landingpage';
+
 
 *{
     margin: 0;
@@ -13,21 +27,16 @@ body{
 .header{
     height: 60px;
     width: 100vw;
-    background-color: $orange1;
+    background-color: $ten_dot_orange;
 
     display: flex;
     align-items: center;
 }
 
-.header a {
-    width: 80px;
-}
-
 .footer{
     height: 40px;
     width: 100vw;
-    background-color: $orange1;
-
+    background-color: $ten_dot_orange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +45,8 @@ body{
 .css_wrapper {
     height: 100%;
     flex: 1;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(10,1fr) 0.5fr;
 }
 
 .css_container {

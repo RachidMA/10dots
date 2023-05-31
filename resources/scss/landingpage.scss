@@ -1,0 +1,93 @@
+#big_circ {
+    border-radius: 50%;
+    aspect-ratio: 1;
+
+    width: 80vw;
+    min-width: 800px;
+    background-color: $grey01;
+    position: absolute;
+    left: 40vw;
+    top: 15vh;
+    z-index: -10;
+    // transform: translatex(30%);
+    overflow: hidden;
+}
+
+@mixin landing_row {
+    grid-column: 2/12;
+    height: fit-content;
+    min-height: 20vh;
+    // border: 10PX solid black;
+    align-self: center;
+}
+
+.landing_row_1 {
+    @include landing_row;
+    #welcome {
+        font-size: 50pt;
+    }
+
+    span {
+        color: $ten_dot_orange;
+    }
+}
+
+.landing_row_2 {
+    @include landing_row;
+    grid-column: 1/13;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(10,1fr) 0.5fr;
+    background: radial-gradient(circle,$light_orange 62%, transparent 60%);
+    background-size: 200px;
+    background-repeat: repeat-x;
+    background-position: left;
+    
+    form {
+        grid-column: 2/12;
+        background-color: $grey02;
+        width: auto;
+        box-sizing: border-box;
+        padding: 3em;
+        border-radius: 1em;
+
+        width: fit-content;
+        min-width: 50vw;
+        box-shadow: 0 5px 3px $grey03 ;
+    }
+
+    div {
+        display: flex;
+    }
+
+    div label {
+        width: fit-content;
+        white-space: nowrap;
+        align-self: first baseline;
+        // background-color: aqua;
+        min-height: 2em;
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        border: none;
+        width: 100%;
+        border-radius: 100px;
+        box-sizing: border-box;
+        padding-left: 1em;
+        min-height: 2em;
+
+        margin: 0 0.5em 2em 0.5em;
+    }
+
+    input[type="submit"] {
+        background-color: $ten_dot_orange;
+        width: 30%;
+        margin: 0;
+        color: white;
+        padding: 0;
+        justify-self: flex-end;
+        margin-left: auto;
+        margin-right: 0.5em;
+    }
+}
