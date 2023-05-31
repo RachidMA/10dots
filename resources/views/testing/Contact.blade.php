@@ -5,7 +5,7 @@
 <!-- =======================JEAN========================= -->
 <div class="container py-4">
 <div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;">
-<form action="{{ route('submitted') }}" method="POST" class="contact-form">
+<form action="{{ route('contact-us') }}" method="POST" class="contact-form">
 @csrf
     <div class="mb-3">
     <input class="form-control" id="name" type="text" name="name" placeholder="Name" />

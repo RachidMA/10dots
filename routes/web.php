@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 //============Landing Page Routes====================//
 Route::prefix('/home')->group(function () {
     Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
+    Route::post('/', [ContactController::class, 'store'])->name('contact-us');
 });
 
 
