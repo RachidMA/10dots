@@ -168,4 +168,12 @@ class JobController extends Controller
         $job = Job::find($request->id);
         dd($job);
     }
+
+    public function editJob () {
+        return view ('testing.Job_update_form');
+    }
+
+    public function updateJob () {
+
+    }
 }
