@@ -24,8 +24,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">
-                        Job Details
+                    <a class="nav-link" href="{{ route ('jobEdit') }}">
+                        Update Job
                     </a>
                 </li>
                 <li class="nav-item">
