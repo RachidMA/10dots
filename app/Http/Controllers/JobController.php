@@ -11,14 +11,15 @@ use App\Models\Category;
 class JobController extends Controller
 {
     // ======JEAN: From showFeaturedJobs to Search=====//
-    public function showFeaturedJobs(Request $request){
+    public function showFeaturedJobs(Request $request)
+    {
 
         $featuredJobs = Job::inRandomOrder()
-        ->limit(6)
-        ->get();
+            ->limit(6)
+            ->get();
 
         // dd ($featuredJobs);
-        return view('welcome',[ 'featuredJobs' => $featuredJobs]);
+        return view('welcome', ['featuredJobs' => $featuredJobs]);
     }
     public function showForm()
     {
@@ -38,14 +39,14 @@ class JobController extends Controller
         $country = $request->input('country');
 
         $searchResult = Job::where('job_title', 'like', '%' . $job . '%')
-        ->where('city', $city)
-        ->where('country', $country)
-        ->get();
+            ->where('city', $city)
+            ->where('country', $country)
+            ->get();
 
         $suggestedJobs = Job::where('city', '!=', $city)
-        ->orWhere('country', '!=', $country)
-        ->limit(5) //limit to 5 can put more
-        ->get();
+            ->orWhere('country', '!=', $country)
+            ->limit(5) //limit to 5 can put more
+            ->get();
 
         //Instead of returning the view this is used to see if Im catching something from database
         // dd($searchResult);
@@ -54,11 +55,11 @@ class JobController extends Controller
 
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
-    //     if ($searchResult->isEmpty()) {
-    //         return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
-    //     } else {
-    //         return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
-    //     }
+        //     if ($searchResult->isEmpty()) {
+        //         return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+        //     } else {
+        //         return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+        //     }
     }
 
 
@@ -155,15 +156,16 @@ class JobController extends Controller
         // return redirect('site.userDashoard')->with('success', 'Job created successfully');
     }
 
-    public function jobs (Request $request) {
+    public function jobs(Request $request)
+    {
         $jobId = Job::all()->take(10);
-        
-        return view ('testing.jobs_all_test')->with('jobs', $jobId);
+
+        return view('testing.jobs_all_test')->with('jobs', $jobId);
     }
 
-    public function jobDetails (Request $request) {
+    public function jobDetails(Request $request)
+    {
         $job = Job::find($request->id);
         dd($job);
-        
     }
 }
