@@ -10,17 +10,7 @@ use App\Models\Category;
 
 class JobController extends Controller
 {
-    // ======JEAN: From showFeaturedJobs to Search=====//
-    public function showFeaturedJobs(Request $request)
-    {
 
-        $featuredJobs = Job::inRandomOrder()
-            ->limit(6)
-            ->get();
-
-        // dd ($featuredJobs);
-        return view('welcome', ['featuredJobs' => $featuredJobs]);
-    }
     public function showForm()
     {
         return view('testing.Job_search_form');
@@ -169,12 +159,14 @@ class JobController extends Controller
         dd($job);
     }
 
-    public function editJob () {
+
+    public function editJob()
+    {
         $jobId = Job::all()->take(10);
-        return view ('testing.Job_update_form')->with('jobs', $jobId);
+        return view('testing.Job_update_form')->with('jobs', $jobId);
     }
 
-    public function updateJob () {
-
+    public function updateJob()
+    {
     }
 }
