@@ -20,9 +20,11 @@ use Illuminate\Support\Facades\Auth;
 */
 
 //============Landing Page Routes====================//
-Route::get('/', [HomepageController::class, 'show'])->name("homepage");
-//=======JEAN---> part of my task to show featured jobs in the homepage=====//
-Route::get('/', [JobController::class, 'showFeaturedJobs'])->name('featured-jobs');
+Route::prefix('/home')->group(function () {
+    Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
+});
+
+
 
 
 //=================Routes for jobs (JEAN)====================//
