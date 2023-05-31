@@ -1,1 +1,1 @@
-<!-- <a href="/signs/{{$sign->slug}}"> {{$sign->name}}</a> -->
+<a href="/signs/{{$sign->slug}}"> {{$sign->name}}</a>

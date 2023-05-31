@@ -54,11 +54,11 @@ class JobController extends Controller
 
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
-    //     if ($searchResult->isEmpty()) {
-    //         return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
-    //     } else {
-    //         return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
-    //     }
+        if ($searchResult->isEmpty()) {
+            return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+        } else {
+            return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+        }
     }
 
 
