@@ -41,12 +41,6 @@
     <label for="image_url">Upload Image:</label>
     <input type="file" id="image_url" name="image_url"><br><br>
 
-    <label for="user_id">User ID:</label>
-    <input type="text" id="user_id" name="user_id"><br><br>
-
-    <label for="category_id">Category ID:</label>
-    <input type="text" id="category_id" name="category_id"><br><br>
-
     <input type="submit" value="Edit">
     </form>
   </div>
