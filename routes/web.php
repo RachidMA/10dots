@@ -36,7 +36,14 @@ Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
 Route::get('/update-form', [JobController::class, 'editJob'])->name('jobEdit');
 Route::get('/update-form/{id}', [JobController::class, 'updateJob'])->name('jobUpdate');
-Route::view('list', 'testing.Job_edit_form');
+// Route::view('list', 'testing.Job_edit_form');
+
+//Routes to edit doer profiles
+Route::get('/list', [JobController::class, 'list'])->name('editJob');
+Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
+
+// Route::get('/list', [JobController::class, 'editJob'])->name('editJob');
+// Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
