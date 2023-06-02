@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Job;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class HomepageController extends Controller
     {
 
         $featuredJobs = Job::inRandomOrder()
-            ->limit(6)
+            ->limit(4)
             ->get();
 
         if (!$featuredJobs) {
@@ -21,23 +22,5 @@ class HomepageController extends Controller
         return view('testing.welcome')->with('featuredJobs', $featuredJobs);
     }
 
-    public function show(){
-        return view('testing.Contact');
-    }
 
-    public function store(Request $request){
-        // $info = [
-        //     'name' => 'required|min:3',     
-        //     'email' => 'required|email',   
-        //     'message' => 'required|min:10',
-        // ];
-
-        // $request->validate($info);
-
-        // $name = $request->input('name');
-        // $email = $request->input('email');
-        // $message = $request->input('message');
-    
-
-    }
 }
