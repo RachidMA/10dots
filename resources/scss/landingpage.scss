@@ -17,10 +17,41 @@
     grid-column: 1/15;
     height: fit-content;
     min-height: 20vh;
-    border: 5PX solid green;
-    height: fit-content;
+    // border: 1PX solid green;
+    
     display: grid;
     grid-template-columns: 0.5fr repeat(12,1fr) 0.5fr;
+    column-gap: 1rem;
+    padding-top: 48px;
+
+    H3{
+        grid-column: 2/14;
+        grid-row: 1;
+        margin-bottom: 0.5em;
+    }
+}
+
+@mixin card {
+    box-shadow: 0 5px 3px $grey03;
+    background-color: $grey02;
+    box-sizing: border-box;
+    padding: 2.5em;
+    border-radius: 1em;
+}
+
+@mixin orange_button {
+    background-color: $ten_dot_orange;
+    margin: 0;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 100px;
+    box-sizing: border-box;
+    min-height: 2em;
+    padding: 0 2em;
+    white-space: nowrap;
+    min-width: fit-content;
+
 }
 
 .landing_row_1 {
@@ -41,21 +72,18 @@
 
 .landing_row_2 {
     @include landing_row;
+    padding: 0;
     background: radial-gradient(circle,$light_orange 70.7%, transparent 60%);
     background-size: 200px 200px;
     background-repeat: repeat-x;
     background-position: left center;
     
     form {
-        grid-column: 2/14;
-        background-color: $grey02;
-        box-sizing: border-box;
-        padding: 3em;
-        border-radius: 1em;
+        @include card;
 
+        grid-column: 2/14;
         width: fit-content;
         min-width: 50vw;
-        box-shadow: 0 5px 3px $grey03;
     }
 
     div {
@@ -84,29 +112,69 @@
     }
 
     input[type="submit"] {
-        background-color: $ten_dot_orange;
-        width: 30%;
-        margin: 0;
-        color: white;
-        padding: 0;
+        @include orange_button;
         justify-self: flex-end;
         margin-left: auto;
         margin-right: 0.5em;
+        width: 30%;
     }
 }
 
 .landing_row_3 {
     @include landing_row;
-    H3{
-        grid-column: 2/14;
-        grid-row: 1;
-    }
     P {
         grid-column: 2/6;
         grid-row: 2;
+        text-align: justify;
     }
     .helpout {
         grid-column: 8/14;
         grid-row: 2;
+        @include card;
+        height: fit-content;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 1em;
+
+        button {
+            @include orange_button;
+        }
     }
+}
+
+.landing_row_4 {
+    @include landing_row;
+    H3{
+        grid-column: 1/12;
+    }
+    grid-column: 2/14;
+    grid-template-columns: repeat(12, 1fr);
+    .landing_category {
+        grid-column: span 3;
+        min-height: 300px;
+        height: fit-content;
+        .cat_img {
+            height: 220px;
+            background-color: antiquewhite;
+            box-shadow: 0 5px 3px $grey03;
+            border-radius:0.5em 0.5em 0 0;
+
+        }
+        .cat_info {
+            @include card;
+            padding: 1.5em;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 0 0.5em 0.5em;
+            button {
+                @include orange_button;
+            }
+        }
+    }
+}
+
+.landing_row_5 {
+    @include landing_row;
 }

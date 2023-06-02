@@ -41,6 +41,29 @@
         <button>Become a Doer</button>
     </div>
 </div>
+<div class="landing_row_4">
+    <h3>Top tasks</h3>
+    <div class="landing_category">
+        <div class="cat_img">
+
+        </div>
+        <div class="cat_info">
+            <h5>
+                Job Title
+            </h5>
+            <p>
+            2700 completed tasks  |   188 Doers
+            </p>
+            <button>
+                Book job
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="landing_row_5">
+    <h3>The 10 Dots Process is easy</h3>
+</div>
 
 
 @endsection
