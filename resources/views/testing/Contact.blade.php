@@ -1,7 +1,9 @@
 @extends ('layout.layout')
 
 @section('content')
-
+    <!-- <li class="nav-item">
+    <a class="nav-link" href="{{route('contact-us')}}">Contact Us</a>
+</li> -->
 <!-- =======================JEAN========================= -->
 <div class="container py-4">
 <div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;">
