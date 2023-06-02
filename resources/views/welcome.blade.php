@@ -7,7 +7,7 @@
 <div class="landing_row_1">
     <div class="welcome_div">
         <h1 id="welcome">Help You Can trust <span>..........</span></h1>
-        <h2 id="subwelcome">Find a <span>10 Dots</span> Doer Near You</h2>
+        <h2 id="subwelcome">Find a <span>10 Dots</span> Doer Near You <span class="material-symbols-outlined">conditions</span></h2>
     </div>
 </div>
 <div class="landing_row_2">
@@ -29,7 +29,9 @@
         </div>
 
         <div>
-            <input type="submit" value="Submit">
+            <!-- <span class="material-symbols-outlined"> -->
+            <input type="submit" value="search">
+            <!-- </span> -->
         </div>
     </form>
 </div>
@@ -63,6 +65,28 @@
 
 <div class="landing_row_5">
     <h3>The 10 Dots Process is easy</h3>
+    <div class="orange_steps">
+        <div class="steps_div">
+            <div class="step">
+                <span class="material-symbols-outlined">draw</span>
+                <h4>sign up</h4>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis reprehenderit culpa esse quibusdam suscipit corrupti molestias labore ut eius?</P>
+                <span class="material-symbols-outlined">Counter_1</span>
+            </div>
+            <div class="step">
+                <span class="material-symbols-outlined">group_add</span>
+                <h4>Book a Doer</h4>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis reprehenderit culpa esse quibusdam suscipit corrupti molestias labore ut eius?</P>
+                <span class="material-symbols-outlined">Counter_2</span>
+            </div>
+            <div class="step">
+                <span class="material-symbols-outlined">grain</span>
+                <h4>Give your Dots</h4>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis reprehenderit culpa esse quibusdam suscipit corrupti molestias labore ut eius?</P>
+                <span class="material-symbols-outlined">Counter_3</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 
