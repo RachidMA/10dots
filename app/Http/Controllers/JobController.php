@@ -159,21 +159,33 @@ class JobController extends Controller
         dd($job);
     }
 
-    public function editJob()
+    public function editJob(Request $request)
     {
-        $edit = Job::all();
-        return view('testing.Job_edit_form' )->with('doers', $edit);
+        $edit = Job::find($request->id);
+        return view('testing.Job_edit_form' )->with('doer', $edit);
     }
 
-    // public function updateJob()
-    // {
-    //     //
-    // }
+    public function updateJob(Request $req)
+    {
+        $data = Job::find($req->id);
+        dd($data);
+        $data->first_name=$req->first_name;
+        $data->last_name=$req->last_name;
+        $data->phone=$req->phone;
+        $data->address=$req->address;
+        $data->country=$req->country;
+        $data->job_title=$req->job_title;
+        $data->description=$req->description;
+        $data->min_price=$req->min_price;
+        $data->max_price=$req->max_price;
+        $data->save();
+        return view('testing.Job_update_form' )->with('doers', $data);
+    }
 
     public function list (Request $request)
     {
         $jobs=Job::all();
-        return view('testing.Job_edit_form' )->with('doers', $jobs);
+        return view('testing.Job_delete_form' )->with('doers', $jobs);
     }
 
      public function delete(Request $request) {
