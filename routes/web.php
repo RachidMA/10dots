@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JobController;
 // use app\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
@@ -22,7 +23,6 @@ use Illuminate\Support\Facades\Auth;
 //============Landing Page Routes====================//
 Route::prefix('/home')->group(function () {
     Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
-    Route::post('/', [ContactController::class, 'store'])->name('contact-us');
 });
 
 Route::get('/', function () {
@@ -33,14 +33,19 @@ Route::get('/', function () {
 Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 
-// Routes to get jobs
+//=================Routes for contact page{footer} (JEAN)===========//
+Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+
+
+//==============Routes to get jobs (ADA)====================//
 Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
 Route::get('/update-form', [JobController::class, 'editJob'])->name('jobEdit');
 Route::get('/update-form/{id}', [JobController::class, 'updateJob'])->name('jobUpdate');
 // Route::view('list', 'testing.Job_edit_form');
 
-//Routes to edit doer profiles
+//=============Routes to edit doer profiles (ADA)==========//
 Route::get('/list', [JobController::class, 'list'])->name('editJob');
 Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
 
