@@ -13,16 +13,20 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function show()
+    //RACHID: REMOVE SHOW() DUPLICATED
+    //RACHID: THIS FUNCTION TO USE A USER PROFILE VIEW
+    public function showCard(Request $request)
     {
-        return view('site.userDetails');
-    }
 
-    public function showCard(Job $user)
-    {
-        $user = Job::all(); // Retrieve the user by ID
+        //GET USER OBJECT
+        $doer = User::find($request->id);
 
-        return view("site.userDetails", ['showCard' => $user]);
+        //Jobs related to a doer
+        $jobs = $doer->jobs()->get();
+        // dd($user_jobs);
+        //GET USER JOB CREATED
+        // return view("site.userDetails", ['showCard' => $user]);
+        return view('site.userDetails', ['doer' => $doer, 'jobs' => $jobs]);
     }
 
     public function showReview()

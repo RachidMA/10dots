@@ -49,10 +49,11 @@ Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
+    //RACHID: REMOVED /{id} WAS DUBLICATED ROUTE
     //Routes for users
-    Route::get('/{id}', [UserController::class, 'show'])->name('showUserDetails');
     Route::get('/{id}', [UserController::class, 'showCard'])->name('showCard');
-    Route::get('/create-job', [JobController::class, 'createJob'])->name('create-job');
+    Route::get('/{id}/dashboard', [JobController::class, 'doerDashboard'])->name('doer-dashboard');
+    Route::get('/{id}/create-job', [JobController::class, 'createJob'])->name('create-job');
     Route::post('/store-job', [JobController::class, 'storeJob'])->name('store-job');
 });
 
