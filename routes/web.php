@@ -41,9 +41,12 @@ Route::get('/update-form/{id}', [JobController::class, 'updateJob'])->name('jobU
 // Route::view('list', 'testing.Job_edit_form');
 
 //Routes to edit doer profiles
-Route::get('/list', [JobController::class, 'list'])->name('editJob');
+Route::get('/list', [JobController::class, 'list']);
 Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
-
+Route::get('/edit/{id}', [JobController::class, 'editJob'])->name('editJob');
+Route::get('/update/{id}', [JobController::class, 'updateJob'])->name('updateJob');
+// Route::post('/update', [JobController::class, 'updateJob'])->name('updateJob');
+ 
 // Route::get('/list', [JobController::class, 'editJob'])->name('editJob');
 // Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
 

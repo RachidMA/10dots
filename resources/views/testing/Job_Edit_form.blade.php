@@ -1,33 +1,15 @@
-<h1>Doer Information</h1>
+<h1>Edit your Information</h1>
 
-<table border = "1">
-    <tr>
-        <td>Id</td>
-        <td>First name</td>
-        <td>last name</td>
-        <td>address</td>
-        <td>country</td>
-        <td>city</td>
-        <td>job title</td>
-        <td>price range</td>
-        <td>image url</td>
-        <td>phone</td>
-        <td>description</td>
-    </tr>
-        @foreach ($doers as $doer)
-        <tr>
-            <td>{{ $doer['id'] }}</td>
-            <td>{{ $doer[ 'first_name' ] }}</td>
-            <td>{{ $doer[ 'last_name' ] }}</td>
-            <td>{{ $doer[ 'address' ] }}</td>
-            <td>{{ $doer[ 'country' ] }}</td>
-            <td>{{ $doer[ 'city' ] }}</td>
-            <td>{{ $doer[ 'job_title' ] }}</td>
-            <td>{{ $doer[ 'price_range' ] }}</td>
-            <td>{{ $doer[ 'image_url' ] }}</td>
-            <td>{{ $doer[ 'phone' ] }}</td>
-            <td>{{ $doer[ 'description' ] }}</td>
-            <td><a href = "{{  route ('deleteJob', [ 'id'=>$doer->id]) }}">Delete</a></td>
-        </tr>
-        @endforeach
-</table>
+<div class = "editCard">
+    <img src = "{{ $doer[ 'img_url' ] }}" alt="Doer profile image">
+    <div class = "container">
+    <h2>Name: {{ $doer[ 'first_name' ] }} {{ $doer[ 'last_name' ] }}</h2>
+        <p><h3>Job: {{ $doer[ 'job_title' ] }}</h3></p>
+        <p>Rate: {{ $doer[ 'min_price' ] }} - {{ $doer[ 'max_price' ] }} euros</p>
+        <p>Description: {{ $doer[ 'description' ] }}</p>
+        <p>Address: {{ $doer[ 'address' ] }}</p>
+        <p>City: {{ $doer[ 'city' ] }}, {{ $doer[ 'country' ] }}</p>
+        <p>Phone Number: {{ $doer[ 'phone' ] }}</p>
+    </div>
+<button><a href = "{{  route ('updateJob', [ 'id'=>$doer->id]) }}">Edit</a></button>
+</div>
