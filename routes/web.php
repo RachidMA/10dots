@@ -34,7 +34,8 @@ Route::get('/search-form', [JobController::class, 'showForm'])->name('search-for
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 
 //=================Routes for contact page{footer} (JEAN)===========//
-Route::get('/', [ContactController::class, 'show'])->name('contact-us');
+Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
 
 //==============Routes to get jobs (ADA)====================//
