@@ -10,11 +10,7 @@ use App\Models\Category;
 
 class JobController extends Controller
 {
-
-    public function showForm()
-    {
-        return view('testing.Job_search_form');
-    }
+    //RACHID: REMOVED THE DUPLICATED SHOW FUNCTION
     public function search(Request $request)
     {
         $info = [
@@ -61,7 +57,6 @@ class JobController extends Controller
         $categories = Category::all();
 
         // TODO: FETCH COUNTRIES AND PASS THEM WITH VIEW FOR COUNTRIES DROPDOWN FIELD
-
 
         //return create job form
         return view('testing.job_create_form')->with('categories', $categories);
@@ -146,6 +141,26 @@ class JobController extends Controller
         // return redirect('site.userDashoard')->with('success', 'Job created successfully');
     }
 
+    //RACHID: DIRECT TO DOER DASHBOARD
+    public function doerDashboard(Request $request)
+    {
+        //THIS WILL GET THE AUTHENTICATED USER OBJECT
+        $user = auth()->user();
+        //GET DOER ID FROM REUEST
+        $doer_id = auth()->id();
+        $profile_image = auth()->user()->profile_image;
+
+        //FETCH JOBS THAT THE DOER CREATE FROM DATABASE 
+        $jobs = Job::where('user_id', $doer_id)->get();
+        if (!$jobs) {
+            return view('testing.Doer_dashboard')->with("message", "You do not have created job yet. press create to start");
+        }
+        return view('testing.Doer_dashboard', ['jobs' => $jobs, 'profile_image' => $profile_image]);
+    }
+
+    //RACHID: THIS FUNCTION COULD BE USED TO FETCH JOBS RESULT
+    //BASED ON JOB TITLE COUNTRY AND CITY
+    //THIS FUNTION STILL NEED TO ADD CONDITIONS TO THE SEARCH QUERY
     public function jobs(Request $request)
     {
         $jobId = Job::all()->take(10);
@@ -153,16 +168,31 @@ class JobController extends Controller
         return view('testing.jobs_all_test')->with('jobs', $jobId);
     }
 
+    //RACHID: THIS FUNCTION WILL BE MODIFIED TO 
+    //USED IN FETCHING A JOB BASED ON JOB ID
+    //FOR DOER OR USER OR ADMIN(CONDITION ON ROLE)
     public function jobDetails(Request $request)
     {
         $job = Job::find($request->id);
         dd($job);
     }
 
-    public function editJob(Request $request)
+    //RACHID: THIS FUNCTION WILL BE DELETED LATER
+    public function list(Request $request)
     {
-        $edit = Job::find($request->id);
-        return view('testing.Job_edit_form' )->with('doer', $edit);
+        $jobs=Job::all();
+        return view('testing.Job_delete_form' )->with('doers', $jobs);
+        $jobs = Job::all();
+        return view('testing.Job_edit_form')->with('doers', $jobs);
+    }
+    
+    //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
+    //BY ID TO POPULATE EDIT FORM(AUTHENTICATED USER ONLY)
+    public function editJob()
+    {
+        $edit = Job::all();
+        return view('testing.Job_edit_form')->with('doers', $edit);
+
     }
 
     public function updateJob(Request $req)
@@ -182,13 +212,9 @@ class JobController extends Controller
         return view('testing.Job_update_form' )->with('doers', $data);
     }
 
-    public function list (Request $request)
+    //RACHID WILL KEEP THIS FUNCTION
+    public function delete(Request $request)
     {
-        $jobs=Job::all();
-        return view('testing.Job_delete_form' )->with('doers', $jobs);
-    }
-
-     public function delete(Request $request) {
         $data = Job::find($request->id);
         $data->delete();
         return redirect('list');
