@@ -48,12 +48,11 @@ Route::get('/update-form/{id}', [JobController::class, 'updateJob'])->name('jobU
 
 //=============Routes to edit doer profiles (ADA)==========//
 Route::get('/list', [JobController::class, 'list']);
-Route::get('/list', [JobController::class, 'list'])->name('editJob');
 Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
 Route::get('/edit/{id}', [JobController::class, 'editJob'])->name('editJob');
 Route::get('/update/{id}', [JobController::class, 'updateJob'])->name('updateJob');
 // Route::post('/update', [JobController::class, 'updateJob'])->name('updateJob');
- 
+
 // Route::get('/list', [JobController::class, 'editJob'])->name('editJob');
 // Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
 
