@@ -3,6 +3,13 @@
 @section('content')
 
 <!-- =======================JEAN========================= -->
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <h3>
+            {!! \Session::get('success') !!}
+        </h3>
+    </div>
+@endif
 <div class="container py-4">
 <div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;">
 <form action="{{ route('contact.store') }}" method="POST" class="contact-us">

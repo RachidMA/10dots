@@ -26,7 +26,7 @@ class ContactController extends Controller
         Mail::to($request->email)->send(new ContactMail($contact));
         
     
-        return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+        return redirect()->back()->with('success', 'Thank you for contacting us. We will get back to you soon.');
     }
     
     
