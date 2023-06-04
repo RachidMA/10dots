@@ -182,39 +182,49 @@ class JobController extends Controller
     }
 
     //RACHID: THIS FUNCTION WILL BE DELETED LATER
+    //ADA: no it will not! This shows the list of all users with delete button for each
     public function list(Request $request)
     {
         $jobs=Job::all();
         return view('testing.Job_delete_form' )->with('doers', $jobs);
-        $jobs = Job::all();
-        return view('testing.Job_edit_form')->with('doers', $jobs);
     }
-    
+
     //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
     //BY ID TO POPULATE EDIT FORM(AUTHENTICATED USER ONLY)
-    public function editJob()
+    public function editJob(Request $request)
     {
-        $edit = Job::all();
-        return view('testing.Job_edit_form')->with('doers', $edit);
-
+        $edit = Job::find($request->id);
+        return view('testing.Job_edit_form')->with('doer', $edit);
     }
 
-    public function updateJob(Request $req)
+    public function showJob(Request $request)
     {
-        $data = Job::find($req->id);
-        dd($data);
-        $data->first_name=$req->first_name;
-        $data->last_name=$req->last_name;
-        $data->phone=$req->phone;
-        $data->address=$req->address;
-        $data->country=$req->country;
-        $data->job_title=$req->job_title;
-        $data->description=$req->description;
-        $data->min_price=$req->min_price;
-        $data->max_price=$req->max_price;
+        $jobId = $request->id;
+        $data = Job::find($jobId);
+        return view('testing.Job_update_form' )->with('jobs', $data);    
+    }
+
+    //ADA: function works!! 
+ public function updateJob(Request $request) {
+        $jobId = $request->id;
+         $data = Job::find($jobId);
+         $data->first_name=$request->first_name;
+        $data->last_name=$request->last_name;
+        $data->phone=$request->phone;
+        $data->address=$request->address;
+        $data->country=$request->country;
+        $data->job_title=$request->job_title;
+        $data->description=$request->description;
+        $data->min_price=$request->min_price;
+        $data->max_price=$request->max_price;
         $data->save();
-        return view('testing.Job_update_form' )->with('doers', $data);
-    }
+        return redirect('testing.Job_success' );
+ }
+
+ public function redirect()
+ {
+     return view('testing.Job_success' );
+ }
 
     //RACHID WILL KEEP THIS FUNCTION
     public function delete(Request $request)
