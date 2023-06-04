@@ -11,12 +11,12 @@
     </script>
 @endif -->
 
-<!-- This is the search result from the serach bar -->
-@foreach($searchResult as $job)
-<h1 class="fw-light">Search result</h1>
-    <div class="test">
+<!-- This is the search result from the search bar -->
 
-        <p>Job: {{ $job->job_title}}</p> 
+<h1 class="fw-light">Search result</h1>
+@foreach($searchResult as $job)
+    <div class="test">
+    <p><a href="{{ route('jobDetails', ['id' => $job->id]) }}">{{ $job->job_title }}</a></p> 
         <p>name: {{$job->first_name}} {{$job->last_name}}</p>
         <p>adress: {{ $job->address}}</p>
         <p>City: {{ $job->city}}</p>
@@ -30,9 +30,9 @@
     <h3>Suggested Jobs</h3>
     <ul>
         @foreach ($suggestedJobs as $job)
-        <p>Job: {{ $job->job_title}}</p> 
+    <p><a href="{{ route('jobDetails', ['id' => $job->id]) }}">{{ $job->job_title }}</a></p> 
         <p>name: {{$job->first_name}} {{$job->last_name}}</p>
-        <p>adress: {{ $job->address}}</p>
+        <p>adress: {{$job->category->name}}</p>
         <p>City: {{ $job->city}}</p>
         <p>country: {{ $job->country}}</p>
         @endforeach
