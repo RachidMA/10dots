@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Category;
-
+use App\Models\City;
 
 class JobController extends Controller
 {
@@ -44,6 +44,9 @@ class JobController extends Controller
         // dd($suggestedJobs);
         // dd($searchResult);
 
+        //RACHID:TODO: NEED TO ADD SEARCH REALTS VIEW TO SHOW THE SEARCHED JOB BY USERS
+        return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
         //     if ($searchResult->isEmpty()) {
@@ -53,7 +56,12 @@ class JobController extends Controller
         //     }
     }
 
+    //RACHID:GET THE PRICE RANGE
+    public function searchByPrice(Request $request)
+    {
 
+        dd('price range', $request->all());
+    }
 
     //RACHID:CREATE JOB BY AUTHENTICATED USER
     public function createJob(Request $request)
@@ -157,10 +165,12 @@ class JobController extends Controller
 
         //FETCH JOBS THAT THE DOER CREATE FROM DATABASE 
         $jobs = Job::where('user_id', $doer_id)->get();
+        // dd($jobs);
         if (!$jobs) {
             return view('testing.Doer_dashboard')->with("message", "You do not have created job yet. press create to start");
         }
-        return view('testing.Doer_dashboard', ['jobs' => $jobs, 'profile_image' => $profile_image]);
+
+        return view('testing.Doer_dashboard', ['jobs' => $jobs, 'profile_image' => $profile_image, 'doer' => $user]);
     }
 
     //RACHID: THIS FUNCTION COULD BE USED TO FETCH JOBS RESULT
@@ -186,36 +196,35 @@ class JobController extends Controller
     //RACHID: THIS FUNCTION WILL BE DELETED LATER
     public function list(Request $request)
     {
-        $jobs=Job::all();
-        return view('testing.Job_delete_form' )->with('doers', $jobs);
+        $jobs = Job::all();
+        return view('testing.Job_delete_form')->with('doers', $jobs);
         $jobs = Job::all();
         return view('testing.Job_edit_form')->with('doers', $jobs);
     }
-    
+
     //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
     //BY ID TO POPULATE EDIT FORM(AUTHENTICATED USER ONLY)
     public function editJob()
     {
         $edit = Job::all();
         return view('testing.Job_edit_form')->with('doers', $edit);
-
     }
 
     public function updateJob(Request $req)
     {
         $data = Job::find($req->id);
         dd($data);
-        $data->first_name=$req->first_name;
-        $data->last_name=$req->last_name;
-        $data->phone=$req->phone;
-        $data->address=$req->address;
-        $data->country=$req->country;
-        $data->job_title=$req->job_title;
-        $data->description=$req->description;
-        $data->min_price=$req->min_price;
-        $data->max_price=$req->max_price;
+        $data->first_name = $req->first_name;
+        $data->last_name = $req->last_name;
+        $data->phone = $req->phone;
+        $data->address = $req->address;
+        $data->country = $req->country;
+        $data->job_title = $req->job_title;
+        $data->description = $req->description;
+        $data->min_price = $req->min_price;
+        $data->max_price = $req->max_price;
         $data->save();
-        return view('testing.Job_update_form' )->with('doers', $data);
+        return view('testing.Job_update_form')->with('doers', $data);
     }
 
     //RACHID WILL KEEP THIS FUNCTION
@@ -224,5 +233,22 @@ class JobController extends Controller
         $data = Job::find($request->id);
         $data->delete();
         return redirect('list');
+    }
+
+
+    //RACHID: This method handles the api call for fetching cities RACHID===================
+    //for specific country
+    public function getCities(Request $request)
+    {
+        dd($request);
+        $country_id = $request->country_id;
+        dd('country_id', $country_id);
+        $cities = City::where('country_id', $country_id)->get();
+        dd($cities);
+
+        if (empty($cities)) {
+            return response()->json(['error' => 'No cities found.'], 404);
+        }
+        return response($cities);
     }
 }

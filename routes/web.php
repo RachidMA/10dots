@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JobController;
 // use app\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,13 +26,21 @@ Route::prefix('/home')->group(function () {
     Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+//RACHID:THIS ROUTE WILL BE REMOVE AND REPLACED WITH ABOVE ROUTE
+// Route::get('/home', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 //=================Routes for jobs (JEAN)====================//
 Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
+
+//RACHID:I JUST ADDED A COMMENT: THIS ROUTE SHOULD FETCH JOBS BEFORE ADDING PRICE RANGE
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
+//RACHID:SEARCH JOB BASED ON PRICE
+//RACHID:GET THE PRICE RANGE
+route::post('/search-job-by-price', [JobController::class, 'searchByPrice'])->name('price-range');
 
 //=================Routes for contact page{footer} (JEAN)===========//
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
@@ -54,14 +63,26 @@ Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('re
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
-    //RACHID: REMOVED /{id} WAS DUBLICATED ROUTE
-    //Routes for users
-    Route::get('/{id}', [UserController::class, 'showCard'])->name('showCard');
+
+    //RACHID:REMOVED SHOWCARD ROUTE. IS THE SAME ROUTE AS USER/DOER DASHBOARD
     Route::get('/{id}/dashboard', [JobController::class, 'doerDashboard'])->name('doer-dashboard');
     Route::get('/{id}/create-job', [JobController::class, 'createJob'])->name('create-job');
     Route::post('/store-job', [JobController::class, 'storeJob'])->name('store-job');
+
+    //RACHID:COMSTIMIZE LOGOUT ROUTE
+    Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');
 });
  
+
+//RACHID:THESE ROUTES ONLY FOR ADMIN
+Route::prefix('/{name}')->middleware(['auth', 'admin'])->group(function () {
+    //ROUTE TO ADMIN DASHBOARD
+    Route::get('/dashboard', [UserController::class, 'adminDashboard'])->name('admin-dashboard');
+});
+
+//Get cities for each country
+Route::post('/get-cities', [JobController::class, 'getCities'])->name('cities');
+
 
 //AUTHENTICATION ROUTES
 Auth::routes();

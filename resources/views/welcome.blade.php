@@ -28,6 +28,7 @@
             <input type="text" id="city" name="city" placeholder="City"><br>
         </div>
 
+
         <div>
             <!-- <span class="material-symbols-outlined"> -->
             <input type="submit" value="search">
@@ -54,7 +55,7 @@
                 Job Title
             </h5>
             <p>
-            2700 completed tasks  |   188 Doers
+                2700 completed tasks | 188 Doers
             </p>
             <button>
                 Book job

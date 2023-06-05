@@ -21,11 +21,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- bootstrap js -->
     <!-- - responsible for responsive navbar -->
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+
+    <!-- import axios to send the oploaded profile image using javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <!-- Add this in your layout file or view  RACHID ================-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!- <!-- Scripts -->
-        @vite(['resources/scss/app.scss', 'resources/css/app.css'])
+        @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/css/app.css'])
+
 </head>
 
 <body>
@@ -33,9 +38,12 @@
 
         @include("layout.header")
 
-        <div class="css_wrapper">
-            @yield ('content')
+        <div class="main-container">
+            <div class="css_wrapper">
+                @yield ('content')
+            </div>
         </div>
+
 
         @include("layout.footer")
 
