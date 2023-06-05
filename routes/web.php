@@ -6,7 +6,11 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JobController;
 // use app\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
+
 use App\Http\Controllers\LogoutController;
+
+use App\Http\Controllers\ReviewController;
+
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,6 +64,8 @@ Route::get('/update/{id}', [JobController::class, 'showJob'])->name('showJob');
 Route::post('/update/{id}', [JobController::class, 'updateJob'])->name('updateJob');
 Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('redirect');
 
+//=============Routes to leave a review (ADA)==========//
+Route::get('/review/{id}', [ReviewController::class, 'review' ])->name('leaveReview');
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
