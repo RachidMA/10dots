@@ -1,243 +1,285 @@
 /*RACHID: DOER DASHBOARD */
 
+/* RACHID:ADD MESSAGE SECTION IN MAIN WELCOME PAGE */
+.welcome-error {
+  width: 100vw;
+}
 .category{
-   background-color: whitesmoke;
-    width: 80%;
-    height: 15rem;
-    border: 1px solid rgba(0, 0, 0, 0.205);
-    text-align: center;
-    overflow: hidden;
-    margin: 1rem 2rem;
-    padding: 1rem 1.5rem;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-   
-    
+  background-color: whitesmoke;
+  width: 80%;
+  height: 14rem;
+  border: 1px solid rgba(0, 0, 0, 0.205);
+  text-align: center;
+  overflow: hidden;
+  margin: 1rem 2rem;
+  /* padding: 1rem 1.5rem; */
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: .7rem;
+  
+  
+}
+.categories a.category-job-link{
+  text-decoration: none;
+  color: rgba(0, 0, 255, 0.822);
+}
+
+.categories a.category-job-link:hover{
+  color: blue;
+}
+
+.categories a.category-job-link:active{
+  color: red;
 }
 
 .category .cat_img{
-    background-color: red;
-    width: 40%;
-    height: 10rem;
-    border: 1px solid gray;
+  background-color: red;
+  width: 40%;
+  height: 10rem;
+  border: 1px solid gray;
 }
 .category .cat_img img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.job-detail .details-button{
+  margin-top: 2rem;
 }
 .category .job-detail{
-    /* background-color: rgba(0, 128, 0, 0.219); */
-    width: 60%;
-    height: 100%;
-    margin-top: 1rem;
-    padding: 1.5rem 0;
+  background-color: rgba(0, 128, 0, 0.219);
+  width: 60%;
+  height: 100%;
+  /* margin-top: 1rem; */
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+.category .job-detail .cat_text{
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  padding-left: .5rem;
+}
+.cat_text .job-title{
+  text-align: center;
+}
+
+.cat_text .address {
+  /* background-color: yellow; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .category button{
-    padding: .3rem 1rem;
-    border: none;
-    background-color:rgba(128, 128, 128, 0.541);
-    border-radius: 5px;
-    margin-top: 1rem;
-    
+  padding: .3rem .4rem;
+  border: none;
+  background-color:rgba(128, 128, 128, 0.541);
+  border-radius: 5px;
+  margin-top: 1rem;
+  
 }
 
 .category button:hover{
-    background-color: gray;
+  background-color: gray;
 }
 .job-list-container > .job-card-body {
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  }
-  .job-list-container > .job-card-body img {
-    max-width: 100%;
-    
-    border: 5px solid red;
-    
-  }
-  .card-body {
-    padding: 0 20px 20px;
-  }
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+.job-list-container > .job-card-body img {
+  max-width: 100%;
+  
+  border: 5px solid red;
+  
+}
+.card-body {
+  padding: 0 20px 20px;
+}
 
-  .buttons {
-    background-color: red;
-    text-align: center;
-  }
-  .buttons> button {
-    background: rgba(128, 128, 128, 0.596);
-    border: 0;
-    color: white;
-    padding: 5px;
-    width: 50%;
+.buttons {
+  background-color: red;
+  text-align: center;
+}
+.buttons> button {
+  background: rgba(128, 128, 128, 0.596);
+  border: 0;
+  color: white;
+  padding: 5px;
+  width: 50%;
 }
 
 .buttons > button  a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .buttons button:hover {
-    background-color: gray ;
+  background-color: gray ;
 }
 /* ================================= */
 
 /* ADMIN DASHBOARD PROFILE IMAGE */
 .image-card {
-    background-color: rgba(0, 255, 179, 0.164);
-    height: auto;
-    text-align: center;
+  background-color: rgba(0, 255, 179, 0.164);
+  height: auto;
+  text-align: center;
 
 }
 
 .image-card img {
-    height: 20rem;
+  height: 20rem;
 }
 /* ==========ADMIN DASHBOARD=================== */
 
 /* RACHID:STYLING SEARCH_RESULT_WITHOUT_PRICE TEMPLATE */
 .main-container .css_wrapper{
-    /* background-color: rgba(255, 0, 0, 0.288); */
-    width: 100%;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
+  /* background-color: rgba(255, 0, 0, 0.288); */
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
 }
 .main-container .css_wrapper .container-reasults {
-    /* background-color: rgba(0, 0, 255, 0.315); */
-    width: 100vw;
-    /* margin-bottom: 2rem; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: auto;
-    /* grid-gap: 1rem; */
+  /* background-color: rgba(0, 0, 255, 0.315); */
+  width: 100vw;
+  /* margin-bottom: 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  /* grid-gap: 1rem; */
 
-    
+  
 }
 
 .main-container .css_wrapper .container-reasults .category .cat-info{
-    background-color: red;
-    margin: 2rem;
-    width: 100%;
+  background-color: red;
+  margin: 2rem;
+  width: 100%;
 }
 
 /* ===================================== */
 /* //RACHID: PRICE SLIDER STYLE
 //Styling the price slider RACHID */
 .wrapper-price{
-    width: 20rem;
-    height: auto;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px 25px 40px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-    font-size: .8rem;
-  }
-  header h2{
-    font-size: 24px;
-    font-weight: 600;
-  }
-  header p{
-    margin-top: 5px;
-    font-size: 16px;
-  }
-  .price-input{
-    width: 100%;
-    height: 1.5rem;
-    display: flex;
-    margin: .8rem 0;
-  }
-  .price-input .field{
-    display: flex;
-    width: 100%;
-    height:100%;
-    align-items: center;
-  }
-  .field input{
-    width: 100%;
-    height: 100%;
-    outline: none;
-    font-size: 19px;
-    margin-left: 12px;
-    border-radius: 5px;
-    text-align: center;
-    border: 1px solid #999;
-    -moz-appearance: textfield;
-  }
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  .price-input .separator{
-    width: 130px;
-    display: flex;
-    font-size: 19px;
-    align-items: center;
-    justify-content: center;
-  }
-  .slider{
-    height: 5px;
-    position: relative;
-    background-color: #ff800a1c;
-    border-radius: 5px;
-  }
-  .slider .progress{
-    height: 100%;
-    left: 0%;
-    right: 0%;
-    position: absolute;
-    border-radius: 5px;
-    background-color: #FF7F0A;
-  }
-  .range-input{
-    position: relative;
-  }
-  .range-input input{
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    top: -5px;
-    background: none;
-    pointer-events: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-  input[type="range"]::-webkit-slider-thumb{
-    height: 17px;
-    width: 17px;
-    border-radius: 50%;
-    background-color: #FF7F0A;
-    pointer-events: auto;
-    -webkit-appearance: none;
-    box-shadow: 0 0 6px rgba(0,0,0,0.05);
-  }
-  input[type="range"]::-moz-range-thumb{
-    height: 17px;
-    width: 17px;
-    border: none;
-    border-radius: 50%;
-    background-color: #FF7F0A;
-    pointer-events: auto;
-    -moz-appearance: none;
-    box-shadow: 0 0 6px rgba(0,0,0,0.05);
-  }
-  .apply-button {
-    margin-top: 1.5rem;
-    text-align: center;
-  }
-  .apply-button button {
-    padding: .3rem .8rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff800a8a;
-  }
-  .apply-button button:hover {
-    background-color: #FF7F0A;
-  }
+  width: 20rem;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 25px 40px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  font-size: .8rem;
+}
+header h2{
+  font-size: 24px;
+  font-weight: 600;
+}
+header p{
+  margin-top: 5px;
+  font-size: 16px;
+}
+.price-input{
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  margin: .8rem 0;
+}
+.price-input .field{
+  display: flex;
+  width: 100%;
+  height:100%;
+  align-items: center;
+}
+.field input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 19px;
+  margin-left: 12px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #999;
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.price-input .separator{
+  width: 130px;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+.slider{
+  height: 5px;
+  position: relative;
+  background-color: #ff800a1c;
+  border-radius: 5px;
+}
+.slider .progress{
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #FF7F0A;
+}
+.range-input{
+  position: relative;
+}
+.range-input input{
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background-color: #FF7F0A;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+input[type="range"]::-moz-range-thumb{
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FF7F0A;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+.apply-button {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.apply-button button {
+  padding: .3rem .8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff800a8a;
+}
+.apply-button button:hover {
+  background-color: #FF7F0A;
+}
 /* // ========PRICE SLIDER STYLING========== */
 

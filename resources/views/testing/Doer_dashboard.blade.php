@@ -23,7 +23,6 @@
         @if($jobs !== null && count($jobs) > 0)
         <div class="container-reasults">
             @foreach($jobs as $job)
-
             <div class=" category" id="{{$job->id}}">
                 <div class="cat_img job-image">
                     <img class="card-img-top" src=" /images/{{$job->image_url}}" alt="Card image cap">
@@ -38,11 +37,7 @@
 
 
                     <!-- JEAN -->
-                    <button>
-                    <a href="{{ route('doer-job-details', ['id' => $job->id]) }}" class="btn btn-primary">Job Details</a>
-                    </button>
-
-                    
+                    <a href="{{ route('doer-job-details', ['id' => $job->id]) }}" class="btn btn-primary details-button">Job Details</a>
                 </div>
             </div>
 
