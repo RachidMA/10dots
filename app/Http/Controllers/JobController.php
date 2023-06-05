@@ -11,9 +11,9 @@ use App\Models\City;
 class JobController extends Controller
 {
 // JEAN: This is the view of my search job form! Please do not delete
-    public function showForm(){
-        return view('testing.Job_search_form');
-    }
+    // public function showForm(){
+    //     return view('testing.Job_search_form');
+    // }
 
     public function search(Request $request)
     {
@@ -39,13 +39,9 @@ class JobController extends Controller
             ->get();
 
             return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
-        //Instead of returning the view this is used to see if Im catching something from database
-        // dd($searchResult);
-        // dd($suggestedJobs);
-        // dd($searchResult);
 
         //RACHID:TODO: NEED TO ADD SEARCH REALTS VIEW TO SHOW THE SEARCHED JOB BY USERS
-        return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+            return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
 
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
@@ -203,13 +199,19 @@ class JobController extends Controller
     }
 
     //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
-    //BY ID TO POPULATE EDIT FORM(AUTHENTICATED USER ONLY)
+    //BY ID TO POPULATE EDIT FORM(AUTHENTICATED DOER ONLY)
     public function editJob()
     {
         $edit = Job::all();
         return view('testing.Job_edit_form')->with('doers', $edit);
     }
 
+    //Jean============//
+    public function showDoerJobDetails($id)
+    {
+        $job = Job::find($id);
+        return view('testing.Doer_jobdetails');
+    }
     public function updateJob(Request $req)
     {
         $data = Job::find($req->id);

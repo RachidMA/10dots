@@ -1,7 +1,7 @@
 @extends ('layout.layout')
 
 @section('content')
-<!-- //Jean: -->
+
 <h1>Job Details</h1>
 <p>Job Title: {{ $job->job_title }}</p>
 <p>Name: {{ $job->first_name }} {{ $job->last_name }}</p>
@@ -12,6 +12,8 @@
 <p>Description: {{$job->description}}</p>
 <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
 
-<button>Book now</button> 
+<button>Edit</button>
+<button>Delete</button>
+
 
 @endsection
