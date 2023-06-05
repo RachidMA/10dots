@@ -10,8 +10,9 @@ use App\Models\City;
 
 class JobController extends Controller
 {
-// JEAN: This is the view of my search job form! Please do not delete
-    public function showForm(){
+    // JEAN: This is the view of my search job form! Please do not delete
+    public function showForm()
+    {
         return view('testing.Job_search_form');
     }
 
@@ -38,14 +39,15 @@ class JobController extends Controller
             ->limit(5) //limit to 5 can put more
             ->get();
 
-            return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+        //RACHID:JEAN. JUST UNCOMMENT YOUR RETURN BELLOW TO RETURN YOUR VIEW
+        return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs, 'city' => $city]);
         //Instead of returning the view this is used to see if Im catching something from database
         // dd($searchResult);
         // dd($suggestedJobs);
         // dd($searchResult);
 
         //RACHID:TODO: NEED TO ADD SEARCH REALTS VIEW TO SHOW THE SEARCHED JOB BY USERS
-        return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+        // return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
 
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
@@ -190,7 +192,7 @@ class JobController extends Controller
     {
         $job = Job::find($request->id);
         // dd($job);
-        return view ('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
+        return view('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
     }
 
     //RACHID: THIS FUNCTION WILL BE DELETED LATER

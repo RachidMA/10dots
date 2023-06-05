@@ -8,7 +8,7 @@ PLUS THE PRICE SLIDER -->
 
 <h1>Jobs Search Reasults</h1>
 
-@if($searchResult !== null && count($searchResult) > 0)
+
 <div class="container-reasults">
     <div class="price-slider">
         <x:price_slider-card />
@@ -26,6 +26,7 @@ PLUS THE PRICE SLIDER -->
         </div>
     </div>
     <div class="results">
+        @if($searchResult !== null && count($searchResult) > 0)
         @foreach($searchResult as $job)
 
         <div class=" category" id="{{$job->id}}">
