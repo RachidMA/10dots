@@ -11,9 +11,9 @@ use App\Models\City;
 class JobController extends Controller
 {
 // JEAN: This is the view of my search job form! Please do not delete
-    public function showForm(){
-        return view('testing.Job_search_form');
-    }
+    // public function showForm(){
+    //     return view('testing.Job_search_form');
+    // }
 
     public function search(Request $request)
     {
@@ -39,13 +39,9 @@ class JobController extends Controller
             ->get();
 
             return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
-        //Instead of returning the view this is used to see if Im catching something from database
-        // dd($searchResult);
-        // dd($suggestedJobs);
-        // dd($searchResult);
 
         //RACHID:TODO: NEED TO ADD SEARCH REALTS VIEW TO SHOW THE SEARCHED JOB BY USERS
-        return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+            return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
 
         //Uncomment if the view is ready bcoz the file here is for testing purpose only
 
@@ -54,6 +50,12 @@ class JobController extends Controller
         //     } else {
         //         return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
         //     }
+    }
+    //JEAN ==== THIS IS FOR THE CUSTOMER TO VIEW THE JOB DETAILS FROM SEARCH RESULT AND SUGGESTED JOBS
+    public function jobDetails(Request $request)
+    {
+        $job = Job::find($request->id);
+        return view ('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
     }
 
     //RACHID:GET THE PRICE RANGE
@@ -186,13 +188,14 @@ class JobController extends Controller
     //RACHID: THIS FUNCTION WILL BE MODIFIED TO 
     //USED IN FETCHING A JOB BASED ON JOB ID
     //FOR DOER OR USER OR ADMIN(CONDITION ON ROLE)
-    public function jobDetails(Request $request)
+    
+    //Jean============//
+    public function showDoerJobDetails($id)
     {
-        $job = Job::find($request->id);
-        // dd($job);
-        return view ('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
+    $job = Job::find($id);
+    return view('testing.Doer_jobdetails');
     }
-
+    
     //RACHID: THIS FUNCTION WILL BE DELETED LATER
     public function list(Request $request)
     {
@@ -203,7 +206,7 @@ class JobController extends Controller
     }
 
     //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
-    //BY ID TO POPULATE EDIT FORM(AUTHENTICATED USER ONLY)
+    //BY ID TO POPULATE EDIT FORM(AUTHENTICATED DOER ONLY)
     public function editJob()
     {
         $edit = Job::all();
