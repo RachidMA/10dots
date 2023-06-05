@@ -10,7 +10,11 @@ use App\Models\Category;
 
 class JobController extends Controller
 {
-    //RACHID: REMOVED THE DUPLICATED SHOW FUNCTION
+// JEAN: This is the view of my search job form! Please do not delete.
+    public function showForm(){
+        return view('testing.Job_search_form');
+    }
+
     public function search(Request $request)
     {
         $info = [
