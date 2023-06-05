@@ -20,11 +20,11 @@
     <label for="address">Address:</label>
     <input type="text" id="address" name="address" placeholder="Change your address" value = "{{ $jobs[ 'address' ] }}"><br><br>
 
-    <label for="country">Country:</label>
-    <input type="text" id="country" name="country" placeholder="Change your country" value = "{{ $jobs[ 'country' ] }}"><br><br>
-
     <label for="city">City:</label>
     <input type="text" id="city" name="city" placeholder="Change your city" value = "{{ $jobs[ 'city' ] }}"><br><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" placeholder="Change your country" value = "{{ $jobs[ 'country' ] }}"><br><br>
 
     <label for="job_title">Job Title:</label>
     <input type="text" id="job_title" name="job_title" placeholder="Change your job" value = "{{ $jobs[ 'job_title' ] }}"><br><br>

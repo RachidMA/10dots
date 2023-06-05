@@ -31,6 +31,7 @@
 
     <div class=”rating”>
       <label for="content" class="form-label">Review</label>
+      <input type=”hidden” name=”JobId” value=”#″ >
       <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
       <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
       <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
@@ -40,7 +41,7 @@
 
     <div class="mb-3">
       <label for="author" class="form-label">Comments</label>
-      <input type="text" name="comments" id="comments">
+      <input type="textarea" name="comments" id="comments">
     </div>
 
     <button type="submit" name="submit" id="submit">Submit</button>

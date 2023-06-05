@@ -212,6 +212,7 @@ class JobController extends Controller
         $data->last_name=$request->last_name;
         $data->phone=$request->phone;
         $data->address=$request->address;
+        $data->city=$request->city;
         $data->country=$request->country;
         $data->job_title=$request->job_title;
         $data->description=$request->description;
