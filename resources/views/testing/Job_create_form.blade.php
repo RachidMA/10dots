@@ -40,21 +40,8 @@
     <div class="error-message" style="color: red;">{{$message}}</div>
     @enderror
     <br><br>
-
-
-    <label for="country">Country:</label>
-    <input type="text" id="country" name="country" value="{{old('country')}}">
-    @error('country')
-    <div class="error-message" style="color: red;">{{$message}}</div>
-    @enderror
-    <br><br>
-
-    <label for="city">City:</label>
-    <input type="text" id="city" name="city" value="{{old('city')}}">
-    @error('city')
-    <div class="error-message" style="color: red;">{{$message}}</div>
-    @enderror
-    <br><br>
+    <!-- RACHID:COUNTRIES AND CITIES DROPDOWN -->
+    <x:testing-components.countries_cities-card :countries='$countries' />
 
     <!-- //RACHID: ADDED CATEGORIES LIST -->
     <div>

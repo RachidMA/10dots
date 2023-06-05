@@ -1,51 +1,60 @@
 @extends('layout.layout')
 
-@section('title', 'Doer Dashboard')
+@section('title', 'content')
 
 @section('content')
 
-<div class="dashboard">
-    <div class="message">
-        @if(session('message'))
-        <p class="message">{{ $message }}</p>
-        @endif
+<!-- RACHID:DOER DASHBOARD -->
+<div class="container  mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Profile Container -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Profile:</h5>
+                    <img src="/images/{{$doer->profile_image}}" class="img-fluid rounded-circle mb-3" alt="Profile Image">
+                    <p class="card-text">Name: {{$doer->name}}</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="profile-container">
-        <div class="image">
-            <h2>PROFILE IMAGE</h2>
-            <img src="/images/{{$profile_image}}" alt="profile-image">
-        </div>
-        <div class="doer-info">
-            <h2>Doer Info</h2>
-        </div>
-        THIS IS THE UPLOAD IMAGE FORM
-        <!-- <div class="upload-image-form">
-            <form action="/doer/upload-image" method="post" enctype="multipart/form-data">
-                @csrf
-                <input type="file" name="image" id="image" class="form-control" required>
-                <input type="submit" value="Upload" class="btn btn-primary">
-            </form>
-        </div> -->
-    </div>
-    <div class="jobs-container">
-        <div class="jobs-list">
-            <h2>Jobs List</h2>
-        </div>
-        <div class="job-item">
-            <!-- IF DOER HAS MORE THAN ONE JOB LOOP THE JOBS ARRAY -->
-            @if(count($jobs) > 1)
+    <div class="row cards-row mt-4">
+        <!-- ============ -->
+        @if($jobs !== null && count($jobs) > 0)
+        <div class="container-reasults">
             @foreach($jobs as $job)
-            <div class="job-list-container">
-                <x:testing-components.job-preview-card :job='$job' />
+
+            <div class=" category" id="{{$job->id}}">
+                <div class="cat_img job-image">
+                    <img class="card-img-top" src=" /images/{{$job->image_url}}" alt="Card image cap">
+                </div>
+                <div class="cat_info job-detail">
+                    <h5>
+                        {{$job->job_title}}
+                    </h5>
+                    <p>
+                        2700 completed tasks | 188 Doers
+                    </p>
+                    <button>
+                        Job Details
+                    </button>
+                </div>
             </div>
+
             @endforeach
-            @else
-            <div class="job-list-container">
-                <x:testing-components.job-preview-card :job='$job[0]' />
-            </div>
-            @endif
-
         </div>
-    </div>
+        @elseif($jobs !== null && count($jobs) === 0)
+        <div class="no-jobs-message">
+            <p>No job results found.</p>
+        </div>
+        @else
+        <div class="no-jobs-message">
+            <p>Error: Unable to fetch job results.</p>
+        </div>
+        @endif
 
-    @endsection
+        <!-- ============ -->
+    </div>
+</div>
+
+@endsection
