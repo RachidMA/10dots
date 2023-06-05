@@ -69,10 +69,13 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
     Route::get('/{id}/create-job', [JobController::class, 'createJob'])->name('create-job');
     Route::post('/store-job', [JobController::class, 'storeJob'])->name('store-job');
 
+    //JEAN: Doer Job detail route
+    Route::get('/doer-job-details/{id}', [JobController::class, 'showJobDetailsCreator'])->name('doer-job-details');
+
     //RACHID:COMSTIMIZE LOGOUT ROUTE
     Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');
 });
- 
+
 
 //RACHID:THESE ROUTES ONLY FOR ADMIN
 Route::prefix('/{name}')->middleware(['auth', 'admin'])->group(function () {
