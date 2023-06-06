@@ -56,13 +56,7 @@ Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
 
 
-//=============Routes to edit doer profiles (ADA)==========//
-Route::get('/list', [JobController::class, 'list']);
-Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
-Route::get('/edit/{id}', [JobController::class, 'editJob'])->name('editJob');
-Route::get('/update/{id}', [JobController::class, 'showJob'])->name('showJob');
-Route::post('/update/{id}', [JobController::class, 'updateJob'])->name('updateJob');
-Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('redirect');
+
 
 //=============Routes to leave a review (ADA)==========//
 Route::get('/review/{id}', [ReviewController::class, 'review' ])->name('leaveReview');
@@ -77,6 +71,14 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
 
     //JEAN: Doer Job detail route
     Route::get('/doer-job-details/{id}', [JobController::class, 'showJobDetailsCreator'])->name('doer-job-details');
+
+    //=============Routes to edit doer profiles (ADA)==========//
+    Route::get('/list', [JobController::class, 'list']);
+    Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
+    Route::get('/edit/{id}', [JobController::class, 'editJob'])->name('editJob');
+    Route::get('/update/{id}', [JobController::class, 'showJob'])->name('showJob');
+    Route::post('/update/{id}', [JobController::class, 'updateJob'])->name('updateJob');
+    Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('redirect');
 
     //RACHID:COMSTIMIZE LOGOUT ROUTE
     Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');

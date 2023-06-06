@@ -12,7 +12,7 @@
 <p>Description: {{$job->description}}</p>
 <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
 
-<button><a href="{{ route('editJob', ['id' => $job->id]) }}" class="btn btn-primary">Edit</a></button>
-<button><a href="{{ route('deleteJob', ['id' => $job->id]) }}" class="btn btn-primary">Delete</a></button>
+<a href="{{ route('editJob', ['id' => $job->id]) }}" class="btn btn-primary"><button>Edit</button></a>
+<a href="{{ route('deleteJob', ['id' => $job->id]) }}" class="btn btn-primary"><button>Delete</button></a>
 
 @endsection

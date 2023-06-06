@@ -41,12 +41,8 @@ PLUS THE PRICE SLIDER -->
                     2700 completed tasks | 188 Doers
                 </p>
                 <div class="buttons-container">
-                    <button>
-                        Job Details
-                    </button>
-                    <button>
-                        Contact Me
-                    </button>
+                <a href="{{ route('jobDetails', ['id' => $job->id]) }}"><button>Job Details</button></a>
+                    
                 </div>
 
             </div>
