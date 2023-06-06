@@ -4,10 +4,10 @@
 <div id="big_circ"></div>
 
 <!-- RACHID:ADDED SUCCESS AND ERROR MESSAGES SECTION -->
-<div class="welcome-error">
+<div class="container welcome-error">
     @if(session('message'))
     <!-- Success Alert -->
-    <div class="container alert alert-success alert-dismissible fade show w-50">
+    <div class="alert alert-success alert-dismissible fade show w-50">
         <strong>Success!</strong> {{session('message')}}.
         @if(Auth::user())
         <a href="{{route('jobs.userDashboard', ['name'=>Auth::user()->name])}}" class="btn btn-primary  h-100 rounded-lg w-25  mx-4 text-light">Go To Dashboard</a>
@@ -16,12 +16,13 @@
     </div>
     <!-- Access Denied Alert -->
     @elseif(session('error'))
-    <div class="container alert alert-danger alert-dismissible fade show w-50">
+    <div class="alert alert-danger alert-dismissible fade show w-50">
         <strong>Error!</strong> {{session('error')}}.
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     @endif
 </div>
+
 <div class="landing_row_1">
     <div class="welcome_div">
         <h1 id="welcome">Help You Can trust <span>..........</span></h1>
@@ -66,7 +67,6 @@
     <h3>Top tasks</h3>
     <div class="landing_category">
         <div class="cat_img">
-
         </div>
         <div class="cat_info">
             <h5>

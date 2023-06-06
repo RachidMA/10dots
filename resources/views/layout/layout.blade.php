@@ -38,12 +38,9 @@
 
         @include("layout.header")
 
-        <div class="main-container">
             <div class="css_wrapper">
                 @yield ('content')
             </div>
-        </div>
-
 
         @include("layout.footer")
 
