@@ -1,1 +1,0 @@
-<!-- <a href="/signs/{{$sign->slug}}"> {{$sign->name}}</a> -->

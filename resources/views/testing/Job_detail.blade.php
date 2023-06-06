@@ -11,7 +11,8 @@
 <p>Image: {{ $job->image_url}}</p>
 <p>Description: {{$job->description}}</p>
 <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
-
+<div class="buttons-container">
 <button>Book now</button> 
-
+<button>Contact me</button> 
+</div>
 @endsection

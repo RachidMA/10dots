@@ -34,10 +34,8 @@
                     <p>
                         2700 completed tasks | 188 Doers
                     </p>
-
-
                     <!-- JEAN -->
-                    <a href="{{ route('doer-job-details', ['id' => $job->id]) }}" class="btn btn-primary details-button">Job Details</a>
+                    <button><a href="{{ route('doer-job-details', ['id' => $job->id]) }}" class="btn btn-primary details-button">Job Details</a></button>
                 </div>
             </div>
 

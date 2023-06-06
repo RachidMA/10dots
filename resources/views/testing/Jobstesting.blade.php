@@ -57,7 +57,7 @@
             <div class="cat_info job-detail">
                 <div class="cat_text">
                     <div class="job-title">
-                        <p><a href="{{ route('jobDetails', ['id' => $job->id]) }}">{{ $job->job_title }}</a></p>
+                        <h2>{{ $job->job_title }}</h2>
                     </div>
                     <p>name: {{$job->first_name}} {{$job->last_name}}</p>
                     <div class="address">
@@ -68,8 +68,7 @@
                     <p>2700 completed tasks | 188 Doers</p>
                 </div>
                 <div class="buttons-container">
-                    <button>Job Details</button>
-                    <button>Contact Me</button>
+                <a href="{{ route('jobDetails', ['id' => $job->id]) }}"><button>Job Details</button></a>
                 </div>
             </div>
         </div>
