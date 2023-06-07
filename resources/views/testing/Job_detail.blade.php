@@ -17,18 +17,53 @@
 <button>Leave a Review</button>
 </div>
 
-<div class= 'review'>
-    <form>
-    <input type="radio" id="star5" name="rate" value="5" />
-      <label for="star5" title="text">5 stars</label>
-      <input type="radio" id="star4" name="rate" value="4" />
-      <label for="star4" title="text">4 stars</label>
-      <input type="radio" id="star3" name="rate" value="3" />
-      <label for="star3" title="text">3 stars</label>
-      <input type="radio" id="star2" name="rate" value="2" />
-      <label for="star2" title="text">2 stars</label>
-      <input type="radio" id="star1" name="rate" value="1" />
-      <label for="star1" title="text">1 star</label>
-    </form>
+<div id="reviewFormContainer" class= 'review'>
+
+<form method= "POST" action= "{{ route ('leaveReview') }}" >
+    @csrf
+
+    <h1>Leave a review</h1>
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label> 
+        <input type="text" name = "name"  placeholder="enter your name here" id="name">
+
+        <label for="name" class="form-label">Your Email</label> 
+        <input type="email" name = "email"  placeholder="enter your email here" id="email">
+    </div>
+
+    <div class="rate">
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5" title="text">5 dots</label>
+
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4" title="text">4 dots</label>
+
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3" title="text">3 dots</label>
+
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2" title="text">2 dots</label>
+
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label for="star1" title="text">1 dot</label>
+    </div>
+
+    <div class="mb-3">
+        <label for="comment" class="form-label">Comments</label> 
+        <textarea id="textarea" rows="3" cols="25" name = "comment" id="comment"></textarea>
+    </div>
+          
+      <input type="hidden" name="job_id" id = "job_id" value ="6">
+
+      <button type="submit" name = "submit" id="submit" >Submit</button>
+
+</form>
 </div>
+
+
+
+ 
+
+     
 @endsection
