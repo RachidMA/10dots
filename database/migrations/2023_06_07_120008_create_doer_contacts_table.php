@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('doer_contacts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('job_id');
-            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
-            $table->string('job_title');
             $table->string("name");
             $table->string("email");
             $table->string("phone");

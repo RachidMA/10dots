@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DoerContactController;
 use App\Http\Controllers\JobController;
 // use app\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
@@ -50,6 +51,9 @@ route::post('/search-job-by-price', [JobController::class, 'searchByPrice'])->na
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
+//=================Routes for contact the doer page (JEAN)===========//
+Route::get('/contact',[DoerContactController::class, 'showContact'])->name('contact.view');
+Route::post('/contact',[DoerContactController::class,'submitForm'])->name('contact.submitForm');
 
 //==============Routes to get jobs (ADA)====================//
 Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
