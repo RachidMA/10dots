@@ -21,15 +21,23 @@
         @endif
     </div>
     <div class="container  mt-5">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row profile_row">
+            <div class="col-md-4 ">
                 <!-- Profile Container -->
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Profile:</h5>
                         <!-- <img src="/images/{{$doer->profile_image}}" class="img-fluid rounded-circle mb-3" alt="Profile Image"> -->
                         <x:testing-components.image_profile-card />
-                        <p class="card-text">Name: {{$doer->name}}</p>
+                        <div class="profile-text-info">
+                            <div class="info-1">
+                                <p class="card-text">Name: {{$doer->name}} 1</p>
+                                <p class="card-text">Name: {{$doer->name}} 1</p>
+                            </div>
+                            <div class="info-2">
+                                <p class="card-text">Name: {{$doer->name}} 2</p>
+                                <p class="card-text">Name: {{$doer->name}} 2</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -64,6 +64,12 @@
                 @endif
                 @else
                 <li class="nav-item dropdown">
+                    <!-- RACHID:PROFILE IMAGE -->
+                    @if(auth()->check())
+                    <a href="{{route('doer-dashboard', ['id'=>auth()->user()->id])}}" class="avatar">
+                        <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="image-profile">
+                    </a>
+                    @endif
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
