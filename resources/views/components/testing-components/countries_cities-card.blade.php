@@ -1,6 +1,5 @@
 <div class="country-city">
     <div>
-        <label for="country">Country</label>
         <select name="country" id="country">
             <option value="">Select Country</option>
             @foreach ($countries as $country)
@@ -11,9 +10,7 @@
     @error('country')
     <div class="error-message" style="color: red;">{{$message}}</div>
     @enderror
-    <br><br>
     <div>
-        <label for="city">City</label>
         <select name="city" id="city">
             <option value="">select city</option>
         </select>
@@ -21,5 +18,4 @@
     @error('city')
     <div class="error-message" style="color: red;">{{$message}}</div>
     @enderror
-    <br><br>
 </div>
