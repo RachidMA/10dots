@@ -5,46 +5,36 @@
 <!-- If 0 result from seach bar -->
 <!-- But please fix it bcoz I get error cant display this for the moment -->
 
-<!-- @if(session('error'))
-    <script>
-        alert('{{ session('error') }}');
-    </script>
-@endif -->
+@if(session('error'))
+<div class="container alert alert-danger alert-dismissible fade show w-50">
+    <strong>Error!</strong> {{session('error')}}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+@endif
+
 <!-- This is the search result from the search bar -->
 <div class="container-reasults">
     <div class="price-slider">
-        <x:price_slider-card />
+        <x:price_slider-card :job='$job' :city='$city' />
     </div>
     <div class="more-categories">
-        <h4>More Job Categories In Your Area</h4>
+
+        <h4>More Job Categories In Your Area. Check them out</h4>
         <div class="categories-list">
             <ul class="categories">
-                @if($suggestedJobs !== null && count($suggestedJobs) > 0)
-                @foreach ($suggestedJobs->unique('category_id') as $job)
-                <li>{{$job->category->name}}</li>
+                <!-- Assuming this code is within your Blade template -->
+                @foreach ($categories as $category)
+                <h2>{{ $category->name }}</h2>
                 <ul>
-                    @php
-                    $jobsInCity = $job->category->jobs->where('city', $city);
-                    @endphp
-                    @if($jobsInCity->count() > 0)
-                    @foreach ($jobsInCity as $category_jobs)
-                    <li><a href="#" class="category-job-link">{{$category_jobs->job_title}}</a></li>
+                    @foreach ($category->jobs()->where('city', $city)->get() as $job)
+                    <li>
+                        <a href="{{route('search-by-link', ['job_title'=>$job->job_title, 'city'=>$city])}}" class="category-job-link">{{$job->job_title}}</a>
+                    </li>
                     @endforeach
-                    @else
-                    <p>No Categories Available!</p>
-                    @endif
                 </ul>
                 @endforeach
-                @elseif($suggestedJobs !== null && count($suggestedJobs) === 0)
-                <div class="no-jobs-message">
-                    <p>No Categories Found In Your Area.</p>
-                </div>
-                @else
-                <div class="no-jobs-message">
-                    <p>Error: Unable to fetch categories results.</p>
-                </div>
-                @endif
             </ul>
+            <!-- Assuming this code is within your Blade template -->
         </div>
     </div>
     <div class="results">
@@ -68,7 +58,7 @@
                     <p>2700 completed tasks | 188 Doers</p>
                 </div>
                 <div class="buttons-container">
-                <a href="{{ route('jobDetails', ['id' => $job->id]) }}"><button>Job Details</button></a>
+                    <a href="{{ route('jobDetails', ['id' => $job->id]) }}"><button>Job Details</button></a>
                 </div>
             </div>
         </div>
@@ -76,9 +66,6 @@
         @elseif($searchResult !== null && count($searchResult) === 0)
         <div class="no-jobs-message">
             <p>No Jobs Found In Your Area.</p>
-            @if(session('error'))
-            <p>{{session('error')}}</p>
-            @endif
         </div>
         @else
         <div class="no-jobs-message">

@@ -1,9 +1,11 @@
-
 /*RACHID: DOER DASHBOARD */
 
 /* RACHID:ADD MESSAGE SECTION IN MAIN WELCOME PAGE */
 .welcome-error {
   width: 100vw;
+}
+.doer-container{
+  width: 100%;
 }
 .category{
   background-color: whitesmoke;
@@ -25,7 +27,7 @@
 }
 .categories a.category-job-link{
   text-decoration: none;
-  color: rgba(0, 0, 255, 0.822);
+  color: rgba(0, 0, 255, 0.637);
 }
 
 .categories a.category-job-link:hover{
@@ -284,48 +286,72 @@ input[type="range"]::-moz-range-thumb{
 }
 /* // ========PRICE SLIDER STYLING========== */
 
+/* //RACHID:UPDATE IMAGE BUTTON AND ICON */
+.image-profile{
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px; 
+}
+.avatar {
+  /* background-color: yellow; */
+  position: absolute;
+  top: -.3rem;
+  right: 8rem;
+  width: 6%;
+  text-align: center;
 
-/* 
-/////THIS IS THE CSS FOR JOB-LEAVE-REVIEW.BLADE.PHP/////
-*{
-    margin: 0;
-    padding: 0;
 }
-.rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
+.image-container {
+    width: 15rem;
+    position: relative;
+    /* background-color: rgba(255, 0, 0, 0.123); */
 }
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+.image {
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 8px;
 }
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-} 
+  .round{
+    position: absolute;
+    background-color: whitesmoke;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+  }
 
-///////END CSS FOR JOB_LEAVE_REVIEW//////// */ 
+  .round i {
+    margin-bottom: 2rem;
+  }
 
+  /* //Hide the submit button for profile image before its upload */
+  .round button {
+    visibility:hidden;
+  }
+
+  .round button.show {
+    visibility: visible;
+  }
+  .round input[type="file"] {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transform: scale(2);
+    opacity: 0;
+    width: 1rem;
+    height: 1rem;
+  }
+input[type = "file"]::-webkit-file-upload-button{
+    cursor: pointer;
+}

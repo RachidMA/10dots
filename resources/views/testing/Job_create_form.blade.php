@@ -47,7 +47,7 @@
     <div>
       <label for="categories">Category:</label>
       <select name="category" id="categories">
-        <option value="">Select Country</option>
+        <option value="">Select Category</option>
         @foreach ($categories as $category)
         <option value="{{ $category->id }}">{{ $category->name }}</option>
         @endforeach
@@ -71,17 +71,9 @@
     @enderror
     <br><br>
 
-    <label for="min_price">Minimum Price:</label>
-    <input type="number" id="min_price" name="min_price" value="{{old('min_price')}}"><br><br>
+    <label for="price">Price Per Houre:</label>
+    <input type="number" id="price" name="price" value="{{old('price')}}"><br><br>
 
-    <label for="max_price">Maximum Price:</label>
-    <input type="number" id="max_price" name="max_price" value="{{old('max_price')}}"><br><br>
-    <!-- @if(session('error'))
-    <p>{{session('error')}}</p>
-    @endif -->
-
-    <label for="image_url">Upload Image:</label>
-    <input type="file" id="image_url" name="image_url"><br><br>
 
     <input type="submit" value="Submit">
   </form>

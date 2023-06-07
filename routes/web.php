@@ -44,46 +44,47 @@ Route::get('/search-form', [JobController::class, 'showForm'])->name('search-for
 Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
 //RACHID:SEARCH JOB BASED ON PRICE
 //RACHID:GET THE PRICE RANGE
-route::post('/search-job-by-price', [JobController::class, 'searchByPrice'])->name('price-range');
+Route::post('/search-job/price-range', [JobController::class, 'searchByPrice'])->name('price-range');
+//RACHID:SEARCH BY LINKS(SIDE BAR)
+Route::get('/search-by-link', [JobController::class, 'searchByLink'])->name('search-by-link');
+
+//==============Routes to get jobs (ADA)====================//
+Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
 
 //=================Routes for contact page{footer} (JEAN)===========//
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
 
-//==============Routes to get jobs (ADA)====================//
-Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
-Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
-
-
-
 
 //=============Routes to leave a review (ADA)==========//
-Route::get('/review/{id}', [ReviewController::class, 'review' ])->name('leaveReview');
+Route::get('/review/{id}', [ReviewController::class, 'review'])->name('leaveReview');
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
 
     //RACHID:REMOVED SHOWCARD ROUTE. IS THE SAME ROUTE AS USER/DOER DASHBOARD
     Route::get('/{id}/dashboard', [JobController::class, 'doerDashboard'])->name('doer-dashboard');
-    Route::get('/{id}/create-job', [JobController::class, 'createJob'])->name('create-job');
+    Route::post('/upload-image', [UserController::class, 'StoreAvatar'])->name('store-avatar');
+    Route::get('/create-job', [JobController::class, 'createJob'])->name('create-job');
     Route::post('/store-job', [JobController::class, 'storeJob'])->name('store-job');
-
     //JEAN: Doer Job detail route
     Route::get('/doer-job-details/{id}', [JobController::class, 'showJobDetailsCreator'])->name('doer-job-details');
-
     //=============Routes to edit doer profiles (ADA)==========//
-    Route::get('/list', [JobController::class, 'list']);
-    Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
+
     Route::get('/edit/{id}', [JobController::class, 'editJob'])->name('editJob');
     Route::get('/update/{id}', [JobController::class, 'showJob'])->name('showJob');
     Route::post('/update/{id}', [JobController::class, 'updateJob'])->name('updateJob');
+    Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
     Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('redirect');
 
     //RACHID:COMSTIMIZE LOGOUT ROUTE
     Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');
 });
 
+// RACHID:REMOVE THIS ROUTE
+// Route::get('/list', [JobController::class, 'list']);
+// Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 
 //RACHID:THESE ROUTES ONLY FOR ADMIN
 Route::prefix('/{name}')->middleware(['auth', 'admin'])->group(function () {

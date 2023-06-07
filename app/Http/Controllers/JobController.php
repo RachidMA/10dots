@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Country;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
@@ -33,27 +35,96 @@ class JobController extends Controller
         $city = $request->input('city');
         $country = $request->input('country');
 
+
         $searchResult = Job::where('job_title', 'like', '%' . $job . '%')
             ->where('city', $city)
-            ->where('country', $country)
-            ->get();
+            ->where('country', $country);
+        $searchResult = $searchResult->get();
 
-        $suggestedJobs = Job::where('city', '!=', $city)
-            ->orWhere('country', '!=', $country)
-            ->limit(5) //limit to 5 can put more
-            ->get();
+        $categories = Category::whereHas('jobs', function ($query) use ($city) {
+            $query->where('city', '=', $city);
+        })->get();
+
 
         if ($searchResult->isEmpty()) {
-            return redirect()->back()->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+
+            return view('testing.Jobstesting')->with([
+                'error' => 'No jobs found in the specified city and country for the given job. Try a different search!',
+                'searchResult' => $searchResult,
+                'categories' => $categories,
+                'city' => $city,
+                'job' => $job
+            ]);
         }
-        // //RACHID:TODO: NEED TO ADD SEARCH REALTS VIEW TO SHOW THE SEARCHED JOB BY USERS
-        // return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
 
-        //RACHID:JEAN. JUST UNCOMMENT YOUR RETURN BELLOW TO RETURN YOUR VIEW
-        return view('testing.Jobstesting', ['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs, 'city' => $city]);
+        return view('testing.Jobstesting', [
+            'searchResult' => $searchResult,
+            'categories' => $categories,
+            'city' => $city,
+            'job' => $job
+        ]);
+    }
 
-        //RACHID:TODO: NEED TO ADD SEARCH REALTS VIEW TO SHOW THE SEARCHED JOB BY USERS
-        // return view('testing.search_result_without_price')->with(['searchResult' => $searchResult, 'suggestedJobs' => $suggestedJobs]);
+    public function searchByLink(Request $request)
+    {
+        $city = $request->input('city');
+        $job = $request->input('job_title');
+
+        if ($city && $job) {
+            $searchResult = Job::where('city', $city)
+                ->where('job_title', 'like', '%' . $job . '%')
+                ->get();
+
+            $categories = Category::whereHas('jobs', function ($query) use ($city) {
+                $query->where('city', '=', $city);
+            })->get();
+
+            if ($searchResult->isEmpty()) {
+
+                return view('testing.Jobstesting')
+                    ->with(['searchResult' => $searchResult, 'categories' => $categories, 'city' => $city, 'job' => $job])
+                    ->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+            }
+
+            return view('testing.Jobstesting')
+                ->with(['searchResult' => $searchResult, 'categories' => $categories, 'city' => $city, 'job' => $job]);
+        }
+    }
+    //RACHID:THIS FUNCTION WILL FETCH JOBS BASED ON PRICE FILTER FOR THE SECOND RESULTS
+    //RACHID:GET THE PRICE RANGE
+    public function searchByPrice(Request $request)
+    {
+        // dump($request->all());
+        $city = $request->city;
+        $job = $request->job;
+        $min_price = $request->min_price;
+        $max_price = $request->max_price;
+
+        $categories = Category::whereHas('jobs', function ($query) use ($city) {
+            $query->where('city', '=', $city);
+        })->get();
+
+        $searchResult = Job::where('job_title', 'like', '%' . $job . '%')
+            ->where('city', $city)
+            ->get();
+
+        $filteredResults = [];
+        if ($min_price !== null && $max_price !== null) {
+            foreach ($searchResult as $result) {
+                if ($result->price >= $min_price && $result->price < $max_price) {
+                    $filteredResults[] = $result;
+                }
+            }
+
+            if (count($filteredResults) === 0) {
+                return view('testing.Jobstesting')
+                    ->with(['searchResult' => $filteredResults, 'categories' => $categories, 'city' => $city, 'job' => $job])
+                    ->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+            }
+
+            return view('testing.Jobstesting')
+                ->with(['searchResult' => $filteredResults, 'categories' => $categories, 'city' => $city, 'job' => $job]);
+        }
     }
     //JEAN ==== THIS IS FOR THE CUSTOMER TO VIEW THE JOB DETAILS FROM SEARCH RESULT AND SUGGESTED JOBS
     public function jobDetails(Request $request)
@@ -62,28 +133,31 @@ class JobController extends Controller
         return view('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
     }
 
-    //RACHID:GET THE PRICE RANGE
-    public function searchByPrice(Request $request)
-    {
+    // //RACHID:GET THE PRICE RANGE
+    // public function searchByPrice(Request $request)
+    // {
 
-        dd('price range', $request->all());
-    }
+    //     dd('price range', $request->all());
+    // }
 
     //RACHID:CREATE JOB BY AUTHENTICATED USER
     public function createJob(Request $request)
     {
         //fetch all existing job categories
         $categories = Category::all();
+        $countries = Country::all();
 
         // TODO: FETCH COUNTRIES AND PASS THEM WITH VIEW FOR COUNTRIES DROPDOWN FIELD
 
         //return create job form
-        return view('testing.job_create_form')->with('categories', $categories);
+        return view('testing.job_create_form')->with(['categories' => $categories, 'countries' => $countries]);
     }
     //RACHID:STORE JOB BY AUTHENTICATED USER
     public function storeJob(Request $request)
     {
-        // dd($request);
+        //RACHID:ADD FETCHING USER
+        $doer = Auth::user();
+
         //Validate form data
         $request->validate([
             'first_name' => ['required'],
@@ -148,14 +222,21 @@ class JobController extends Controller
             'city' => $job_data['city'],
             'job_title' => $job_data['job_title'],
             'description' => $job_data['description'],
-            'min_price' => $job_data['min_price'],
-            'max_price' => $job_data['max_price'],
+            'price' => $job_data['price'],
             'image_url' => $job_data['image_url'],
             'user_id' => auth()->id(),
             'category_id' => $job_data['category'],
         ]);
 
-        dd('ALL INPUTS FROM FORM', $job_data);
+        // dd('ALL INPUTS FROM FORM', $job_data);
+        $doer_jobs = $doer->jobs;
+
+
+        return view('testing.Doer_dashboard')->with([
+            'message' => 'Job created successfully',
+            'doer' => $doer,
+            'jobs' => $doer_jobs
+        ]);
 
         // return redirect('site.userDashoard')->with('success', 'Job created successfully');
     }
@@ -182,6 +263,7 @@ class JobController extends Controller
     //RACHID: THIS FUNCTION COULD BE USED TO FETCH JOBS RESULT
     //BASED ON JOB TITLE COUNTRY AND CITY
     //THIS FUNTION STILL NEED TO ADD CONDITIONS TO THE SEARCH QUERY
+    // DELETE THIS FUNCTION
     public function jobs(Request $request)
     {
         $jobId = Job::all()->take(10);
@@ -197,12 +279,10 @@ class JobController extends Controller
     public function showDoerJobDetails($id)
     {
         $job = Job::find($id);
-        // return view('testing.Doer_jobdetails');
-
-        //     $job = Job::find($request->id);
-        // dd($job);
-        return view('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
-
+        if ($job) {
+            //RETURN THE FORM
+            return view('testing.Doer_jobdetails', ['job' => $job]);
+        }
     }
 
     //RACHID: THIS FUNCTION WILL BE DELETED LATER
@@ -216,16 +296,37 @@ class JobController extends Controller
 
     //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
     //BY ID TO POPULATE EDIT FORM(AUTHENTICATED DOER ONLY)
-    public function editJob()
+    public function editJob($id)
     {
-        $edit = Job::all();
-        return view('testing.Job_edit_form')->with('doers', $edit);
+        $countries = Country::all();
+        //GET CATEGORIES
+        $categories = Category::all();
+        //FIND THE JOB
+        $job = Job::find($id);
+        if ($job) {
+            //RETURN THE FORM
+            return view('testing.job_update_form', ['job' => $job, 'countries' => $countries, 'categories' => $categories]);
+        }
     }
 
     public function updateJob(Request $req)
     {
+        //Validate form data
+        $req->validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'phone' => ['required', 'regex:/[0-9+\-\(\)\s]*$/'],
+            'address' => ['required'],
+            'country' => ['required'],
+            'city' => ['required'],
+            'category' => ['required'],
+            'job_title' => ['required'],
+            'description' => ['required'],
+            'image_url' => ['image', 'mimes:jpeg, png, jpg, gif|max:2048'],
+        ]);
+
         $data = Job::find($req->id);
-        dd($data);
+
         $data->first_name = $req->first_name;
         $data->last_name = $req->last_name;
         $data->phone = $req->phone;
@@ -233,10 +334,19 @@ class JobController extends Controller
         $data->country = $req->country;
         $data->job_title = $req->job_title;
         $data->description = $req->description;
-        $data->min_price = $req->min_price;
-        $data->max_price = $req->max_price;
+        $data->price = $req->price;
+        $data->updated_at = now();
         $data->save();
-        return view('testing.Job_update_form')->with('doers', $data);
+
+        //RACHID:GET THE DOER PROFILE AND HIS JOBS
+        $doer = Auth::user();
+
+
+        return view('testing.Doer_dashboard')->with([
+            'doer' => $doer,
+            'jobs' => $doer->jobs,
+            'message' => 'Job Updated Successfully',
+        ]);
     }
 
     //RACHID WILL KEEP THIS FUNCTION
@@ -244,7 +354,16 @@ class JobController extends Controller
     {
         $data = Job::find($request->id);
         $data->delete();
-        return redirect('list');
+
+        // RETURN TO DOER DASHBOARD
+        //RACHID:GET THE DOER PROFILE AND HIS JOBS
+        $doer = Auth::user();
+
+        return view('testing.Doer_dashboard')->with([
+            'message' => 'Job deleted successfully',
+            'doer' => $doer,
+            'jobs' => $doer->jobs
+        ]);
     }
 
 

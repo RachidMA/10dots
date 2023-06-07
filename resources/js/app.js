@@ -135,3 +135,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// #submit display block when the image is uploaded
+const submitButton = document.querySelector("#submit");
+const inputFile = document.querySelector("#file-upload");
+
+//RACHID:I HAD TO ADD THIS CONDITION HERE FOR OTHERS. BECAUSE OTHER PAGES
+//DO NOT HAVE THESE ELEMENTS AND IT RAISES ERROR
+if (inputFile) {
+    inputFile.addEventListener("change", () => {
+        submitButton.classList.toggle("show");
+    });
+}

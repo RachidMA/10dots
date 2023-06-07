@@ -36,4 +36,25 @@ class UserController extends Controller
         //RETURN ADMIN DASHBOARD
         return view('testing.Admin_dashboard')->with(['admin' => $admin, 'countries' => $countries, 'jobs' => $jobs]);
     }
+
+    //Store the uploade profile image
+    public function StoreAvatar(Request $request)
+    {
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($avatar = $request->file('avatar')) {
+            $avatar_name = time() . '-' . $avatar->getClientOriginalName();
+            $avatar->move(public_path('images'), $avatar_name);
+
+            $user = Auth::user();
+            $user->profile_image = $avatar_name;
+            $user->save();
+        } else {
+            return back()->with('error', 'Please select your image');
+        }
+
+        return back()->with('success', 'The image was successfully uploaded');
+    }
 }

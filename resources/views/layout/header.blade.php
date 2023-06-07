@@ -16,11 +16,21 @@
                         Home
                     </a>
                 </li>
+                <!-- RACHID:ADD BECOME DOER LINK -->
+                @if(Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Update Job
+                    <a class="nav-link" href="{{ route('create-job')}}" style="color: green;">
+                        Become Doer
                     </a>
                 </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login', ['redirect' => route('create-job') ])}}">
+                        Become Doer
+                    </a>
+                </li>
+                @endif
+
                 @if(Auth::check())
                 @if(Auth::user()->role==1)
                 <li class="nav-item">
@@ -31,16 +41,10 @@
                 @elseif(Auth::user()->role==0)
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('doer-dashboard', ['id'=>Auth::user()->id])}}">
-                        Your Dashboard
-                    </a>
-                </li>
-                @endif
-                @else
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}" disabled>
                         Dashboard
                     </a>
                 </li>
+                @endif
                 @endif
             </ul>
             <!-- Right Side Of Navbar -->

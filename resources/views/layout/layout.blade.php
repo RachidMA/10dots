@@ -28,6 +28,9 @@
     <!-- Add this in your layout file or view  RACHID ================-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- CDN LINK FOR ICONS SPECIAL THE ONE USED FOR PROFILE IMAGE UPLOAD ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...your-sha512-hash..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-...your-sha512-hash..." crossorigin="anonymous" />
     <!- <!-- Scripts -->
         @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/css/app.css'])
 
@@ -38,9 +41,9 @@
 
         @include("layout.header")
 
-            <div class="css_wrapper">
-                @yield ('content')
-            </div>
+        <div class="css_wrapper">
+            @yield ('content')
+        </div>
 
         @include("layout.footer")
 

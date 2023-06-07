@@ -1,4 +1,6 @@
-<form action="{{ route('price-range') }}" method="POST">
+@props(['job', 'city'])
+
+<form action="{{route('price-range', ['job'=>$job, 'city'=>$city])}}" method="POST">
     @csrf
     <div class="wrapper-price">
         <div class="price-input">
