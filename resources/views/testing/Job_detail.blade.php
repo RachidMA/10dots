@@ -14,10 +14,11 @@
 <div class="buttons-container">
 <button>Book now</button> 
 <button>Contact me</button> 
-<button>Leave a Review</button>
 </div>
 
 <div id="reviewFormContainer" class= 'review'>
+
+    <button>Leave a Review</button>
 
 <form method= "POST" action= "{{ route ('leaveReview') }}" >
     @csrf
@@ -61,9 +62,4 @@
 </form>
 </div>
 
-
-
- 
-
-     
 @endsection
