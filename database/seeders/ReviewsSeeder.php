@@ -21,7 +21,7 @@ class ReviewsSeeder extends Seeder
             for ($i = 0; $i < 5; $i++) { // create 30 reviews for each job
                 $name = $faker->name;
                 $email = $faker->email;
-                $rating = $faker->numberBetween(1, 5); // generate a random number between 1 and 5
+                $rating = $faker->numberBetween(1, 10); // generate a random number between 1 and 10
                 $comment = $faker->sentence(20);
 
                 DB::table('reviews')->insert([
