@@ -1,0 +1,34 @@
+.navbar {
+    background-color: $grey00;
+    width: 100vw;
+    color: black;
+    padding: 1em;
+
+    .logo{
+        font-size: 24pt;
+        vertical-align: bottom;
+        color: $ten_dot_orange;
+        margin-left: 0.5em;
+    }
+    button {
+        padding: 0;
+    }
+
+    .nav-item {
+        margin: 0 1em;
+        font-size: 14pt;
+        a {
+            color: black;
+            font-weight: 500;
+        }
+        a:hover{
+            color: $ten_dot_orange;
+        }
+        
+        .dash {
+            color: $ten_dot_orange;
+        }
+
+    }
+}
+
