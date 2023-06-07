@@ -276,7 +276,7 @@ class JobController extends Controller
     //FOR DOER OR USER OR ADMIN(CONDITION ON ROLE)
 
     //Jean============//
-    public function showDoerJobDetails($id)
+    public function showJobDetailsCreator($id)
     {
         $job = Job::find($id);
         if ($job) {
