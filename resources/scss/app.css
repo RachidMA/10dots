@@ -277,6 +277,36 @@
   margin: 2em 0;
 }
 
+.navbar {
+  background-color: #F5F5F5;
+  width: 100vw;
+  color: black;
+  padding: 1em;
+}
+.navbar .logo {
+  font-size: 24pt;
+  vertical-align: bottom;
+  color: #FF7F0A;
+  margin-left: 0.5em;
+}
+.navbar button {
+  padding: 0;
+}
+.navbar .nav-item {
+  margin: 0 1em;
+  font-size: 14pt;
+}
+.navbar .nav-item a {
+  color: black;
+  font-weight: 500;
+}
+.navbar .nav-item a:hover {
+  color: #FF7F0A;
+}
+.navbar .nav-item .dash {
+  color: #FF7F0A;
+}
+
 .container {
   grid-column: 2/14;
 }
