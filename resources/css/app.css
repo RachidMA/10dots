@@ -449,3 +449,87 @@ input[type="range"]::-moz-range-thumb{
 input[type = "file"]::-webkit-file-upload-button{
     cursor: pointer;
 }
+
+/* RACHID:STYLING DOER JOB DETAILS */
+.job-main-content{
+  /* background-color: rgba(255, 0, 0, 0.349); */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.job-main-content .doer-job-details{
+  /* background-color: rgba(0, 0, 255, 0.295); */
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.doer-job-details-card{
+  display: flex;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.062);
+  /* justify-content: center; */
+}
+.job-informations{
+  /* background-color: yellow; */
+  width: 50%;
+  height: 100%;
+  text-align: start;
+  padding: 0 1rem;
+}
+.doer-job-details img{
+  width: 100%;
+  height: 13rem;
+  margin-right: 1rem;
+  border: 1px solid black;
+}
+
+.job-country-city{
+  /* background-color: red; */
+  display: flex;
+  
+}
+.job-country-city  .country{
+  margin-right: 1rem;
+}
+
+.doer-job-details .job-description{
+  margin-top: 2rem;
+  line-height: 2rem;
+  /* text-align: center; */
+  background-color: rgba(128, 128, 128, 0.062);
+  height: 100%;
+  position: relative;
+  padding: 1rem;
+}
+.job-description .edit-delete{
+  position: absolute;
+  bottom: 1rem;
+  left: 45%;
+}
+.job-description a{
+  text-decoration: none;
+  color: white;
+  padding: .5rem 1.5rem;
+  background-color: rgba(128, 128, 128, 0.623);
+}
+.job-description .delete{
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.726);
+  margin-left: 2rem;
+  padding: .5rem 1rem;
+}
+.job-description a{
+  border-radius: 10px;
+}
+.job-description a:hover{
+  background-color: gray;
+}
+.job-description .delete:hover{
+  background-color: red;
+}
+/* ==================================== */
