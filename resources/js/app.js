@@ -147,3 +147,37 @@ if (inputFile) {
         submitButton.classList.toggle("show");
     });
 }
+
+// ADA: SCRIPT FOR REVIEW FORM TO POP IN MIDDLE ///
+
+// Get the reviewButton element
+var reviewButton = document.querySelector(".reviewButton");
+
+// Get the reviewFormContainer element
+var reviewFormContainer = document.getElementById("reviewFormContainer");
+
+// Add event listener to the reviewButton
+reviewButton.addEventListener("click", function () {
+    // Display the review form
+    reviewFormContainer.style.display = "block";
+
+    // Center the form on the screen
+    centerReviewForm();
+});
+
+// Function to center the review form on the screen
+function centerReviewForm() {
+    // Calculate the top and left positions to center the form
+    var windowHeight = window.innerHeight;
+    var windowWidth = window.innerWidth;
+    var formHeight = reviewFormContainer.offsetHeight;
+    var formWidth = reviewFormContainer.offsetWidth;
+    var topPosition = (windowHeight - formHeight) / 2;
+    var leftPosition = (windowWidth - formWidth) / 2;
+
+    // Apply the calculated positions to the form
+    reviewFormContainer.style.top = topPosition + "px";
+    reviewFormContainer.style.left = leftPosition + "px";
+}
+
+// ADA: END SCRIPT FOR REVIEW FORM TO POP IN MIDDLE ///

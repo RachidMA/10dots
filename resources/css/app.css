@@ -335,6 +335,70 @@ input[type="range"]::-moz-range-thumb{
     margin-bottom: 2rem;
   }
 
+/* 
+/////THIS IS THE CSS FOR THE LEAVE A REVIEW FORM IN JOB DETAILS/////
+{
+    margin: 0;
+    padding: 0;
+    }
+
+    #reviewFormContainer {
+      display: none;
+      position: absolute;
+    }
+    
+    .rate {
+      float: left;
+      height: 46px;
+      padding: 0 10px;
+    }
+
+    .rate:not(:checked) > input {
+      position: absolute;
+      top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+      float: right;
+      width: .6em;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 30px;
+      color: #ccc;
+      border-radius: 50%;
+      transition: color 0.3s; 
+    }
+
+    .rate:not(:checked) > label:before {
+        content: '●';
+
+      }
+
+
+    .rate > input:checked ~ label {
+      color: orange;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+      color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+      color: #c59b08;
+    }
+
+
+    / .rate:not(:checked) > label:hover {
+      background-color: orange;
+      color: white;
+    } */
+/* ///////END CSS FOR JOB_LEAVE_REVIEW//////// */ 
   /* //Hide the submit button for profile image before its upload */
   .round button {
     visibility:hidden;

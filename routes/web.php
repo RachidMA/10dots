@@ -57,8 +57,18 @@ Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.s
 
 
 
+
 //=============Routes to leave a review (ADA)==========//
-Route::get('/review/{id}', [ReviewController::class, 'review'])->name('leaveReview');
+
+//==============Routes to get jobs (ADA)====================//
+Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
+Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
+
+
+//=============Routes to leave a review (ADA)==========//
+Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
+Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
+
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
 Route::prefix('/user')->middleware(['auth'])->group(function () {
