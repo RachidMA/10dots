@@ -51,22 +51,22 @@
     <form action="/search-job" method="post">
         @csrf
 
-        <div>
+        <div class="Search_section">
             <label for="job">I'm looking for a</label>
             <input type="text" id="job" name="job" placeholder="cleaner, plumber, baby-sitter"><br>
         </div>
 
-        <div>
+        <!-- <div>
             <label for="country">in</label>
             <input type="text" id="country" name="country" placeholder="Country">
 
 
             <label for="city">in this city:</label>
             <input type="text" id="city" name="city" placeholder="City"><br>
-        </div>
+        </div> -->
+        <x:testing-components.countries_cities-card :countries='$countries'/>
 
-
-        <div>
+        <div class="Search_section"> 
             <!-- <span class="material-symbols-outlined"> -->
             <input type="submit" value="search">
             <!-- </span> -->
