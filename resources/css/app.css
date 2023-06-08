@@ -365,22 +365,70 @@ input[type="range"]::-moz-range-thumb{
     margin-bottom: 2rem;
   }
 
-/* 
-/////THIS IS THE CSS FOR THE LEAVE A REVIEW FORM IN JOB DETAILS/////
-{
+
+/* /////THIS IS THE CSS FOR THE LEAVE A REVIEW FORM IN JOB DETAILS///// */
+/* {
     margin: 0;
     padding: 0;
-    }
+    } */
 
     #reviewFormContainer {
       display: none;
       position: absolute;
+      background-color: #adb5bd;
+      padding: 1rem;
+      border: 1px solid black;
+      height: 80%;
+      width: 40%;
     }
-    
+    #reviewFormContainer .main-review-form{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 90%;
+      
+    }
+
+    .main-review-form .name-email{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .main-review-form .name-email input{
+      border: none;
+      border-radius: 5px;
+      padding: .2rem .4rem;
+    }
+
+    .main-review-form #textarea{
+     border: none;
+     border-radius: 5px;
+      width: 30rem;
+      height: 8rem;
+    }
+    #reviewFormContainer .submit-button{
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .submit-button button {
+      padding: .3rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: orange;
+    }
+
+    .submit-button button:hover {
+      background-color: #c59b08;
+    }
+
     .rate {
       float: left;
       height: 46px;
       padding: 0 10px;
+      background-color: gray;
+      border-radius: 5px;
+
     }
 
     .rate:not(:checked) > input {
@@ -423,11 +471,9 @@ input[type="range"]::-moz-range-thumb{
       color: #c59b08;
     }
 
-
-    / .rate:not(:checked) > label:hover {
-      background-color: orange;
+    .rate:not(:checked) > label:hover {
       color: white;
-    } */
+    }
 /* ///////END CSS FOR JOB_LEAVE_REVIEW//////// */ 
   /* //Hide the submit button for profile image before its upload */
   .round button {
@@ -466,6 +512,7 @@ input[type = "file"]::-webkit-file-upload-button{
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  margin-top: 3rem;
 }
 .doer-job-details-card{
   display: flex;
@@ -533,3 +580,105 @@ input[type = "file"]::-webkit-file-upload-button{
   background-color: red;
 }
 /* ==================================== */
+/* RACHID:STYLING THE SPAM DIV AND BUTTONS */
+.job-image-guest{
+  background-color: rgba(128, 128, 128, 0.479);
+  position: relative;
+}
+.job-image-guest img{
+  width: 30%;
+}
+
+.spam-button a{
+  padding: .5rem 1rem;
+  color: black;
+ border-radius: 20px;
+ position: absolute;
+ top: .5rem;
+ right: 2rem;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  font-size: 1rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 200;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#reportButton {
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+
+#reportButton:hover {
+  background-color: #c82333;
+}
+
+#confirmButton {
+  margin-left: 10px;
+}
+#confirmButton a {
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+@media (max-width: 580px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+/* ============================================ */
