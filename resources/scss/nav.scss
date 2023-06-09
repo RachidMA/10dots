@@ -2,7 +2,7 @@
     background-color: $grey00;
     width: 100vw;
     color: black;
-    padding: 1em;
+    padding: 0.5em 1em;
 
     .logo{
         font-size: 24pt;
@@ -12,9 +12,22 @@
     }
     button {
         padding: 0;
+        margin: 0 0.5em;
+    }
+
+    .pfimg {
+        padding: 0;
+        justify-self: flex-end;
+    }
+
+    .navbar-toggler {
+        justify-self: flex-end;
     }
 
     .nav-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin: 0 1em;
         font-size: 14pt;
         a {
@@ -28,7 +41,6 @@
         .dash {
             color: $ten_dot_orange;
         }
-
     }
 }
 
