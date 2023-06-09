@@ -807,6 +807,46 @@ input[type = "file"]::-webkit-file-upload-button{
 #card-deck .category  .job-info-text{
   font-size: 1rem;
 }
-
-
 /* ===================================================== */
+
+/* RACHID:ADD SOME CHANGE TO FEATURED JOB CARDS EXIST IN THE HOME PAGE */
+.landing_row_4 .landing_category{
+  border: 1px solid rgba(128, 128, 128, 0.295);
+ }
+
+.landing_row_4 .landing_category .cat_info a {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  text-decoration: none;
+  text-align: center;
+}
+
+.landing_row_4 .landing_category .cat_info p{
+ text-align: start;
+ height: 3rem;
+}
+.landing_row_4 .landing_category img{
+  height: 100%;
+  width: 100%;
+ }
+
+ /* RACHID:ADD UPLOAD JOB IMAGE BY DOER FROM DOER DASHBOARD */
+ .doer-job-details-card {
+  position: relative;
+ }
+ .doer-job-details-card .round{
+  position : absolute;
+  bottom: 3rem;
+  left: .5rem;
+
+ }

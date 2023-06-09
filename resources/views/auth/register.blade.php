@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="loreg_card">
+<div class="big_circ_2"></div>
+
+<h2>register</h2>
+
 
     <form method="POST" action="{{ route('register') }}">
         @csrf

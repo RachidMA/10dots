@@ -3,6 +3,9 @@
     grid-row: 1;
     form{
         height: 100%;
+        input {
+            min-width: 40px;
+        }
     .wrapper-price {
         padding-top: 4em;
         width: 100%;
@@ -12,5 +15,39 @@
     }
 }
 .results_container{
-    grid-column: 4/15;
+    grid-column: 5/12;
+    margin-top: 2em;
+
+    .categories {
+        padding: 0;
+        display: none;
+    }
+    .job_result {
+        @include card;
+        margin-top: 2em;
+        display: flex;
+        padding:0;
+        overflow: hidden;
+        .img_div {
+            background-color: aqua;
+            width: 50%;
+            img{
+                object-fit: cover;
+            }
+        }
+        a{
+            align-self: center;
+            .job_button {
+                @include orange_button;
+                width: 100%;
+            }
+        }
+        .cat_info {
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+    }
 }

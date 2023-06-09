@@ -2,12 +2,17 @@
 
 @section('content')
 
-<!-- <div class="error">
+<div class="error">
   @if(session('error'))
   <p>{{session('error')}}</p>
   @endif
-</div> -->
+</div>
+
 <div class="loreg_card">
+  <div class="big_circ_2"></div>
+  <h2>Want to help a person out?<br>
+    <span>Fill in your details to get started</span>
+  </h2>
   <form action="{{route('store-job')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <input class="form-control" placeholder= "first name" type="text" id="first_name" name="first_name" value="{{old('first_name')}}">
