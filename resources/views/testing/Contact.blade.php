@@ -15,7 +15,7 @@
 @endif
 
 <div class="container py-4">
-    <h1>Get in Touch</h1>
+
 <div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;>
 
 <h1>Hello, how can we help you?</h1>
