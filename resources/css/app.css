@@ -838,3 +838,14 @@ input[type = "file"]::-webkit-file-upload-button{
   height: 100%;
   width: 100%;
  }
+
+ /* RACHID:ADD UPLOAD JOB IMAGE BY DOER FROM DOER DASHBOARD */
+ .doer-job-details-card {
+  position: relative;
+ }
+ .doer-job-details-card .round{
+  position : absolute;
+  bottom: 3rem;
+  left: .5rem;
+
+ }
