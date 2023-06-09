@@ -52,7 +52,7 @@ Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.c
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
 //=================Routes for contact the doer page (JEAN)===========//
-Route::get('/contact',[DoerContactController::class, 'showContact'])->name('contact.view');
+Route::get('/contact/{jobId}',[DoerContactController::class, 'showContact'])->name('contact.show');
 Route::post('/contact',[DoerContactController::class,'submitForm'])->name('contact.submitForm');
 
 //==============Routes to get jobs (ADA)====================//

@@ -8,67 +8,39 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Doer_contact;
 
 class ContactDoer extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $jobTitle;
     public $name;
     public $phone;
     public $email;
     public $message;
     public $date;
-    /**
-     * Create a new message instance.
-    
-     * @param string $name
-     * @param string $phone
-     * @param string $email
-     * @param string $message
-     * @param string $date
-     * @return void
-     */
-    public function __construct($name, $phone, $email, $message, $date)
+    public $jobId;
+    public function __construct($jobTitle, $name, $phone, $email, $message, $date, $jobId)
     {   
-
+        $this->jobTitle = $jobTitle;
         $this->name = $name;
         $this->phone = $phone;
         $this->email = $email;
         $this->message = $message;
         $this->date = $date;
+        $this->jobId = $jobId;
     }
-    public function build()
+
+    public function buildForDoer()
     {
         return $this->view('emails.contact_doer')
             ->subject('New Contact Form Submission');
     }
-    /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
+    
+    public function buildForCustomer()
     {
-        return new Envelope(
-            subject: 'Contact Doer',
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            markdown: 'emails.contact_doer',
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
+        return $this->view('emails.notification')
+                    ->subject('Thank you for contacting us!');
     }
 }

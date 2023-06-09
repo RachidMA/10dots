@@ -12,7 +12,7 @@
 <p>Description: {{$job->description}}</p>
 <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
 <div class="buttons-container">
-<button>Book now</button> 
-<button>Contact me</button> 
+<a href="{{ route('contact.show', ['jobId' => $job->id]) }}"><button>Contact me</button></a>
+
 </div>
 @endsection

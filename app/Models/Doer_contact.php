@@ -16,6 +16,8 @@ class Doer_contact extends Model
         'email',
         'phone', 
         'date', 
-        'message'
+        'message',
+        'created_at',
+        'updated_at'
     ];
 }
