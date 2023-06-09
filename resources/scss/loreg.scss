@@ -3,6 +3,7 @@
     background-color: $light_orange;
     grid-column: 1/15;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
