@@ -64,9 +64,9 @@
             <label for="city">in this city:</label>
             <input type="text" id="city" name="city" placeholder="City"><br>
         </div> -->
-        <x:testing-components.countries_cities-card :countries='$countries'/>
+        <x:testing-components.countries_cities-card :countries='$countries' />
 
-        <div class="Search_section"> 
+        <div class="Search_section">
             <!-- <span class="material-symbols-outlined"> -->
             <input type="submit" value="search">
             <!-- </span> -->
@@ -83,21 +83,31 @@
 </div>
 <div class="landing_row_4">
     <h3>Top tasks</h3>
+    @if($featuredJobs)
+    @foreach($featuredJobs as $job)
     <div class="landing_category">
         <div class="cat_img">
+            <img src="/images/{{$job->image_url ? $job->image_url : 'default-image.jpg'}}" alt="">
         </div>
         <div class="cat_info">
-            <h5>
-                Job Title
-            </h5>
+            <h4>
+                {{$job->category->name}}
+            </h4>
+            <h6>{{$job->job_title}}</h6>
             <p>
-                2700 completed tasks | 188 Doers
+                {{$job->address}} | {{ $job->country }}, {{$job->city}}
             </p>
-            <button>
+            <!-- <button>
                 Book job
-            </button>
+            </button> -->
+            <a href="{{route('jobDetails', ['id'=>$job->id])}}">Book job</a>
         </div>
     </div>
+    @endforeach
+    @else
+    <h5>No Jobs</h5>
+    @endif
+
 </div>
 
 <div class="landing_row_5">

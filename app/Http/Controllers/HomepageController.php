@@ -20,11 +20,11 @@ class HomepageController extends Controller
         $countries = Country::all();
         // dd($featuredJobs, $countries);
         if (!$featuredJobs) {
-            return view('welcome');
+            return view('welcome')->with(['countries' => $countries]);
         }
 
         //RACHID:THIS VIEW WILL BE MODIFIED WHEN ALL REAL VIEWS ARE READY
-        return view('.welcome')->with(['featuredJobs', $featuredJobs, 'countries' => $countries]);
+        return view('welcome')->with(['featuredJobs' => $featuredJobs, 'countries' => $countries]);
     }
     // ==================RACHID: ROUTE TO REAL HOME PAGE================//
     //RACIHD: RETURN HOME VIEW WITH COUNTRIES AND FEATURED JOBS

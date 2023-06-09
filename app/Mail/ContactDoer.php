@@ -32,15 +32,15 @@ class ContactDoer extends Mailable
         $this->jobId = $jobId;
     }
 
-    public function buildForDoer()
-    {
-        return $this->view('emails.contact_doer')
-            ->subject('New Contact Form Submission');
-    }
-    
     public function buildForCustomer()
     {
+        return $this->view('emails.contact_doer')
+            ->subject('You booked a job!');
+    }
+    
+    public function buildForDoer()
+    {
         return $this->view('emails.notification')
-                    ->subject('Thank you for contacting us!');
+                    ->subject('Your services are needed');
     }
 }

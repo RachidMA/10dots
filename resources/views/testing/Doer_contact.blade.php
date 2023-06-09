@@ -1,19 +1,21 @@
 @extends ('layout.layout')
 
 @section('content')
+
+<div class="loreg_card">
 @if (\Session::has('success'))
     <div class="alert alert-success">
         <h3>
             {!! \Session::get('success') !!}
         </h3>
+        <a href="{{ route('jobDetails', ['id' => $jobId]) }}"><button>Go Back to the Job</button></a>
     </div>
 @endif
+    
+    <h1>Contact the Doer</h1>
 
-<div id="content">
-    <h1>Contact</h1>
-
-    <form action="{{ route('contact.submitForm') }}" method="POST" class="contact">
-        @csrf
+<form action="{{ route('contact.submitForm') }}" method="POST" class="contact">
+    @csrf
         <input type="hidden" name="job_id" value="{{ $jobId }}">
         <p>
             <label for="name" class="icon-user"> Name
@@ -47,7 +49,4 @@
         <input type="submit" value="Send this mail!" />
     </form>
 </div>
-
-
-
 @endsection
