@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Edit your details</h1></br>
+<div class="loreg_card">
 
-<div class="form-container">
+<h1>Update your details</h1></br>
   <form action="{{ route ('updateJob', [ 'id'=>$job->id ]) }}" method="POST" enctype="multipart/form-data">
     @csrf
 
@@ -76,7 +76,7 @@
       @error('category')
       <div class="error-message" style="color: red;">{{$message}}</div>
       @enderror
-    </div>
+    </div></br>
 
     <label for="job_title">Job Title:</label>
     <input type="text" id="job_title" name="job_title" placeholder="Change your job" value="{{ $job->job_title }}">
@@ -92,10 +92,12 @@
     @enderror
     <br><br>
 
-    <label for="price">Price Per Houre:</label>
+    <label for="price">Price Per Hour:</label>
     <input type="number" id="price" name="price" placeholder="price" value="{{ $job->price }}"><br><br>
 
-    <button type="submit">Submit Changes</button>
+    <button type="submit" class = "updateButton">Submit Changes</button>
 
   </form>
 </div>
+
+@endsection
