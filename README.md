@@ -1,37 +1,36 @@
 ![Header](10dots-welcome.png)
 
-<!-- # 🟠🟠 Welcome to 10 Dots 🟠🟠 -->
-10 dots is a web application that allows connect to connect with service providers in their area. Created using the Laravel framework.</br></br>
+# What is 10 Dots?
+10 dots is a web application that allows users to connect with service providers in their area. After a task is completed users can rate the service on a scale of 10 dots, hence the name. Created using the Laravel framework.</br></br>
+
 🟠'Doers' are able to create a task in 3 categories: Music, Art, History</br>
 🟠'Users' can search for help in different countries ( Australia, Belgium, Canada, Germany, USA, and UK)
 
-## ⚡Features
-- Login/registration system
-- User & Admin dashboards
-- On clicking the SUBMIT button, the application will display all available doers in their area
-- Mail system powered by Mailtrap
-- Admin dashboard enabled to delete doer profiles
-- Responsive and mobile friendly
+## Features
+- 📋 Login/registration system
+- 📊 User & Admin dashboards
+- 🚩 Account flagging: automatic deletion 
+- ⭐ Review system for Doers
+- 📫 Mail system powered by Mailtrap
+- 📱 Responsive and mobile friendly
 
-## 🔎Learning objectives
-- A typical AJAX flow: sending asynchronous requests to a remote server and processing the results
-- DOM manipulation: changing the DOM based on the results of the AJAX requests
+## 🔍 Learning objectives
+- 
 - 
 
 ## Members
-[Rachid] - Backend Developer (https://github.com/RachidMA)</br>
+[Rachid](https://github.com/RachidMA) - Backend Developer</br>
 [Ada](https://github.com/ada-omoji) - Backend Developer</br>
-[Jean - Backend Developer](https://github.com/JeanPinay)</br>
-[Vincent - Frontend Developer](https://github.com/VincentClarysse)</br>
-[Claire - Frontend](https://github.com/HereThereClaire)</br>
+[Jean](https://github.com/JeanPinay) - Backend Developer</br>
+[Vincent](https://github.com/VincentClarysse) - Frontend Developer</br>
+[Claire](https://github.com/HereThereClaire) - Frontend</br>
 
 ## ⚒️Languages and tools: 
-[![Languages](https://skillicons.dev/icons?i=laravel,javascript,css,sass,mysql,github&theme=light)](https://skillicons.dev)
+[![Languages](https://skillicons.dev/icons?i=laravel,javascript,blade,css,sass,mysql,github&theme=light)](https://skillicons.dev)
 
-Agile, Scrum
-
-## Skills needed
+## Additional skills needed
 * Git (version control)
+* Agile, Scrum
 * Team work
 * Organization
 
