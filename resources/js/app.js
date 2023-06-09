@@ -56,18 +56,24 @@ if (country) {
     country.addEventListener("change", async () => {
         //FETCH ALL CITIES FOR THE SELECTED COUNTRY
         const selected_country = country.value;
-        console.log("COUNTRY SELECTED:", selected_country);
 
         //FETCH ONLY IF THERE IS COUNTRY NAME AS VALUE (PROVENT ERROR IF USER CLICKS ON THIS TAG: <option value="">Select Country</option>)
         if (!selected_country == "") {
             // const selected_country = "United States Of America";
             const cities = await get_cities(selected_country);
+            // Sort cities alphabetically
+            cities.sort();
+
+            // Sort cities alphabetically
+
+            // Now cities are sorted alphabetically
+            console.log(cities);
             if (!cities) {
                 city.innerHTML = "No cities found";
             }
             //this line will make sure to set the option to default message
             ////and clear the previous entry
-
+            // TODO: ORDER THE CITIES LIST alphabetically
             $("#city").html('<option value="">select city</option>');
             //Diplay the results comming from API REQUEST
             $.each(cities, function (key, city) {
@@ -159,6 +165,7 @@ var reviewFormContainer = document.getElementById("reviewFormContainer");
 // Add event listener to the reviewButton
 reviewButton.addEventListener("click", function () {
     // Display the review form
+    console.log("button clicked");
     reviewFormContainer.style.display = "block";
 
     // Center the form on the screen
@@ -181,3 +188,43 @@ function centerReviewForm() {
 }
 
 // ADA: END SCRIPT FOR REVIEW FORM TO POP IN MIDDLE ///
+// RACHID:SPAM BOX AND BUTTONS
+// Get the modal element
+var modal = document.getElementById("reportModal");
+
+// Get the button that opens the modal
+var reportButton = document.getElementById("reportButton");
+
+// Get the <span> element that closes the modal
+var closeModal = document.getElementById("closeModal");
+
+// Get the cancel button inside the modal
+var cancelButton = document.getElementById("cancelButton");
+
+// Get the confirm button inside the modal
+var confirmButton = document.getElementById("confirmButton");
+
+// When the user clicks on the button, open the modal
+reportButton.addEventListener("click", function () {
+    modal.style.display = "block";
+});
+
+// When the user clicks on <span> (x), close the modal
+closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// When the user clicks on the cancel button, close the modal
+cancelButton.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// When the user clicks on the confirm button, perform the action
+confirmButton.addEventListener("click", function () {
+    // Perform the action here (e.g., submit form or make AJAX request)
+    // You can add your logic to add one to spams table
+
+    modal.style.display = "none";
+});
+
+// =============================

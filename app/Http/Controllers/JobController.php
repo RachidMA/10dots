@@ -276,7 +276,7 @@ class JobController extends Controller
     //FOR DOER OR USER OR ADMIN(CONDITION ON ROLE)
 
     //Jean============//
-    public function showDoerJobDetails($id)
+    public function showJobDetailsCreator($id)
     {
         $job = Job::find($id);
         if ($job) {
@@ -369,17 +369,16 @@ class JobController extends Controller
 
     //RACHID: This method handles the api call for fetching cities RACHID===================
     //for specific country
-    public function getCities(Request $request)
-    {
-        dd($request);
-        $country_id = $request->country_id;
-        dd('country_id', $country_id);
-        $cities = City::where('country_id', $country_id)->get();
-        dd($cities);
+    // public function getCities(Request $request)
+    // {
 
-        if (empty($cities)) {
-            return response()->json(['error' => 'No cities found.'], 404);
-        }
-        return response($cities);
-    }
+    //     $country_id = $request->country_id;
+    //     $cities = City::where('country_id', $country_id)->get();
+
+    //     // TODO: ORDER THE CITIES LIST alphabetically
+    //     if (empty($cities)) {
+    //         return response()->json(['error' => 'No cities found.'], 404);
+    //     }
+    //     return response($cities);
+    // }
 }

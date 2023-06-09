@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DoerContactController;
 use App\Http\Controllers\JobController;
 // use app\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
@@ -10,7 +11,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LogoutController;
 
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\SpamReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -55,6 +56,9 @@ Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
+//=================Routes for contact the doer page (JEAN)===========//
+Route::get('/contact/{jobId}',[DoerContactController::class, 'showContact'])->name('contact.show');
+Route::post('/contact',[DoerContactController::class,'submitForm'])->name('contact.submitForm');
 
 
 
@@ -68,6 +72,9 @@ Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails
 //=============Routes to leave a review (ADA)==========//
 Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
 Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
+
+//RACHID:ADD REPORT SPAM ROUTE
+Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
 
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
