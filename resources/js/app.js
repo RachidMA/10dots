@@ -228,12 +228,3 @@ confirmButton.addEventListener("click", function () {
 });
 
 // =============================
-// RACHID:ADD FUNCTION TO DIPLAY TODAY'S DATE FOR EMAILS AND NOTIFICAITION SPAMS
-// Get the current date
-var currentDate = new Date();
-
-// Format the date as desired
-var formattedDate = currentDate.toLocaleDateString();
-
-// Set the current date in the email template
-document.getElementById("current-date").textContent = formattedDate;

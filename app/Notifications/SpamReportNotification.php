@@ -39,13 +39,14 @@ class SpamReportNotification extends Notification
     {
         $currentDate = Carbon::now()->format('Y-m-d');
         return (new MailMessage)
+            ->subject('Spam Report Notification')
             ->line('Spam Report')
             ->line('Current Date: ' . $currentDate)
             ->line('Hello ' . $this->data['admin_name'])
-            ->line('We have send the doer' . $this->data['user']->name . ' Spam notification')
-            ->line('Since his spam count reached: ' . $this->data['spamReportCount'])
-            ->action('Doer Profile', url('/'))
-            ->line('Please. Take further action!');
+            ->line('We have sent a spam notification to the doer: ' . $this->data['user']->name)
+            ->line('The spam count for this user has reached: ' . $this->data['spamReportCount'])
+            ->action('View Doer Profile', url('/'))
+            ->line('Please take further action if necessary.');
     }
 
     /**
