@@ -11,7 +11,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LogoutController;
 
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\SpamReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,6 +72,9 @@ Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails
 //=============Routes to leave a review (ADA)==========//
 Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
 Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
+
+//RACHID:ADD REPORT SPAM ROUTE
+Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
 
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)

@@ -20,13 +20,13 @@
                 @if(Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('create-job')}}" style="color: green;">
-                        Become Doer
+                        Create Job
                     </a>
                 </li>
                 @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login', ['redirect' => route('create-job') ])}}">
-                        Become Doer
+                        Become A Doer
                     </a>
                 </li>
                 @endif
