@@ -95,6 +95,9 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
     Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
     Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('redirect');
 
+    //RACHID:UPLOAD JOB IMAGE
+    Route::post('upload-job-image', [JobController::class, 'uploadJobImage'])->name('upload-job-image');
+
     //RACHID:COMSTIMIZE LOGOUT ROUTE
     Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');
 });

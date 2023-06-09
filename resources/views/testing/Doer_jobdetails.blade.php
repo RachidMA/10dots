@@ -7,6 +7,25 @@
             <div class="job-image">
                 <img class="card-img-top" src=" /images/{{$job->image_url}}" alt="Card image cap">
             </div>
+            <!-- REUSE THIS FORM TO UPLOAD JOB IMAGE 
+    IS BETTER TO HAVE USER UPLOAD IMAGE AFTER JOB IS CREATED NOT WHEN HE IS CREATING THE JOB
+    JUST MINIMIZE ISSUES -->
+            <div class="upload">
+                <form action="{{route('upload-job-image', ['id'=>$job->id])}}" method="POST" enctype="multipart/form-data" id="image-upload">
+                    @csrf
+                    <div class="round">
+                        <i class="fa fa-camera"></i>
+                        <input id="file-upload" type="file" name='avatar' />
+
+                        <button type="submit" class="btn btn-primary" id="submit">Upload</button>
+                        @error('avatar')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </form>
+            </div>
             <div class="job-informations">
                 <div class="job-title">
                     <h3 class="title">Job Title: {{ $job->job_title }}</h3>
