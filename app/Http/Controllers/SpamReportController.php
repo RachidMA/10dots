@@ -42,8 +42,8 @@ class SpamReportController extends Controller
                 // Get the current spam report count
                 $spamReportCount = $user->spam_reports;
                 $data = [
-                    "admin_email" => "azzahir421@gmail.com",
-                    "admin_name" => "azzahir",
+                    "admin_email" => "10dots@gmail.com",
+                    "admin_name" => "10dots Admin",
                     "user" => $user,
                     "spamReportCount" => $spamReportCount
                 ];

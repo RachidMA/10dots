@@ -40,17 +40,18 @@
 </head>
 
 <body>
+
     <div class="email-container">
         <h1>Spam Report <span>
                 <p>Date: <span id="current-date">{{ now()->format('Y-m-d') }}</span></p>
             </span></h1>
         <p>Dear {{$data['user']->name}},</p>
-        <p>This email is to notify you about a spam report received.</p>
+        <p>This email is to inform you about a spam report that we have received.</p>
         <p>Email: {{$data['user']->email}}</p>
         <p>Your current Spam Report Count: {{$data['spamReportCount']}}</p>
-        <p>Please be aware that if the spam report count reaches 5, your profile will be automatically deleted.</p>
-        <p>If you have any questions, feel free to email us at {{$data['admin_email']}}.</p>
-        <p>Thank you.</p>
+        <p>Please be aware that if the number of spam reports reaches 5, your profile will be automatically deleted as per our policy.</p>
+        <p>If you have any questions or concerns, please feel free to contact us at {{$data['admin_email']}}.</p>
+        <p>Thank you for your attention to this matter.</p>
     </div>
 </body>
 

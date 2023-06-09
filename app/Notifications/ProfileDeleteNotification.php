@@ -39,13 +39,14 @@ class ProfileDeleteNotification extends Notification
     {
         $currentDate = Carbon::now()->format('Y-m-d');
         return (new MailMessage)
+
+            ->subject('Spam Report Notification')
             ->line('Spam Report')
             ->line('Current Date: ' . $currentDate)
             ->line('Hello ' . $this->data['admin_name'])
-            ->line('We have send the doer' . $this->data['user']->name . ' Spam notification')
-            ->line('Since his spam count reached: ' . $this->data['spamReportCount'] . 'We decided to close his account')
-            ->action('Doer Profile', url('/'))
-            ->line('Thank you!');
+            ->line('We have sent a spam notification to ' . $this->data['user']->name)
+            ->line('Due to the user reaching a spam count of ' . $this->data['spamReportCount'] . ', we have decided to close their account.')
+            ->line('Thank you for your attention.');
     }
 
     /**

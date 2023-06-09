@@ -45,11 +45,13 @@
                 <p>Date: <span id="current-date">{{ now()->format('Y-m-d') }}</span></p>
             </span></h1>
         <p>Dear {{$data['user']->name}},</p>
-        <p>Since you have reached to total spam report of: {{$data['spamReportCount']}}</p>
-        <p>This email is to notify your account has been removed.</p>
-        <p>This is our policy, and we do not tolerate spammers</p>
-        <p>Thank you.</p>
+        <p>We regret to inform you that your account has been removed due to multiple spam reports.</p>
+        <p>At our organization, we have a zero-tolerance policy towards spammers to maintain a safe and reliable environment for our users.</p>
+        <p>If you believe this action has been taken in error, please feel free to contact us at {{$data['admin_email']}} for further assistance.</p>
+        <p>Thank you for your understanding.</p>
     </div>
 </body>
+
+
 
 </html>

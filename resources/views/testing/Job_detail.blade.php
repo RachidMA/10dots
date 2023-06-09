@@ -24,10 +24,8 @@
                     <h3>{{$job->user->id}}</h3>
                 </div>
                 <div class="contact-me">
-                <!-- //Jean=== -->
-                <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a> 
-                
-                    <a href="#">Contact Me</a>
+                    <!-- //Jean=== -->
+                    <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a>
                     <button class="reviewButton">Leave Review</button>
                 </div>
             </div>
