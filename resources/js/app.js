@@ -56,18 +56,24 @@ if (country) {
     country.addEventListener("change", async () => {
         //FETCH ALL CITIES FOR THE SELECTED COUNTRY
         const selected_country = country.value;
-        console.log("COUNTRY SELECTED:", selected_country);
 
         //FETCH ONLY IF THERE IS COUNTRY NAME AS VALUE (PROVENT ERROR IF USER CLICKS ON THIS TAG: <option value="">Select Country</option>)
         if (!selected_country == "") {
             // const selected_country = "United States Of America";
             const cities = await get_cities(selected_country);
+            // Sort cities alphabetically
+            cities.sort();
+
+            // Sort cities alphabetically
+
+            // Now cities are sorted alphabetically
+            console.log(cities);
             if (!cities) {
                 city.innerHTML = "No cities found";
             }
             //this line will make sure to set the option to default message
             ////and clear the previous entry
-
+            // TODO: ORDER THE CITIES LIST alphabetically
             $("#city").html('<option value="">select city</option>');
             //Diplay the results comming from API REQUEST
             $.each(cities, function (key, city) {
@@ -155,7 +161,7 @@ var reviewButton = document.querySelector(".reviewButton");
 
 // Get the reviewFormContainer element
 var reviewFormContainer = document.getElementById("reviewFormContainer");
-console.log("hello world", reviewFormContainer);
+
 // Add event listener to the reviewButton
 reviewButton.addEventListener("click", function () {
     // Display the review form

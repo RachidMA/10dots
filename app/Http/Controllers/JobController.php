@@ -193,24 +193,6 @@ class JobController extends Controller
             $job_data['image_url'] = 'default.jpg';
         }
 
-        // //CHECK IF THERE IS MIN_PRICE AND MAX_PRICE
-        // if ($request->min_price && $request->max_price) {
-        //     //IF MIN_PRICE AND MAX_PRICE EXIST
-        //     //CHECK IF MIN_PRICE > MAX_PRICE
-        //     if ($request->min_price > $request->max_price) {
-        //         //IF MIN_PRICE > MAX_PRICE
-        //         //RETURN ERROR MESSAGE
-        //         return redirect()->back()->with('error', 'Min price should be less than max price');
-        //     } else {
-        //         //IF MIN_PRICE < MAX_PRICE
-        //         //UPDATE MIN_PRICE AND MAX_PRICE
-        //         $job_data['min_price'] = $request->min_price;
-        //         $job_data['max_price'] = $request->max_price;
-        //     }
-        // } else {
-        //     $job_data['min_price'] = null;
-        //     $job_data['max_price'] = null;
-        // }
 
         //STORE THE DATA INTOR DATABASE
         Job::insert([
@@ -258,6 +240,29 @@ class JobController extends Controller
         }
 
         return view('testing.Doer_dashboard', ['jobs' => $jobs, 'profile_image' => $profile_image, 'doer' => $user]);
+    }
+
+    //RACHID:ADD FUNCTION TO STORE UPLOADED JOB IMAGE
+    public function uploadJobImage(Request $request)
+    {
+        //FETCH THE IMAGE FROM REQUEST
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($avatar = $request->file('avatar')) {
+            $job_image = time() . '-' . $avatar->getClientOriginalName();
+            $avatar->move(public_path('images'), $job_image);
+
+            //FIND THE JOB 
+            $job = Job::find($request->id);
+
+            $job->image_url = $job_image;
+            $job->save();
+        } else {
+            return back()->with('error', 'Please select your image');
+        }
+        return back()->with('success', 'The image was successfully uploaded');
     }
 
     //RACHID: THIS FUNCTION COULD BE USED TO FETCH JOBS RESULT
@@ -369,17 +374,16 @@ class JobController extends Controller
 
     //RACHID: This method handles the api call for fetching cities RACHID===================
     //for specific country
-    public function getCities(Request $request)
-    {
-        dd($request);
-        $country_id = $request->country_id;
-        dd('country_id', $country_id);
-        $cities = City::where('country_id', $country_id)->get();
-        dd($cities);
+    // public function getCities(Request $request)
+    // {
 
-        if (empty($cities)) {
-            return response()->json(['error' => 'No cities found.'], 404);
-        }
-        return response($cities);
-    }
+    //     $country_id = $request->country_id;
+    //     $cities = City::where('country_id', $country_id)->get();
+
+    //     // TODO: ORDER THE CITIES LIST alphabetically
+    //     if (empty($cities)) {
+    //         return response()->json(['error' => 'No cities found.'], 404);
+    //     }
+    //     return response($cities);
+    // }
 }

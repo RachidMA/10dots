@@ -24,11 +24,9 @@
                     <h3>{{$job->user->id}}</h3>
                 </div>
                 <div class="contact-me">
-                <!-- //Jean=== -->
-                <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a> 
-                
-                    <a href="#">Contact Me</a>
-                    <button class="reviewButton">Leave a Review</button>
+                    <!-- //Jean=== -->
+                    <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a>
+                    <button class="reviewButton">Leave Review</button>
                 </div>
             </div>
         </div>
@@ -99,13 +97,11 @@
         </div>
         <div class="modal-footer">
             <button id="cancelButton" class="btn">No</button>
-            <form method="POST" action="">
+            <form method="POST" action="{{ route('report-spam') }}">
                 @csrf
                 <input type="hidden" name="job_id" value="{{ $job->id }}">
                 <button type="submit" class="btn btn-danger" id="confirmButton">OK</button>
             </form>
-
-
         </div>
     </div>
 </div>

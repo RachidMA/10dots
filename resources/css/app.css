@@ -39,7 +39,7 @@
 }
 
 .category .cat_img{
-  background-color: red;
+  /* background-color: red; */
   width: 40%;
   height: 10rem;
   border: 1px solid gray;
@@ -196,7 +196,7 @@
 }
 
 .main-container .css_wrapper .container-reasults .category .cat-info{
-  background-color: red;
+  /* background-color: red; */
   margin: 2rem;
   width: 100%;
 }
@@ -520,6 +520,8 @@ input[type = "file"]::-webkit-file-upload-button{
   align-items: center;
   background-color: rgba(128, 128, 128, 0.062);
   /* justify-content: center; */
+  
+  height: 50rem;
 }
 .job-informations{
   /* background-color: yellow; */
@@ -580,6 +582,30 @@ input[type = "file"]::-webkit-file-upload-button{
 .job-description .delete:hover{
   background-color: red;
 }
+
+/* RACHID:ADD STYLE TO CUSTOMER JOB DETAIL TEMPLAGE */
+.contact-me a{
+  text-decoration: none;
+  padding: .5rem 1.5rem;
+  background-color: rgba(0, 128, 0, 0.774);
+  margin: 0 2.5rem;
+  color: white;
+  border-radius: 1.5rem;
+}
+.contact-me a:hover{
+ background-color: green;
+}
+.contact-me button{
+  background-color: orange;
+  border: none;
+  padding: .4rem 1.5rem;
+  border-radius: 1.5rem;
+  color: white;
+}
+.contact-me button:hover{
+  background-color: #c59b08;
+  border: none;
+}
 /* ==================================== */
 /* RACHID:STYLING THE SPAM DIV AND BUTTONS */
 .job-image-guest{
@@ -587,7 +613,7 @@ input[type = "file"]::-webkit-file-upload-button{
   position: relative;
 }
 .job-image-guest img{
-  width: 30%;
+  width: 100%;
 }
 
 .spam-button a{
@@ -681,8 +707,10 @@ input[type = "file"]::-webkit-file-upload-button{
   .modal-content {
     width: 80%;
   }
+
 }
 /* ============================================ */
+
 /* ============Jean: THIS IS THE alert ========== */
 .alert {
   background-color: #dff0d8;
@@ -699,6 +727,148 @@ h3 {
   margin: 0;
   font-weight: bold;
 }
-button{
+/* button{
   
+} */
+
+/* RACHID:ADD STYLE TO DOER PROFILE SEARCHED BY ADMIN */
+/* SEARCH FORM */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
 }
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.doer-email label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.doer-email input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* DOER PROFILE CARD */
+#card-deck{
+  width: 100vw;
+  height: 80%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+#card-deck .category{
+  height: 80%;
+}
+
+#card-deck .cat_info{
+  width: 100%;
+  height: 80%;
+}
+#card-deck .category .job-image{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  /* background-color: orange; */
+}
+
+#card-deck .category .job-image img{
+  height: 5rem;
+  height: 10rem;
+}
+
+#card-deck .cat_info{
+  width: 100%;
+  height: 80%;
+  /* background-color: rgba(0, 0, 255, 0.281); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#card-deck .cat_info .contact-me{
+  position: absolute;
+  bottom: 1rem;
+}
+
+#card-deck .category .job-informations{
+  width: 40rem;
+  line-height: 2rem;
+}
+#card-deck .category  .job-title{
+  text-align: center;
+}
+
+#card-deck .category  .job-info-text{
+  font-size: 1rem;
+}
+/* ===================================================== */
+
+/* RACHID:ADD SOME CHANGE TO FEATURED JOB CARDS EXIST IN THE HOME PAGE */
+.landing_row_4 .landing_category{
+  border: 1px solid rgba(128, 128, 128, 0.295);
+ }
+
+.landing_row_4 .landing_category .cat_info a {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  text-decoration: none;
+  text-align: center;
+}
+
+.landing_row_4 .landing_category .cat_info p{
+ text-align: start;
+ height: 3rem;
+}
+.landing_row_4 .landing_category img{
+  height: 100%;
+  width: 100%;
+ }
+
+ /* RACHID:ADD UPLOAD JOB IMAGE BY DOER FROM DOER DASHBOARD */
+ .doer-job-details-card {
+  position: relative;
+ }
+ .doer-job-details-card .round{
+  position : absolute;
+  bottom: 3rem;
+  left: .5rem;
+
+ }
+

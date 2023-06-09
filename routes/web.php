@@ -11,7 +11,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LogoutController;
 
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\SpamReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,8 +57,8 @@ Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.c
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
 //=================Routes for contact the doer page (JEAN)===========//
-Route::get('/contact/{jobId}',[DoerContactController::class, 'showContact'])->name('contact.show');
-Route::post('/contact',[DoerContactController::class,'submitForm'])->name('contact.submitForm');
+Route::get('/contact/{jobId}', [DoerContactController::class, 'showContact'])->name('contact.show');
+Route::post('/contact', [DoerContactController::class, 'submitForm'])->name('contact.submitForm');
 
 
 
@@ -72,6 +72,9 @@ Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails
 //=============Routes to leave a review (ADA)==========//
 Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
 Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
+
+//RACHID:ADD REPORT SPAM ROUTE
+Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
 
 
 //THESE ROUTE SHOULD BE ALLOWED ONLY FOR DOERS(===RACHID ADDED THIS ROUTES===)
@@ -92,6 +95,9 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
     Route::get('/delete/{id}', [JobController::class, 'delete'])->name('deleteJob');
     Route::get('/testing.Job_success', [JobController::class, 'redirect'])->name('redirect');
 
+    //RACHID:UPLOAD JOB IMAGE
+    Route::post('upload-job-image', [JobController::class, 'uploadJobImage'])->name('upload-job-image');
+
     //RACHID:COMSTIMIZE LOGOUT ROUTE
     Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');
 });
@@ -104,6 +110,7 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
 Route::prefix('/{name}')->middleware(['auth', 'admin'])->group(function () {
     //ROUTE TO ADMIN DASHBOARD
     Route::get('/dashboard', [UserController::class, 'adminDashboard'])->name('admin-dashboard');
+    Route::post('/dashboard/doer-profile', [UserController::class, 'adminFindDoer'])->name('admin-find-doer');
 });
 
 //Get cities for each country
