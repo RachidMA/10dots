@@ -14,7 +14,12 @@
     </div>
 @endif
 
+<div class="container py-4">
+    <h1>Get in Touch</h1>
+<div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;>
+
 <h1>Hello, how can we help you?</h1>
+
 <form action="{{ route('contact.store') }}" method="POST" class="contact-us">
 @csrf
 <div class="formInput">
@@ -43,4 +48,7 @@
     <input type="submit" value="Submit" id="input-submit">
 </form>
 </div>
+
+</div>
+
 @endsection
