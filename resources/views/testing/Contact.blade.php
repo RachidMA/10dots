@@ -11,7 +11,8 @@
     </div>
 @endif
 <div class="container py-4">
-<div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;">
+    <h1>Get in Touch</h1>
+<div class="p-5 text-center " style="background-color:#C8C2BC"; background-size: cover; background-position: center;>
 <form action="{{ route('contact.store') }}" method="POST" class="contact-us">
 @csrf
     <div class="mb-3">
@@ -47,6 +48,6 @@
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 </div>
-
+</div>
 
 @endsection
