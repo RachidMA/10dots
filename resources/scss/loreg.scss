@@ -1,13 +1,30 @@
 .loreg_card {
-    padding-top: 4em;
-    background-color: $light_orange;
+    background-color: $grey01;
     grid-column: 1/15;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100vw;
+    z-index: -20;
+
+    .big_circ_2 {
+        @include bigcirc;
+        background-color: $light_orange;
+        opacity: 0.9;
+    }
+
+    h2{
+        font-size: 40pt;
+        text-align: center;
+        margin: 1em;
+        span{
+            font-size: 24pt;
+        }
+    }
 
     form{
+        z-index: 0;
         width: 30%;
         min-width: 300px;
         display: flex;
