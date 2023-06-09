@@ -3,8 +3,8 @@
 # 🟠🟠 Welcome to 10 Dots 🟠🟠
 
 ## What is it ?
-A web application that allows connect to connect with service providers in their area.
-🟠'Doers' are able to create a task in 3 categories: Music, Art, History
+A web application that allows connect to connect with service providers in their area.</br>
+🟠'Doers' are able to create a task in 3 categories: Music, Art, History</br>
 🟠'Users' can search for help in different countries ( Australia, Belgium, Canada, Germany, United States, United Kingdom)
 
 ## ⚡Features
@@ -22,7 +22,11 @@ A web application that allows connect to connect with service providers in their
 - Aggregating and parsing data fetched from an API
 
 ## Members
-[Rachid - Backend Developer](https://github.com/RachidMA) & [Ada - Backend Developer](https://github.com/ada-omoji) & [Jean - Backend Developer](https://github.com/JeanPinay) & [Vincent - Frontend Developer](https://github.com/VincentClarysse)
+[Rachid - Backend Developer](https://github.com/RachidMA)
+[Ada - Backend Developer](https://github.com/ada-omoji)
+[Jean - Backend Developer](https://github.com/JeanPinay)
+[Vincent - Frontend Developer](https://github.com/VincentClarysse) 
+[Claire - Frontend](https://github.com/VincentClarysse)
 
 ## ⚒️Languages and tools: 
 [![Languages](https://skillicons.dev/icons?i=laravel,javascript,css,sass,mailtrap,mysql,github&theme=light)](https://skillicons.dev)
