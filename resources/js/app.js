@@ -155,10 +155,11 @@ var reviewButton = document.querySelector(".reviewButton");
 
 // Get the reviewFormContainer element
 var reviewFormContainer = document.getElementById("reviewFormContainer");
-
+console.log("hello world", reviewFormContainer);
 // Add event listener to the reviewButton
 reviewButton.addEventListener("click", function () {
     // Display the review form
+    console.log("button clicked");
     reviewFormContainer.style.display = "block";
 
     // Center the form on the screen
@@ -181,3 +182,43 @@ function centerReviewForm() {
 }
 
 // ADA: END SCRIPT FOR REVIEW FORM TO POP IN MIDDLE ///
+// RACHID:SPAM BOX AND BUTTONS
+// Get the modal element
+var modal = document.getElementById("reportModal");
+
+// Get the button that opens the modal
+var reportButton = document.getElementById("reportButton");
+
+// Get the <span> element that closes the modal
+var closeModal = document.getElementById("closeModal");
+
+// Get the cancel button inside the modal
+var cancelButton = document.getElementById("cancelButton");
+
+// Get the confirm button inside the modal
+var confirmButton = document.getElementById("confirmButton");
+
+// When the user clicks on the button, open the modal
+reportButton.addEventListener("click", function () {
+    modal.style.display = "block";
+});
+
+// When the user clicks on <span> (x), close the modal
+closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// When the user clicks on the cancel button, close the modal
+cancelButton.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// When the user clicks on the confirm button, perform the action
+confirmButton.addEventListener("click", function () {
+    // Perform the action here (e.g., submit form or make AJAX request)
+    // You can add your logic to add one to spams table
+
+    modal.style.display = "none";
+});
+
+// =============================
