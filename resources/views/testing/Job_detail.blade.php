@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="job-main-content">
     <div class="doer-job-details">
         <div class="doer-job-details-card">
@@ -35,6 +36,7 @@
     <div class="spam-button">
         <a id="reportButton">Report Profile</a>
     </div>
+
 </div>
 
 <div id="reviewFormContainer" class='review'>

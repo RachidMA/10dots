@@ -1,0 +1,17 @@
+.price-slider {
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.price-slider form {
+  height: 100%;
+}
+.price-slider form .wrapper-price {
+  padding-top: 4em;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.results_container {
+  grid-column: 4/15;
+}/*# sourceMappingURL=search_result.css.map */

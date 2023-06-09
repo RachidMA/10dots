@@ -18,6 +18,6 @@
     </ul>
     
     <p>Best regards,</p>
-    <p>Your Company</p>
+    <p>10dots</p>
 </body>
 </html>
