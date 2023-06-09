@@ -100,7 +100,7 @@
             <!-- <button>
                 Book job
             </button> -->
-            <a href="">Book job</a>
+            <a href="{{route('jobDetails', ['id'=>$job->id])}}">Book job</a>
         </div>
     </div>
     @endforeach
