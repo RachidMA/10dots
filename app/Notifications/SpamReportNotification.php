@@ -37,6 +37,8 @@ class SpamReportNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
+        // Store the doer's email in the session
+        session()->put('doer_email', $this->data['user']->email);
         $currentDate = Carbon::now()->format('Y-m-d');
         return (new MailMessage)
             ->subject('Spam Report Notification')
@@ -45,7 +47,7 @@ class SpamReportNotification extends Notification
             ->line('Hello ' . $this->data['admin_name'])
             ->line('We have sent a spam notification to the doer: ' . $this->data['user']->name)
             ->line('The spam count for this user has reached: ' . $this->data['spamReportCount'])
-            ->action('View Doer Profile', url('/'))
+            ->action('View Doer Profile', url('/' . $this->data['admin_name'] . '/dashboard'))
             ->line('Please take further action if necessary.');
     }
 

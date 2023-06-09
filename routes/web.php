@@ -57,8 +57,8 @@ Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.c
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 
 //=================Routes for contact the doer page (JEAN)===========//
-Route::get('/contact/{jobId}',[DoerContactController::class, 'showContact'])->name('contact.show');
-Route::post('/contact',[DoerContactController::class,'submitForm'])->name('contact.submitForm');
+Route::get('/contact/{jobId}', [DoerContactController::class, 'showContact'])->name('contact.show');
+Route::post('/contact', [DoerContactController::class, 'submitForm'])->name('contact.submitForm');
 
 
 
@@ -107,6 +107,7 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
 Route::prefix('/{name}')->middleware(['auth', 'admin'])->group(function () {
     //ROUTE TO ADMIN DASHBOARD
     Route::get('/dashboard', [UserController::class, 'adminDashboard'])->name('admin-dashboard');
+    Route::post('/dashboard/doer-profile', [UserController::class, 'adminFindDoer'])->name('admin-find-doer');
 });
 
 //Get cities for each country
