@@ -132,11 +132,12 @@
   width: auto;
   height: 15rem;
   margin-left: 1rem;
+ 
+  
 }
 .profile_row .card{
-  width: 50rem;
+  width: 56rem;
   height: 100%;
-  
 }
 .profile_row .card-body{
   padding: 1rem;
@@ -158,16 +159,42 @@
   flex-direction: row;
   width: 17rem;
 }
+
 /* ADMIN DASHBOARD PROFILE IMAGE */
 .image-card {
-  background-color: rgba(0, 255, 179, 0.164);
+  background-color: rgba(128, 128, 128, 0.055);
   height: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+
+.image-card .admin-image{
+  
+  width: 50%;
+  height: 10rem;
+  margin-bottom: 5rem;
 }
 
 .image-card img {
-  height: 20rem;
+  height: 100%;
+  width: 100%;
+}
+.image-card .card-body {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body .admin-upload{
+  position: absolute;
+  bottom: 9rem;
+  left: 5rem;
 }
 /* ==========ADMIN DASHBOARD=================== */
 
@@ -199,6 +226,17 @@
   /* background-color: red; */
   margin: 2rem;
   width: 100%;
+}
+.admin-info button{
+  background-color: #FF7F0A;
+  color: white;
+}
+.admin-info button:hover{
+  background-color: #FF922E;
+}
+.admin-info .card-body .input{
+  color: white;
+  width: 20rem;
 }
 
 /* ===================================== */
@@ -349,10 +387,10 @@ input[type="range"]::-moz-range-thumb{
     height: 100%;
     border-radius: 50%;
 }
-  .round{
+.upload .round{
     position: absolute;
     background-color: whitesmoke;
-    bottom: 0;
+    bottom: 1.5rem;
     left: 0;
     width: 32px;
     height: 32px;
@@ -375,11 +413,21 @@ input[type="range"]::-moz-range-thumb{
     #reviewFormContainer {
       display: none;
       position: absolute;
+      top: 15%;
+      left: 30%;
       background-color: #adb5bd;
       padding: 1rem;
       border: 1px solid black;
-      height: 80%;
+      height: auto;
       width: 40%;
+    }
+
+    #reviewFormContainer .close-button{
+      border: none;
+      width: 1rem;
+      position: absolute;
+      right: 1rem;
+      background-color: #adb5bd;
     }
     #reviewFormContainer .main-review-form{
       display: flex;
@@ -388,8 +436,6 @@ input[type="range"]::-moz-range-thumb{
       height: 90%;
       
     }
-
-
     .main-review-form .name-email{
       width: 100%;
       display: flex;
@@ -501,7 +547,7 @@ input[type = "file"]::-webkit-file-upload-button{
 .job-main-content{
   /* background-color: rgba(255, 0, 0, 0.349); */
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -519,28 +565,27 @@ input[type = "file"]::-webkit-file-upload-button{
   display: flex;
   align-items: center;
   background-color: rgba(128, 128, 128, 0.062);
-  /* justify-content: center; */
-  
-  height: 50rem;
+  height: 22rem;
+  padding: 2rem;
+}
+.doer-job-details-card .job-image{
+  width: 35%;
 }
 .job-informations{
-  /* background-color: yellow; */
   width: 50%;
   height: 100%;
   text-align: start;
-  padding: 0 1rem;
+  padding: 0 5rem;
 }
 .doer-job-details img{
   width: 100%;
-  height: 13rem;
+  height: 10rem;
   margin-right: 1rem;
   border: 1px solid black;
 }
 
 .job-country-city{
-  /* background-color: red; */
   display: flex;
-  
 }
 .job-country-city  .country{
   margin-right: 1rem;
@@ -549,7 +594,6 @@ input[type = "file"]::-webkit-file-upload-button{
 .doer-job-details .job-description{
   margin-top: 2rem;
   line-height: 2rem;
-  /* text-align: center; */
   background-color: rgba(128, 128, 128, 0.062);
   height: 100%;
   position: relative;
@@ -581,6 +625,7 @@ input[type = "file"]::-webkit-file-upload-button{
 }
 .job-description .delete:hover{
   background-color: red;
+
 }
 
 /* RACHID:ADD STYLE TO CUSTOMER JOB DETAIL TEMPLAGE */
@@ -606,6 +651,51 @@ input[type = "file"]::-webkit-file-upload-button{
   background-color: #c59b08;
   border: none;
 }
+.job-detail-button {
+  margin-top: 3rem;
+}
+
+/* RACHID:ADD STYLE TO REVIEWS AT JOB DETAILS PAGE THE USER VISIT */
+.reviews-container {
+  height: auto;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.062);
+}
+
+.review-job-detail-page{
+  height: auto;
+  display: flex;
+ align-items: start;
+ justify-content: start;
+ flex-direction: column;
+  border: 1px solid white;
+  line-height: 1.rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgba(128, 128, 128, 0.062);
+  
+}
+.reviews-container .review-name-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.reviews-container .icon-image{
+  /* background-color: red; */
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  margin-right: .5rem;
+}
+.reviews-container .icon-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* ================================================== */
 /* ==================================== */
 /* RACHID:STYLING THE SPAM DIV AND BUTTONS */
 .job-image-guest{
@@ -702,11 +792,90 @@ input[type = "file"]::-webkit-file-upload-button{
   .modal-content {
     width: 70%;
   }
+
+   /* DOER PROFILE BOX */
+.profile_row{
+  width: 100%;
+  height: auto;
+  margin-left: 1rem;
+}
+.profile_row .card{
+  width: 32rem;
+  height: 100%;
+}
+.profile_row .card-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card-body .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body .image-container .upload .round{
+  left: 4rem;
+}
+.container-reasults {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+.container-reasults .category{
+  width: 100%;
+}
+
 }
 @media (max-width: 580px) {
   .modal-content {
     width: 80%;
   }
+  /* DOER PROFILE BOX */
+.profile_row{
+  width: 55%;
+  height: 100%;
+ 
+}
+.profile_row .card{
+  width: 100%;
+  height: 28rem;
+  padding: 0;
+}
+.profile_row .card-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.container-reasults {
+  width: 60%;
+  margin-left: 1rem;
+}
+.container-reasults .category{
+  width: 100%;
+}
+
+.profile_row .card-body .profile-text-info{
+
+ height: 100%;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.card-body .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body .image-container .upload .round{
+  left: 4rem;
+}
 }
 /* ============================================ */
 /* RACHID:ADD STYLE TO DOER PROFILE SEARCHED BY ADMIN */
@@ -761,6 +930,7 @@ input[type = "file"]::-webkit-file-upload-button{
 }
 #card-deck .category{
   height: 80%;
+  padding: 2rem;
 }
 
 #card-deck .cat_info{
@@ -769,14 +939,14 @@ input[type = "file"]::-webkit-file-upload-button{
 }
 #card-deck .category .job-image{
   height: 80%;
+  width: 50%;
   display: flex;
   align-items: center;
   /* background-color: orange; */
 }
 
 #card-deck .category .job-image img{
-  height: 5rem;
-  height: 10rem;
+  height: 100%;
 }
 
 #card-deck .cat_info{
@@ -846,6 +1016,12 @@ input[type = "file"]::-webkit-file-upload-button{
  .doer-job-details-card .round{
   position : absolute;
   bottom: 3rem;
-  left: .5rem;
-
+  left: 2rem;
  }
+
+ /* RACHID:ADD STYLE TO RATING DIV FOR FEATURED JOBS */
+ .rating .rate {
+  margin: 1rem 0;
+  background-color: #964a1e3f;
+ }
+ /* ================================================== */

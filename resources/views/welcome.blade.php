@@ -84,26 +84,42 @@
 <div class="landing_row_4">
     <h3>Top tasks</h3>
     @if($featuredJobs)
-    @foreach($featuredJobs as $job)
+    @foreach($featuredJobs as $job_review)
     <div class="landing_category">
         <div class="cat_img">
-            <img src="/images/{{$job->image_url ? $job->image_url : 'default-image.jpg'}}" alt="">
+            <img src="/images/{{$job_review[0]->job->image_url ? $job_review[0]->job->image_url : 'default-image.jpg'}}" alt="">
         </div>
         <div class="cat_info">
             <h4>
-                {{$job->category->name}}
+                {{$job_review[0]->job->category->name}}
             </h4>
-            <h6>{{$job->job_title}}</h6>
+            <h6>{{$job_review[0]->job->job_title}}</h6>
+            <div class="rating">
+                <div class="rate">
+                    <input type="radio" id="star5_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="5" {{ $job_review[0]->rating == 5 ? 'checked' : '' }} />
+                    <label for="star5_{{ $job_review[0]->job->id }}" title="text">5 dots</label>
+
+                    <input type="radio" id="star4_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="4" {{ $job_review[0]->rating == 4 ? 'checked' : '' }} />
+                    <label for="star4_{{ $job_review[0]->job->id }}" title="text">4 dots</label>
+
+                    <input type="radio" id="star3_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="3" {{ $job_review[0]->rating == 3 ? 'checked' : '' }} />
+                    <label for="star3_{{ $job_review[0]->job->id }}" title="text">3 dots</label>
+
+                    <input type="radio" id="star2_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="2" {{ $job_review[0]->rating == 2 ? 'checked' : '' }} />
+                    <label for="star2_{{ $job_review[0]->job->id }}" title="text">2 dots</label>
+
+                    <input type="radio" id="star1_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="1" {{ $job_review[0]->rating == 1 ? 'checked' : '' }} />
+                    <label for="star1_{{ $job_review[0]->job->id }}" title="text">1 dot</label>
+                </div>
+            </div>
             <p>
-                {{$job->address}} | {{ $job->country }}, {{$job->city}}
+                {{$job_review[0]->job->address}} | {{ $job_review[0]->job->country }}, {{$job_review[0]->job->city}}
             </p>
-            <!-- <button>
-                Book job
-            </button> -->
-            <a href="{{route('jobDetails', ['id'=>$job->id])}}">Book job</a>
+            <a href="{{route('jobDetails', ['id'=>$job_review[0]->job->id])}}">Book job</a>
         </div>
     </div>
     @endforeach
+
     @else
     <h5>No Jobs</h5>
     @endif

@@ -37,7 +37,11 @@
                         <p class="country"> {{ $job->country }}</p>
                         <p>{{ $job->city }}</p>
                     </div>
-                    <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
+                    @if($job->price)
+                    <p class="price">Price: {{$job->price}} €</p>
+                    @else
+                    <p>Price: No Price Was Set</p>
+                    @endif
                 </div>
             </div>
         </div>

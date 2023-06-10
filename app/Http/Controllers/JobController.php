@@ -8,6 +8,7 @@ use App\Models\Job;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
@@ -129,8 +130,15 @@ class JobController extends Controller
     //JEAN ==== THIS IS FOR THE CUSTOMER TO VIEW THE JOB DETAILS FROM SEARCH RESULT AND SUGGESTED JOBS
     public function jobDetails(Request $request)
     {
+        //RACHID:ADD FETCH JOB REVIEWS
+        $reviews = Review::where('job_id', $request->id)->get();
+        if ($reviews) {
+            //count how many reviews job has
+            $reviewsCount = count($reviews);
+        }
+        // dd($reviews);
         $job = Job::find($request->id);
-        return view('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
+        return view('testing.Job_detail',  ['job' => $job, 'reviews' => $reviews, 'reviewsCount' => $reviewsCount]); //JEAN: for testing purpose only
     }
 
     // //RACHID:GET THE PRICE RANGE

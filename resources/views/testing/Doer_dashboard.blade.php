@@ -20,7 +20,7 @@
         </div>
         @endif
     </div>
-    <div class="container  mt-5">
+    <div class="container  mt-4">
         <div class="row profile_row">
             <div class="col-md-4 ">
                 <!-- Profile Container -->
@@ -30,12 +30,15 @@
                         <x:testing-components.image_profile-card />
                         <div class="profile-text-info">
                             <div class="info-1">
-                                <p class="card-text">Name: {{$doer->name}} 1</p>
-                                <p class="card-text">Name: {{$doer->name}} 1</p>
+                                <p class="card-text">Name: {{$doer->name}} </p>
+                                <p class="card-text">Email: {{$doer->email}} </p>
                             </div>
                             <div class="info-2">
-                                <p class="card-text">Name: {{$doer->name}} 2</p>
-                                <p class="card-text">Name: {{$doer->name}} 2</p>
+                                <p class="card-text">Address: {{$doer->jobs()->first()->address}}</p>
+                                <p class="card-text">{{$doer->jobs()->first()->country}}, {{$doer->jobs()->first()->city}}</p>
+                                <div class="number-jobs">
+                                    <p>Total Jobs: {{count($doer->jobs()->get())}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

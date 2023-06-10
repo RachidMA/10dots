@@ -20,10 +20,13 @@
                         <p class="country"> {{ $job->country }}</p>
                         <p>{{ $job->city }}</p>
                     </div>
-                    <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
-                    <h3>{{$job->user->id}}</h3>
+                    @if($job->price)
+                    <p class="price">Price: {{$job->price}} €</p>
+                    @else
+                    <p>Price: No Price Was Set</p>
+                    @endif
                 </div>
-                <div class="contact-me">
+                <div class="contact-me job-detail-button">
                     <!-- //Jean=== -->
                     <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a>
                     <button class="reviewButton">Leave Review</button>
@@ -33,17 +36,54 @@
         <div class="job-description">
             <p>Description: {{$job->description}}</p>
         </div>
+        <div class="reviews-container">
+            @if($reviews)
+            @foreach($reviews as $review)
+            <div class="rating review-job-detail-page ">
+                <div class="review-info">
+                    <div class="review-name-icon">
+                        <div class="icon-image">
+                            <img src="/icons/icon-{{rand(1,4)}}.png" alt="" class="icon-image-display">
+                        </div>
+                        <h4>{{$review->name}}</h4>
+                    </div>
+                    <div class="rate">
+                        <input type="radio" id="star5_{{ $review->id }}" name="rating_{{ $review->id }}" value="5" {{ $review->rating == 5 ? 'checked' : '' }} disabled />
+                        <label for="star5_{{ $review->id }}" title="text">5 dots</label>
+
+                        <input type="radio" id="star4_{{ $review->id }}" name="rating_{{ $review->id }}" value="4" {{ $review->rating == 4 ? 'checked' : '' }} disabled />
+                        <label for="star4_{{ $review->id }}" title="text">4 dots</label>
+
+                        <input type="radio" id="star3_{{ $review->id }}" name="rating_{{ $review->id }}" value="3" {{ $review->rating == 3 ? 'checked' : '' }} disabled />
+                        <label for="star3_{{ $review->id }}" title="text">3 dots</label>
+
+                        <input type="radio" id="star2_{{ $review->id }}" name="rating_{{ $review->id }}" value="2" {{ $review->rating == 2 ? 'checked' : '' }} disabled />
+                        <label for="star2_{{ $review->id }}" title="text">2 dots</label>
+
+                        <input type="radio" id="star1_{{ $review->id }}" name="rating_{{ $review->id }}" value="1" {{ $review->rating == 1 ? 'checked' : '' }} disabled />
+                        <label for="star1_{{ $review->id }}" title="text">1 dot</label>
+                    </div>
+                </div>
+                <p>{{$review->comment}}</p>
+            </div>
+            <!-- <h4>{{$review->name}}</h4>
+            <p>{{$review->comment}}</p> -->
+            @endforeach
+            @else
+            <p>No Reviews Available</p>
+            @endif
+        </div>
     </div>
     <div class="spam-button">
         <a id="reportButton">Report Profile</a>
     </div>
-
 </div>
 
 <div id="reviewFormContainer" class='review'>
+    <!-- RACHID:ADD THIS BUTTON TO CLOSE LEAVE REVIEW FORM WHEN CLICKED -->
+    <button class="close-button">X</button>
     <form method="POST" action="{{ route ('leaveReview') }}">
         @csrf
-
         <h1>Leave a review</h1>
         <div class="main-review-form">
             <div class="mb-3 name-email">
@@ -59,7 +99,6 @@
             </div>
             <label for="rate" class="form-label">Rate</label>
             <div class="rate">
-
                 <input type="radio" id="star5" name="rating" value="5" />
                 <label for="star5" title="text">5 dots</label>
 
@@ -81,11 +120,9 @@
                 <button type="submit" name="submit" id="submit">Submit</button>
             </div>
         </div>
-
-
-
     </form>
 </div>
+
 <div id="reportModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
