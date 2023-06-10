@@ -165,18 +165,22 @@ var reviewFormContainer = document.getElementById("reviewFormContainer");
 // RACHID:ADD CLOSE BUTTON WHEN CLICKED IT CLOSES LEAVE REVIEW FORM
 const closeButton = document.querySelector(".close-button");
 
-closeButton.addEventListener("click", () => {
-    reviewFormContainer.style.display = "none";
-});
+if (closeButton) {
+    closeButton.addEventListener("click", () => {
+        reviewFormContainer.style.display = "none";
+    });
+}
 
-// Add event listener to the reviewButton
-reviewButton.addEventListener("click", function () {
-    // Display the review form
-    reviewFormContainer.style.display = "block";
+if (reviewButton) {
+    // Add event listener to the reviewButton
+    reviewButton.addEventListener("click", function () {
+        // Display the review form
+        reviewFormContainer.style.display = "block";
 
-    // Center the form on the screen
-    centerReviewForm();
-});
+        // Center the form on the screen
+        centerReviewForm();
+    });
+}
 
 // Function to center the review form on the screen
 function centerReviewForm() {
@@ -210,27 +214,58 @@ var cancelButton = document.getElementById("cancelButton");
 // Get the confirm button inside the modal
 var confirmButton = document.getElementById("confirmButton");
 
-// When the user clicks on the button, open the modal
-reportButton.addEventListener("click", function () {
-    modal.style.display = "block";
-});
+if (reportButton) {
+    // When the user clicks on the button, open the modal
+    reportButton.addEventListener("click", function () {
+        modal.style.display = "block";
+    });
+}
 
-// When the user clicks on <span> (x), close the modal
-closeModal.addEventListener("click", function () {
-    modal.style.display = "none";
-});
+if (closeModal) {
+    // When the user clicks on <span> (x), close the modal
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+}
 
-// When the user clicks on the cancel button, close the modal
-cancelButton.addEventListener("click", function () {
-    modal.style.display = "none";
-});
+if (cancelButton) {
+    // When the user clicks on the cancel button, close the modal
+    cancelButton.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+}
 
-// When the user clicks on the confirm button, perform the action
-confirmButton.addEventListener("click", function () {
-    // Perform the action here (e.g., submit form or make AJAX request)
-    // You can add your logic to add one to spams table
+if (confirmButton) {
+    // When the user clicks on the confirm button, perform the action
+    confirmButton.addEventListener("click", function () {
+        // Perform the action here (e.g., submit form or make AJAX request)
+        // You can add your logic to add one to spams table
 
-    modal.style.display = "none";
-});
+        modal.style.display = "none";
+    });
+}
 
 // =============================
+// RACHID:ADD FUNCTION TO CLOSE ERROR AND SUCCESS MESSAGE WINDOW
+
+var successMessage = document.querySelector("#successMessage");
+var errorMessage = document.querySelector("#errorMessage");
+
+var successButton = document.querySelector(".close-success");
+var errorButton = document.querySelector(".close-error");
+
+if (successButton) {
+    successButton.addEventListener("click", () => {
+        successMessage.style.display = "none";
+    });
+}
+
+if (errorButton) {
+    errorButton.addEventListener("click", () => {
+        errorMessage.style.display = "none";
+    });
+}
+
+function closeMessage(element) {
+    element.style.display = "none";
+}
