@@ -40,4 +40,10 @@ class Job extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    //JOBS HAS MANY REVIEWS
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

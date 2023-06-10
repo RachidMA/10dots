@@ -6,7 +6,7 @@
 
 <div class=" category" id="{{$job->id}}">
     <div class="cat_img job-image">
-        <img class="card-img-top" src=" /images/{{$job->image_url}}" alt="Card image cap">
+        <img class="card-img-top" src=" /images/{{$job->user->profile_image}}" alt="Card image cap">
     </div>
     <div class="cat_info">
         <div class="job-informations">

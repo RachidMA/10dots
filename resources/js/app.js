@@ -162,10 +162,16 @@ var reviewButton = document.querySelector(".reviewButton");
 // Get the reviewFormContainer element
 var reviewFormContainer = document.getElementById("reviewFormContainer");
 
+// RACHID:ADD CLOSE BUTTON WHEN CLICKED IT CLOSES LEAVE REVIEW FORM
+const closeButton = document.querySelector(".close-button");
+
+closeButton.addEventListener("click", () => {
+    reviewFormContainer.style.display = "none";
+});
+
 // Add event listener to the reviewButton
 reviewButton.addEventListener("click", function () {
     // Display the review form
-    console.log("button clicked");
     reviewFormContainer.style.display = "block";
 
     // Center the form on the screen
