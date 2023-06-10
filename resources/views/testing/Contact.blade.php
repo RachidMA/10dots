@@ -4,17 +4,15 @@
 
 
 
+
 <div class="loreg_card">
+<h1>Hello, how can we help you?</h1>
 @if (\Session::has('success'))
-    <div class="alert alert-success">
-        <h3>
-            {!! \Session::get('success') !!}
-        </h3>
-        <a href="{{ route('homepage') }}" class="btn btn-primary">Go Back to Home</a>
+    <div class="alert">
+        <h3>{!! \Session::get('success') !!}</h3>
+        <a href="{{ route('homepage') }}" class="btn btn-primary">Home</a>
     </div>
 @endif
-
-<h1>Hello, how can we help you?</h1>
 <form action="{{ route('contact.store') }}" method="POST" class="contact-us">
 @csrf
 <div class="formInput">
@@ -43,4 +41,7 @@
     <input type="submit" value="Submit" id="input-submit">
 </form>
 </div>
+
+</div>
+
 @endsection
