@@ -5,21 +5,19 @@
 @section('content')
 <div class="doer-container">
     <!-- RACHID:DOER DASHBOARD -->
-    <div class="welcome-error">
-        @if(session('message'))
-        <!-- Success Alert -->
+    <!-- <div class="welcome-error">
+        @if(session('job_create'))
         <div class="container alert alert-success alert-dismissible fade show w-50">
-            <strong>Success!</strong> {{session('message')}}.
+            <strong>Success!</strong> {{session('job_created')}}.
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
-        <!-- Access Denied Alert -->
         @elseif(session('error'))
         <div class="container alert alert-danger alert-dismissible fade show w-50">
             <strong>Error!</strong> {{session('error')}}.
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
         @endif
-    </div>
+    </div> -->
     <div class="container  mt-4">
         <div class="row profile_row">
             <div class="col-md-4 ">

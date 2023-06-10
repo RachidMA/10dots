@@ -119,8 +119,13 @@ class JobController extends Controller
 
             if (count($filteredResults) === 0) {
                 return view('testing.Jobstesting')
-                    ->with(['searchResult' => $filteredResults, 'categories' => $categories, 'city' => $city, 'job' => $job])
-                    ->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+                    ->with([
+                        'searchResult' => $filteredResults,
+                        'categories' => $categories,
+                        'city' => $city,
+                        'job' => $job,
+                        'error' => 'No jobs found in the specified city and country for the given job. Try a different search!'
+                    ]);
             }
 
             return view('testing.Jobstesting')
@@ -223,7 +228,7 @@ class JobController extends Controller
 
 
         return view('testing.Doer_dashboard')->with([
-            'message' => 'Job created successfully',
+            'job_create' => 'Job created successfully',
             'doer' => $doer,
             'jobs' => $doer_jobs
         ]);
@@ -266,10 +271,11 @@ class JobController extends Controller
             $job = Job::find($request->id);
 
             $job->image_url = $job_image;
-            $job->save();
+            $job->update();
         } else {
             return back()->with('error', 'Please select your image');
         }
+
         return back()->with('success', 'The image was successfully uploaded');
     }
 
