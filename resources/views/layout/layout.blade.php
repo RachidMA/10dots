@@ -39,25 +39,22 @@
 <body>
     <div class="css_container">
         <!-- IMPORT SESSION -->
-        @php
+        <!-- @php
         use Illuminate\Support\Facades\Session;
         @endphp
         @if(session('message'))
-        <!-- Success Alert -->
+       
         <div class="container alert alert-success alert-dismissible fade show w-50">
             <strong>Success!</strong> {{session('message')}}.
-            @if(Auth::user())
-            <a href="{{route('jobs.userDashboard', ['name'=>Auth::user()->name])}}" class="btn btn-primary  h-100 rounded-lg w-25  mx-4 text-light">Go To Dashboard</a>
-            @endif
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
-        <!-- Access Denied Alert -->
+        
         @elseif(session('error'))
         <div class="container alert alert-danger alert-dismissible fade show w-50">
             <strong>Error!</strong> {{session('error')}}.
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
-        @endif
+        @endif -->
 
         @include("layout.header")
 
