@@ -22,13 +22,14 @@
                     </div>
                     @if($job->price)
                     <p class="price">Price: {{$job->price}} €</p>
+                    <a href="tel:{{ $job->phone }}" class="phone-number"><span><i class="fa-solid fa-phone fa-shake" style="color: #ffc014;"></i></span>CALL ME</a>
                     @else
                     <p>Price: No Price Was Set</p>
                     @endif
                 </div>
                 <div class="contact-me job-detail-button">
                     <!-- //Jean=== -->
-                    <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a>
+                    <a href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at" style="color: #e2e3e9;"></i>Contact Me</a>
                     <button class="reviewButton">Leave Review</button>
                 </div>
             </div>

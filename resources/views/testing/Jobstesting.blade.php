@@ -40,7 +40,7 @@
     @foreach($searchResult as $job)
     <div class="job_result" id="{{$job->id}}">
         <div class="img_div">
-            <img class="" src=" /images/{{$job->image_url}}" alt="Card image cap">
+            <img class="card-img-top" src="/images/{{$job->image_url ? $job->image_url:'job_default.png'}}" alt="Card image cap">
         </div>
         <div class="cat_info">
             <h2>{{ $job->job_title }}</h2>
