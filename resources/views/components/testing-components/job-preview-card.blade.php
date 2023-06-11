@@ -20,6 +20,9 @@
                     <p class="country"> {{ $job->country }}</p>
                     <p>{{ $job->city }}</p>
                 </div>
+                <div class="contact-info">
+
+                </div>
                 @if ($doer->jobs->count() > 1)
                 Total Jobs: {{ $doer->jobs->count() }} Jobs
                 @elseif ($doer->jobs->count() == 1)
@@ -30,9 +33,14 @@
                 <p>Total Spams: {{$doer->spam_reports}}</p>
             </div>
         </div>
-        <div class="contact-me">
-            <!-- //Jean=== -->
-            <a href="{{ route('contact.show', ['jobId' => $job->id]) }}">Contact Me</a>
+        <div class="contacts-link">
+            <div class="phone-link">
+                <a href="tel:{{ $job->phone }}" class="phone-number"><span><i class="fa-solid fa-phone fa-shake" style="color: black;"></i></span>CALL-ME</a>
+            </div>
+            <div class="contact-me">
+                <!-- //Jean=== -->
+                <a href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at" style="color: #e2e3e9;"></i>Contact Me</a>
+            </div>
         </div>
     </div>
 </div>

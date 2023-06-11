@@ -31,6 +31,8 @@
     <!-- CDN LINK FOR ICONS SPECIAL THE ONE USED FOR PROFILE IMAGE UPLOAD ICON -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...your-sha512-hash..." crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-...your-sha512-hash..." crossorigin="anonymous" />
+    <!-- fontawsome kit link -->
+    <script src="https://kit.fontawesome.com/0b78c4645d.js" crossorigin="anonymous"></script>
     <!- <!-- Scripts -->
         @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/css/app.css'])
 

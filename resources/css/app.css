@@ -1134,4 +1134,70 @@ input[type = "file"]::-webkit-file-upload-button{
   background-color: #45a049;
 }
 /* /* ===============end==========  */
+/* RACHID:ADD STYLE TO PHONE JOB PHONE NUMBER ICON */
+.phone-number i {
+  margin-right: .45rem;
+}
+.phone-number{
+  text-decoration: none;
+}
 
+.email-me i{
+  margin-right: .2rem;
+}
+/* .contact-me {
+  
+  margin-top: 3rem;
+  height: 5rem;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 10rem;
+  margin-bottom: -4rem;
+} */
+
+.contacts-link{
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.contacts-link .contact-me{
+  position: absolute;
+  right: 1rem;
+}
+
+.phone-link a {
+  padding: 0;
+  background-color: whitesmoke;
+  color: #0056b3;
+  background-color: orange;
+  padding: 1rem 2rem;
+  color: black;
+}
+
+.phone-link a:hover {
+  background-color: orange;
+  color: black;
+  text-decoration: underline;
+}
+
+.phone-link .phone-number   {
+  font-size: larger;
+}
+
+
+/* TODO: NEED TO MAKE JOBS LIST RESUTL IMAGE FIT THE CONTAINER */
+.results_container  .job_result .img_div{
+  background-color: #FF7F0A ;
+  border: 3px solid rgba(0, 0, 0, 0.247);
+  overflow: hidden;
+ 
+}
+/* ================================================== */
