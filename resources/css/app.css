@@ -830,6 +830,34 @@ input[type = "file"]::-webkit-file-upload-button{
   color: #fff;
 }
 @media (max-width: 800px) {
+.landing_row_4{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+.landing_row_3 .helpout{
+  width: 25rem;
+}
+.landing_row_3 p {
+  width: 20rem;
+}
+.main-list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+  .landing_category{
+    background-color: blue;
+    width: 20rem;
+  
+  }
   .modal-content {
     width: 70%;
   }
@@ -872,6 +900,22 @@ input[type = "file"]::-webkit-file-upload-button{
 
 }
 @media (max-width: 580px) {
+.landing_row_3{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.landing_row_4{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+  .landing_category{
+    width: 80%;
+    height: 80%;
+    margin-bottom: .5rem;
+  }
   .modal-content {
     width: 80%;
   }
@@ -1051,8 +1095,27 @@ input[type = "file"]::-webkit-file-upload-button{
 /* ===================================================== */
 
 /* RACHID:ADD SOME CHANGE TO FEATURED JOB CARDS EXIST IN THE HOME PAGE */
+
+.landing_row_4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
 .landing_row_4 .landing_category{
   border: 1px solid rgba(128, 128, 128, 0.295);
+  width: 20rem;
+ 
+  
  }
 
 .landing_row_4 .landing_category .cat_info a {
