@@ -8,6 +8,7 @@ use App\Models\Job;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
@@ -118,8 +119,13 @@ class JobController extends Controller
 
             if (count($filteredResults) === 0) {
                 return view('testing.Jobstesting')
-                    ->with(['searchResult' => $filteredResults, 'categories' => $categories, 'city' => $city, 'job' => $job])
-                    ->with('error', 'No jobs found in the specified city and country for the given job. Try a different search!');
+                    ->with([
+                        'searchResult' => $filteredResults,
+                        'categories' => $categories,
+                        'city' => $city,
+                        'job' => $job,
+                        'error' => 'No jobs found in the specified city and country for the given job. Try a different search!'
+                    ]);
             }
 
             return view('testing.Jobstesting')
@@ -129,8 +135,15 @@ class JobController extends Controller
     //JEAN ==== THIS IS FOR THE CUSTOMER TO VIEW THE JOB DETAILS FROM SEARCH RESULT AND SUGGESTED JOBS
     public function jobDetails(Request $request)
     {
+        //RACHID:ADD FETCH JOB REVIEWS
+        $reviews = Review::where('job_id', $request->id)->get();
+        if ($reviews) {
+            //count how many reviews job has
+            $reviewsCount = count($reviews);
+        }
+        // dd($reviews);
         $job = Job::find($request->id);
-        return view('testing.Job_detail',  ['job' => $job]); //JEAN: for testing purpose only
+        return view('testing.Job_detail',  ['job' => $job, 'reviews' => $reviews, 'reviewsCount' => $reviewsCount]); //JEAN: for testing purpose only
     }
 
     // //RACHID:GET THE PRICE RANGE
@@ -213,9 +226,9 @@ class JobController extends Controller
         // dd('ALL INPUTS FROM FORM', $job_data);
         $doer_jobs = $doer->jobs;
 
-
-        return view('testing.Doer_dashboard')->with([
-            'message' => 'Job created successfully',
+        // RACHID:MODEFY THE RETURN FROM VIEW TO REDIRECT SO WE CAN DISPLAY SUCCESS AND ERROR MESSAGES
+        return redirect()->route('doer-dashboard', ['id' => $doer->id])->with([
+            'success' => 'The job was successfully created',
             'doer' => $doer,
             'jobs' => $doer_jobs
         ]);
@@ -245,6 +258,8 @@ class JobController extends Controller
     //RACHID:ADD FUNCTION TO STORE UPLOADED JOB IMAGE
     public function uploadJobImage(Request $request)
     {
+        //FIND THE JOB 
+        $job = Job::find($request->id);
         //FETCH THE IMAGE FROM REQUEST
         $request->validate([
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -254,15 +269,17 @@ class JobController extends Controller
             $job_image = time() . '-' . $avatar->getClientOriginalName();
             $avatar->move(public_path('images'), $job_image);
 
-            //FIND THE JOB 
-            $job = Job::find($request->id);
-
             $job->image_url = $job_image;
-            $job->save();
+            $job->update();
         } else {
             return back()->with('error', 'Please select your image');
         }
-        return back()->with('success', 'The image was successfully uploaded');
+
+        return redirect()
+            ->route('doer-dashboard', ['id' => $job->user->id])
+            ->with([
+                'success' => 'Image was successfully uploaded'
+            ]);
     }
 
     //RACHID: THIS FUNCTION COULD BE USED TO FETCH JOBS RESULT
@@ -346,12 +363,12 @@ class JobController extends Controller
         //RACHID:GET THE DOER PROFILE AND HIS JOBS
         $doer = Auth::user();
 
-
-        return view('testing.Doer_dashboard')->with([
-            'doer' => $doer,
-            'jobs' => $doer->jobs,
-            'message' => 'Job Updated Successfully',
-        ]);
+        // RACHID:MODEFY THE RETURN FROM UPDATED JOB FUNCTION TO DISPLAY SUCCESS MESSAGE
+        return redirect()
+            ->route('doer-dashboard', ['id' => $doer->id])
+            ->with([
+                'success' => 'Job was successfully updated'
+            ]);
     }
 
     //RACHID WILL KEEP THIS FUNCTION
@@ -364,11 +381,11 @@ class JobController extends Controller
         //RACHID:GET THE DOER PROFILE AND HIS JOBS
         $doer = Auth::user();
 
-        return view('testing.Doer_dashboard')->with([
-            'message' => 'Job deleted successfully',
-            'doer' => $doer,
-            'jobs' => $doer->jobs
-        ]);
+        return redirect()
+            ->route('doer-dashboard', ['id' => $doer->id])
+            ->with([
+                'error' => 'Job Was successfully Deleted'
+            ]);
     }
 
 

@@ -1,11 +1,54 @@
 /*RACHID: DOER DASHBOARD */
 
 /* RACHID:ADD MESSAGE SECTION IN MAIN WELCOME PAGE */
+/* #successMessages{
+  background-color: red;
+  background-color: blue;
+} */
+.success-message, .error-message {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.75rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+/* =========================== */
 .welcome-error {
+  width: 100vw;
+}
+
+.error-container{
+  background-color: red;
+}
+.doer-main-container {
   width: 100vw;
 }
 .doer-container{
   width: 100%;
+  margin: 2rem auto;
 }
 .category{
   background-color: whitesmoke;
@@ -22,8 +65,6 @@
   justify-content: space-between;
   flex-direction: row;
   font-size: .7rem;
-  
-  
 }
 .categories a.category-job-link{
   text-decoration: none;
@@ -132,11 +173,12 @@
   width: auto;
   height: 15rem;
   margin-left: 1rem;
+ 
+  
 }
 .profile_row .card{
-  width: 50rem;
+  width: 56rem;
   height: 100%;
-  
 }
 .profile_row .card-body{
   padding: 1rem;
@@ -158,16 +200,42 @@
   flex-direction: row;
   width: 17rem;
 }
+
 /* ADMIN DASHBOARD PROFILE IMAGE */
 .image-card {
-  background-color: rgba(0, 255, 179, 0.164);
+  background-color: rgba(128, 128, 128, 0.055);
   height: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+
+.image-card .admin-image{
+  
+  width: 50%;
+  height: 10rem;
+  margin-bottom: 5rem;
 }
 
 .image-card img {
-  height: 20rem;
+  height: 100%;
+  width: 100%;
+}
+.image-card .card-body {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body .admin-upload{
+  position: absolute;
+  bottom: 9rem;
+  left: 5rem;
 }
 /* ==========ADMIN DASHBOARD=================== */
 
@@ -199,6 +267,17 @@
   /* background-color: red; */
   margin: 2rem;
   width: 100%;
+}
+.admin-info button{
+  background-color: #FF7F0A;
+  color: white;
+}
+.admin-info button:hover{
+  background-color: #FF922E;
+}
+.admin-info .card-body .input{
+  color: white;
+  width: 20rem;
 }
 
 /* ===================================== */
@@ -349,10 +428,10 @@ input[type="range"]::-moz-range-thumb{
     height: 100%;
     border-radius: 50%;
 }
-  .round{
+.upload .round{
     position: absolute;
     background-color: whitesmoke;
-    bottom: 0;
+    bottom: 1.5rem;
     left: 0;
     width: 32px;
     height: 32px;
@@ -375,11 +454,21 @@ input[type="range"]::-moz-range-thumb{
     #reviewFormContainer {
       display: none;
       position: absolute;
+      top: 15%;
+      left: 30%;
       background-color: #adb5bd;
       padding: 1rem;
       border: 1px solid black;
-      height: 80%;
+      height: auto;
       width: 40%;
+    }
+
+    #reviewFormContainer .close-button{
+      border: none;
+      width: 1rem;
+      position: absolute;
+      right: 1rem;
+      background-color: #adb5bd;
     }
     #reviewFormContainer .main-review-form{
       display: flex;
@@ -388,8 +477,6 @@ input[type="range"]::-moz-range-thumb{
       height: 90%;
       
     }
-
-
     .main-review-form .name-email{
       width: 100%;
       display: flex;
@@ -501,7 +588,7 @@ input[type = "file"]::-webkit-file-upload-button{
 .job-main-content{
   /* background-color: rgba(255, 0, 0, 0.349); */
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -519,28 +606,27 @@ input[type = "file"]::-webkit-file-upload-button{
   display: flex;
   align-items: center;
   background-color: rgba(128, 128, 128, 0.062);
-  /* justify-content: center; */
-  
-  height: 50rem;
+  height: 22rem;
+  padding: 2rem;
+}
+.doer-job-details-card .job-image{
+  width: 35%;
 }
 .job-informations{
-  /* background-color: yellow; */
   width: 50%;
   height: 100%;
   text-align: start;
-  padding: 0 1rem;
+  padding: 0 5rem;
 }
 .doer-job-details img{
   width: 100%;
-  height: 13rem;
+  height: 10rem;
   margin-right: 1rem;
   border: 1px solid black;
 }
 
 .job-country-city{
-  /* background-color: red; */
   display: flex;
-  
 }
 .job-country-city  .country{
   margin-right: 1rem;
@@ -549,7 +635,6 @@ input[type = "file"]::-webkit-file-upload-button{
 .doer-job-details .job-description{
   margin-top: 2rem;
   line-height: 2rem;
-  /* text-align: center; */
   background-color: rgba(128, 128, 128, 0.062);
   height: 100%;
   position: relative;
@@ -581,6 +666,7 @@ input[type = "file"]::-webkit-file-upload-button{
 }
 .job-description .delete:hover{
   background-color: red;
+
 }
 
 /* RACHID:ADD STYLE TO CUSTOMER JOB DETAIL TEMPLAGE */
@@ -606,6 +692,51 @@ input[type = "file"]::-webkit-file-upload-button{
   background-color: #c59b08;
   border: none;
 }
+.job-detail-button {
+  margin-top: 3rem;
+}
+
+/* RACHID:ADD STYLE TO REVIEWS AT JOB DETAILS PAGE THE USER VISIT */
+.reviews-container {
+  height: auto;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.062);
+}
+
+.review-job-detail-page{
+  height: auto;
+  display: flex;
+ align-items: start;
+ justify-content: start;
+ flex-direction: column;
+  border: 1px solid white;
+  line-height: 1.rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgba(128, 128, 128, 0.062);
+  
+}
+.reviews-container .review-name-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.reviews-container .icon-image{
+  /* background-color: red; */
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  margin-right: .5rem;
+}
+.reviews-container .icon-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* ================================================== */
 /* ==================================== */
 /* RACHID:STYLING THE SPAM DIV AND BUTTONS */
 .job-image-guest{
@@ -702,31 +833,119 @@ input[type = "file"]::-webkit-file-upload-button{
   .modal-content {
     width: 70%;
   }
+
+   /* DOER PROFILE BOX */
+.profile_row{
+  width: 100%;
+  height: auto;
+  margin-left: 1rem;
+}
+.profile_row .card{
+  width: 32rem;
+  height: 100%;
+}
+.profile_row .card-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card-body .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body .image-container .upload .round{
+  left: 4rem;
+}
+.container-reasults {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+.container-reasults .category{
+  width: 100%;
+}
+
 }
 @media (max-width: 580px) {
   .modal-content {
     width: 80%;
   }
 
+  /* DOER PROFILE BOX */
+.profile_row{
+  width: 55%;
+  height: 100%;
+ 
+}
+.profile_row .card{
+  width: 100%;
+  height: 28rem;
+  padding: 0;
+}
+.profile_row .card-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.container-reasults {
+  width: 60%;
+  margin-left: 1rem;
+}
+.container-reasults .category{
+  width: 100%;
+}
+
+.profile_row .card-body .profile-text-info{
+ height: 100%;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.card-body .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body .image-container .upload .round{
+  left: 4rem;
+}
 }
 /* ============================================ */
+/* /* ============Jean: THIS IS THE alert ==========  */
 
-/* ============Jean: THIS IS THE alert ========== */
 .alert {
-  background-color: #dff0d8;
-  color: #3c763d;
-  border: 1px solid #d6e9c6;
-  padding: 10px;
-  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(100deg, #EBEBEB, #B8B6B6);
+  border: 1px solid #eee3e3;
+  color: #ffffff;
+  padding: 40px;
+  width: 800px;
+  height: 270px;
   text-align: center;
-  margin-bottom: 20px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
 }
-h3 {
+
+.alert h3 {
   margin: 0;
-  font-weight: bold;
+  color: #ffffff;
 }
+
 /* button{
   
 } */
@@ -783,6 +1002,7 @@ h3 {
 }
 #card-deck .category{
   height: 80%;
+  padding: 2rem;
 }
 
 #card-deck .cat_info{
@@ -791,14 +1011,14 @@ h3 {
 }
 #card-deck .category .job-image{
   height: 80%;
+  width: 50%;
   display: flex;
   align-items: center;
   /* background-color: orange; */
 }
 
 #card-deck .category .job-image img{
-  height: 5rem;
-  height: 10rem;
+  height: 100%;
 }
 
 #card-deck .cat_info{
@@ -868,7 +1088,116 @@ h3 {
  .doer-job-details-card .round{
   position : absolute;
   bottom: 3rem;
-  left: .5rem;
-
+  left: 2rem;
  }
+ /* RACHID:ADD STYLE TO RATING DIV FOR FEATURED JOBS */
+ .rating .rate {
+  margin: 1rem 0;
+  background-color: #964a1e3f;
+ }
+ /* ================================================== */
 
+
+
+.alert .btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 80px;
+  background-color: #4CAF50;
+  color: #171414;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.alert .btn:hover {
+  background-color: #45a049;
+}
+
+.alert h3 {
+  margin: 0;
+  color: #212020;
+}
+
+.alert .btn {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 80px;
+  background-color: #4CAF50;
+  color: #1e1c1c;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.alert .btn:hover {
+  background-color: #45a049;
+}
+/* /* ===============end==========  */
+/* RACHID:ADD STYLE TO PHONE JOB PHONE NUMBER ICON */
+.phone-number i {
+  margin-right: .45rem;
+}
+.phone-number{
+  text-decoration: none;
+}
+
+.email-me i{
+  margin-right: .2rem;
+}
+/* .contact-me {
+  
+  margin-top: 3rem;
+  height: 5rem;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 10rem;
+  margin-bottom: -4rem;
+} */
+
+.contacts-link{
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.contacts-link .contact-me{
+  position: absolute;
+  right: 1rem;
+}
+
+.phone-link a {
+  padding: 0;
+  background-color: whitesmoke;
+  color: #0056b3;
+  background-color: orange;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.phone-link a:hover {
+  background-color: orange;
+  color: black;
+  text-decoration: underline;
+}
+
+.phone-link .phone-number   {
+  font-size: larger;
+}
+
+
+/* TODO: NEED TO MAKE JOBS LIST RESUTL IMAGE FIT THE CONTAINER */
+.results_container  .job_result .img_div{
+  background-color: #FF7F0A ;
+  border: 3px solid rgba(0, 0, 0, 0.247);
+  overflow: hidden;
+ 
+}
+/* ================================================== */

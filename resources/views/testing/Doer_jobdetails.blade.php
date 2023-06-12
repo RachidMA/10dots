@@ -5,7 +5,7 @@
     <div class="doer-job-details">
         <div class="doer-job-details-card">
             <div class="job-image">
-                <img class="card-img-top" src=" /images/{{$job->image_url}}" alt="Card image cap">
+                <img class="card-img-top" src="/images/{{$job->image_url ? $job->image_url:'job_default.png'}}" alt="Card image cap">
             </div>
             <!-- REUSE THIS FORM TO UPLOAD JOB IMAGE 
     IS BETTER TO HAVE USER UPLOAD IMAGE AFTER JOB IS CREATED NOT WHEN HE IS CREATING THE JOB
@@ -37,7 +37,11 @@
                         <p class="country"> {{ $job->country }}</p>
                         <p>{{ $job->city }}</p>
                     </div>
-                    <p>Price: {{ $job->min_price }} - {{ $job->max_price}}</p>
+                    @if($job->price)
+                    <p class="price">Price: {{$job->price}} €</p>
+                    @else
+                    <p>Price: No Price Was Set</p>
+                    @endif
                 </div>
             </div>
         </div>

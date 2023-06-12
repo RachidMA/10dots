@@ -56,7 +56,7 @@ class DoerContactController extends Controller
     Mail::to($doerEmail)->send($mail->buildForDoer());
     Mail::to($email)->send($mail->buildForCustomer());
 
-    return redirect()->back()->with('success', 'Form submitted successfully!');
+    return redirect()->back()->with('success', 'Job request submitted successfully!');
 }
 
 }
