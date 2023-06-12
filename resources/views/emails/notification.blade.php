@@ -13,7 +13,7 @@
             margin: 0;
         }
         .card {
-            background-color: #9F9F9F;
+            background-color: #ffffff;
             box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             max-width: 500px;
@@ -24,7 +24,7 @@
             text-align: center;
         }
         h1 {
-            color: #4CAF50;
+            color: #FF7F0A;
         }
         h2 {
             color: #555555;
@@ -38,7 +38,7 @@
         }
         a.button {
             display: inline-block;
-            background-color: #4CAF50;
+            background-color: #FF7F0A;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
