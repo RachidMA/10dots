@@ -1191,13 +1191,4 @@ input[type = "file"]::-webkit-file-upload-button{
 .phone-link .phone-number   {
   font-size: larger;
 }
-
-
-/* TODO: NEED TO MAKE JOBS LIST RESUTL IMAGE FIT THE CONTAINER */
-.results_container  .job_result .img_div{
-  background-color: #FF7F0A ;
-  border: 3px solid rgba(0, 0, 0, 0.247);
-  overflow: hidden;
- 
-}
 /* ================================================== */
