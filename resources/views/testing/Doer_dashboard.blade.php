@@ -37,10 +37,10 @@
                                     <p class="card-text">Email: {{$doer->email}} </p>
                                 </div>
                                 <div class="info-2">
-                                    <p class="card-text">Address: {{$doer->jobs()->first()->address ? $doer->jobs()->first()->address: ""}}</p>
-                                    <p class="card-text">{{$doer->jobs()->first()->country}}, {{$doer->jobs()->first()->city}}</p>
+                                    <p class="card-text">Address: {{$doer->jobs()->first() ? $doer->jobs()->first()->address: ""}}</p>
+                                    <p class="card-text">{{$doer->jobs()->first()? $doer->jobs()->first()->country : ""}} {{$doer->jobs()->first()? $doer->jobs()->first()->city : ""}}</p>
                                     <div class="number-jobs">
-                                        <p>Total Jobs: {{count($doer->jobs()->get())}}</p>
+                                        <p>Total Jobs: {{$doer->jobs()->get()? count($doer->jobs()->get()) : 0}}</p>
                                     </div>
                                 </div>
                             </div>
