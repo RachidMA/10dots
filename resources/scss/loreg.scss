@@ -92,5 +92,9 @@
         background-color: white;
         color: $light_orange;
     }
+    input[type=submit] {
+        background-color: $ten_dot_orange;
+        color: white;
+    }
 }
 }
