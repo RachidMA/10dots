@@ -18,6 +18,7 @@ class JobsSeeder extends Seeder
         $categories = DB::table('categories')->pluck('name')->toArray();
         $countries = DB::table('countries')->pluck('id', 'name')->toArray();
         $faker = Faker::create();
+        $created_at = $faker->dateTimeBetween('-1 year', 'now'); // Generate a random date within the last year
 
 
         foreach ($userIds as $userId) {
@@ -37,8 +38,8 @@ class JobsSeeder extends Seeder
                 // Retrieve a random city based on the selected country ID
                 $city = DB::table('cities')->where('country_id', $countryId)->pluck('name')->random();
 
-                $priceMin = rand(10, 50); // Random minimum price
-                $priceMax = rand($priceMin + 100, $priceMin + 500); // Random maximum price
+                $price = rand(10, 50); // Random minimum price
+
 
                 DB::table('jobs')->insert([
                     'first_name' => $firstName,
@@ -49,11 +50,11 @@ class JobsSeeder extends Seeder
                     'city' => $city,
                     'job_title' => $category . ' job' . $i,
                     'description' => $description,
-                    'min_price' => $priceMin,
-                    'max_price' => $priceMax,
+                    'price' => $price,
                     'image_url' => 'https://example.com/' . $lastName . '-image.jpg',
                     'user_id' => $userId,
                     'category_id' => DB::table('categories')->where('name', $category)->value('id'),
+                    'created_id' => $created_at
                 ]);
             }
         }
