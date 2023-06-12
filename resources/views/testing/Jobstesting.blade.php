@@ -51,6 +51,7 @@
                 <p>{{ $job->country}}</p>
             </div>
             <p>2700 completed tasks | 188 Doers</p>
+            <h3>{{$job->price ? $job->price : 'No price set'}}</h3>
             <a href="{{ route('jobDetails', ['id' => $job->id]) }}">
                 <button class="job_button">Job Details</button>
             </a>
