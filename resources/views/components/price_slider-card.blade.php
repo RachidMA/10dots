@@ -26,18 +26,4 @@
         </div>
 
     </div>
-
-
 </form>
-
-
-<!-- <div class="slider-container">
-    <div class="inputs">
-        <label for="price-min">Min Price:</label>
-        <input type="text" id="price-min" name="price_min" readonly />
-
-        <label for="price-max">Max Price:</label>
-        <input type="text" id="price-max" name="price_max" readonly />
-    </div>
-    <div id="price-slider"></div>
-</div> -->

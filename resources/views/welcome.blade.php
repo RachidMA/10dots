@@ -98,7 +98,7 @@
 
 <div class="landing_row_5">
     <div class="orange_steps">
-        <h3 class = "why10dots">The 10 Dots Process is Easy!</h3>
+        <h3 class="why10dots">The 10 Dots Process is Easy!</h3>
         <div class="steps_div">
             <div class="step">
                 <span class="material-symbols-outlined">draw</span>

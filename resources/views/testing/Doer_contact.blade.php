@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="loreg_card">
+    <div class="big_circ_2"></div>
 <h1>Contact the Doer</h1>
 @if (\Session::has('success'))
     <div class="alert">
@@ -15,11 +16,12 @@
         <input type="hidden" name="job_id" value="{{ $jobId }}">
             
             <input type="text" name="name" id="name" required="required" placeholder="Your Name" />
-            <input type="email" name="email" id="email" placeholder="Email" required="required" />
-            <input type="phone" name="phone" id="phone" placeholder="Phone Number" />
-            <input type="date" name="date" id="date" />
+            <input type="email" name="email" id="email" required="required" placeholder="Email"  />
+            <input type="phone" name="phone" id="phone" required="required" placeholder="Phone Number" />
+            <input type="date" name="date" id="date" required="required" />
             <textarea name="message" id="message" placeholder="Your message here and I'll answer as soon as possible" required="required"></textarea>
-        <input type="submit" value="Send" />
+        
+            <input type="submit" value="Submit" />
     </form>
 </div>
 @endsection

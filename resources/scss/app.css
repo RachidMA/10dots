@@ -75,8 +75,23 @@
   width: fit-content;
   min-width: 50vw;
 }
-.landing_row_2 div {
+.landing_row_2 .Search_section {
   display: flex;
+}
+.landing_row_2 .country-city {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.landing_row_2 .country-city select {
+  width: 100%;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  margin-bottom: 2em;
+  width: 45%;
 }
 .landing_row_2 div label {
   width: -moz-fit-content;
@@ -94,7 +109,7 @@
   box-sizing: border-box;
   padding-left: 1em;
   min-height: 2em;
-  margin: 0 0.5em 2em 0.5em;
+  margin: 0 0 2em 0.5em;
 }
 .landing_row_2 input[type=submit] {
   background-color: #FF7F0A;
@@ -111,7 +126,6 @@
   min-width: fit-content;
   justify-self: flex-end;
   margin-left: auto;
-  margin-right: 0.5em;
   width: 30%;
 }
 
@@ -281,7 +295,7 @@
   background-color: #F5F5F5;
   width: 100vw;
   color: black;
-  padding: 1em;
+  padding: 0.5em 1em;
 }
 .navbar .logo {
   font-size: 24pt;
@@ -291,8 +305,19 @@
 }
 .navbar button {
   padding: 0;
+  margin: 0 0.5em;
+}
+.navbar .pfimg {
+  padding: 0;
+  justify-self: flex-end;
+}
+.navbar .navbar-toggler {
+  justify-self: flex-end;
 }
 .navbar .nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 1em;
   font-size: 14pt;
 }
@@ -305,6 +330,174 @@
 }
 .navbar .nav-item .dash {
   color: #FF7F0A;
+}
+
+.loreg_card {
+  background-color: #EBEBEB;
+  grid-column: 1/15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+.loreg_card .big_circ_2 {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 80vw;
+  min-width: 800px;
+  background-color: #EBEBEB;
+  position: absolute;
+  left: 40vw;
+  top: 15vh;
+  z-index: -10;
+  overflow: hidden;
+  background-color: #FF922E;
+  opacity: 0.9;
+  z-index: 10;
+}
+.loreg_card h2 {
+  font-size: 40pt;
+  text-align: center;
+  margin: 1em;
+  z-index: 20;
+}
+.loreg_card h2 span {
+  font-size: 24pt;
+}
+.loreg_card form {
+  z-index: 10;
+  width: 30%;
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.loreg_card form input {
+  width: 100%;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  margin-bottom: 2em;
+}
+.loreg_card form input::-moz-placeholder {
+  text-align: center;
+  position: relative;
+}
+.loreg_card form input::placeholder {
+  text-align: center;
+  position: relative;
+}
+.loreg_card form button {
+  background-color: #444444;
+  border-radius: 100px;
+  flex-basis: 50%;
+  border: none;
+  border: #444444 solid;
+}
+.loreg_card form button:hover {
+  background-color: #706E6E;
+  border: #706E6E solid;
+}
+.loreg_card form .forgot {
+  color: #444444;
+  flex-basis: 50%;
+}
+.loreg_card form select {
+  width: 100%;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  margin-bottom: 2em;
+}
+.loreg_card form .country-city {
+  width: 100%;
+}
+.loreg_card form textarea {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 2em;
+}
+.loreg_card form .updateButton {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  color: #FF922E;
+}
+
+.price-slider {
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.price-slider form {
+  height: 100%;
+}
+.price-slider form input {
+  min-width: 40px;
+}
+.price-slider form .wrapper-price {
+  padding-top: 4em;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.results_container {
+  grid-column: 5/12;
+  margin-top: 2em;
+}
+.results_container .categories {
+  padding: 0;
+  display: none;
+}
+.results_container .job_result {
+  box-shadow: 0 5px 3px #B8B6B6;
+  background-color: #D9D9D9;
+  box-sizing: border-box;
+  padding: 2.5em;
+  border-radius: 1em;
+  margin-top: 2em;
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+}
+.results_container .job_result .img_div {
+  background-color: aqua;
+  width: 50%;
+}
+.results_container .job_result .img_div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.results_container .job_result a {
+  align-self: center;
+}
+.results_container .job_result a .job_button {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 100%;
+}
+.results_container .job_result .cat_info {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .container {
