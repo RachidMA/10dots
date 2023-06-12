@@ -40,7 +40,6 @@
 <div class="landing_row_3">
 
     <h3>Why 10 dots?</h3>
-    <h3>Get started</h3>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas eum consectetur nostrum. Odit velit sint iure dolorem eaque impedit non at? Dolorem hic quaerat, ad possimus consequuntur dicta animi placeat, optio repellendus officiis commodi distinctio voluptate inventore modi autem eius veritatis quae quam doloremque ipsum totam expedita? Dicta nemo itaque, eos officia voluptatum ipsa architecto exercitationem placeat? Harum, sed quam!</p>
     <div class="helpout">
         <h4>Want to help out instead?</h4>
@@ -48,36 +47,8 @@
     </div>
 </div>
 <div class="landing_row_4">
-    <h3>Top Doers</h3>
-    @if($featuredJobs)
-    @foreach($featuredJobs as $job_review)
-    <div class="landing_category">
-        <div class="cat_img">
-            <img src="/images/{{$job_review[0]->job->image_url ? $job_review[0]->job->image_url : 'default-image.jpg'}}" alt="">
-        </div>
-        <div class="cat_info">
-            <h4>
-                {{$job_review[0]->job->category->name}}
-            </h4>
-            <h6>{{$job_review[0]->job->job_title}}</h6>
-            <div class="rating">
-                <div class="rate">
-                    <input type="radio" id="star5_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="5" {{ $job_review[0]->rating == 5 ? 'checked' : '' }} />
-                    <label for="star5_{{ $job_review[0]->job->id }}" title="text">5 dots</label>
-
-                    <input type="radio" id="star4_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="4" {{ $job_review[0]->rating == 4 ? 'checked' : '' }} />
-                    <label for="star4_{{ $job_review[0]->job->id }}" title="text">4 dots</label>
-
-                    <input type="radio" id="star3_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="3" {{ $job_review[0]->rating == 3 ? 'checked' : '' }} />
-                    <label for="star3_{{ $job_review[0]->job->id }}" title="text">3 dots</label>
-
-                    <input type="radio" id="star2_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="2" {{ $job_review[0]->rating == 2 ? 'checked' : '' }} />
-                    <label for="star2_{{ $job_review[0]->job->id }}" title="text">2 dots</label>
-
-                    <input type="radio" id="star1_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="1" {{ $job_review[0]->rating == 1 ? 'checked' : '' }} />
-                    <label for="star1_{{ $job_review[0]->job->id }}" title="text">1 dot</label>
     <div class="top_tasks">
-        <h3>Top tasks</h3>
+        <h3>Top Doers</h3>
     </div>
     <div class="main-list">
         @if($featuredJobs)
@@ -127,7 +98,7 @@
 
 <div class="landing_row_5">
     <div class="orange_steps">
-        <h3 class = "why10dots">The 10 Dots Process is Easy!</h3>
+        <h3 class="why10dots">The 10 Dots Process is Easy!</h3>
         <div class="steps_div">
             <div class="step">
                 <span class="material-symbols-outlined">draw</span>

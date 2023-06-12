@@ -9,7 +9,9 @@ use App\Models\Category;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Review;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class JobController extends Controller
 {
@@ -95,11 +97,13 @@ class JobController extends Controller
     //RACHID:GET THE PRICE RANGE
     public function searchByPrice(Request $request)
     {
+
         // dump($request->all());
         $city = $request->city;
         $job = $request->job;
         $min_price = $request->min_price;
         $max_price = $request->max_price;
+
 
         $categories = Category::whereHas('jobs', function ($query) use ($city) {
             $query->where('city', '=', $city);
@@ -111,6 +115,8 @@ class JobController extends Controller
 
         $filteredResults = [];
         if ($min_price !== null && $max_price !== null) {
+            //SAVE MIN-PRICE AND MAX-PRICEE IN THE SESSION
+
             foreach ($searchResult as $result) {
                 if ($result->price >= $min_price && $result->price < $max_price) {
                     $filteredResults[] = $result;
