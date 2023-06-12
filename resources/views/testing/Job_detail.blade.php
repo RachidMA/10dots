@@ -7,7 +7,7 @@
     <div class="doer-job-details">
         <div class="doer-job-details-card">
             <div class="job-image job-image-guest">
-                <img class="card-img-top" src=" /images/{{$job->image_url}}" alt="Card image cap">
+                <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'job_default.png'}}" alt="Card image cap">
             </div>
             <div class="job-informations">
                 <div class="job-title">
