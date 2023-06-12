@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="loreg_card">
-
+<div class = "big_circ_2"></div>
 <h1>Update your details</h1></br>
   <form action="{{ route ('updateJob', [ 'id'=>$job->id ]) }}" method="POST" enctype="multipart/form-data">
     @csrf
