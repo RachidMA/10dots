@@ -12,7 +12,7 @@
             margin: 0;
         }
         .card {
-            background-color: #9F9F9F;
+            background-color: #ffffff;
             box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             max-width: 500px;
@@ -37,7 +37,7 @@
         }
         a.button {
             display: inline-block;
-            background-color: #4CAF50;
+            background-color: #FF7F0A;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -93,10 +93,10 @@
 </head>
 <body>
     <div class="card">
-        <h1>Booking in Progress</h1>
+        <h1>You have booked a doer</h1>
 
         <p>Hello,</p>
-        <p>Thank you for contacting us. We have received your message and will get back to you as soon as possible.</p>
+        <p>Thank you for booking a doer with us. We have received your message and will get back to you as soon as possible.</p>
 
         <h2>Message Details:</h2>
         <ul>

@@ -23,7 +23,7 @@
             text-align: center;
         }
         h1 {
-            color: #4CAF50;
+            color: #FF7F0A;
         }
         h2 {
             color: #555555;
@@ -37,7 +37,7 @@
         }
         a.button {
             display: inline-block;
-            background-color: #4CAF50;
+            background-color: #FF7F0A;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -65,9 +65,8 @@
 </head>
 <body>
     <div class="card">
-    <h1>Contact 10dots</h1>
+    <h1>Hi there,</h1>
 
-    <p>Hello,</p>
     <p>Thank you for contacting us. We have received your message and will get back to you soon.</p>
 
     <h2>Details:</h2>
