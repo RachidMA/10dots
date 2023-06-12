@@ -38,6 +38,14 @@
     }
 }
 
+.why10dots {
+    text-align: center;
+    justify-content: center;
+    padding-top: 60pt;
+    padding-bottom: 5pt;
+    font-size: 32pt;
+}
+
 .landing_row_2 {
     @include landing_row;
     padding: 0;

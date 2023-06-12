@@ -3,8 +3,9 @@
 @section('content')
 
 <div class="loreg_card">
-
+<div class = "big_circ_2"></div>
 <h1>Update your details</h1></br>
+  <div class="big_circ_2"></div>
   <form action="{{ route ('updateJob', [ 'id'=>$job->id ]) }}" method="POST" enctype="multipart/form-data">
     @csrf
 
@@ -95,7 +96,7 @@
     <label for="price">Price Per Hour:</label>
     <input type="number" id="price" name="price" placeholder="price" value="{{ $job->price }}"><br><br>
 
-    <button type="submit" class = "updateButton">Submit Changes</button>
+    <input type="submit" placeholder="submit"></input>
 
   </form>
 </div>
