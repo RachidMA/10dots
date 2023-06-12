@@ -6,7 +6,7 @@
 
 <div class=" category" id="{{$job->id}}">
     <div class="cat_img job-image">
-        <img class="card-img-top" src=" /images/{{$job->user->profile_image}}" alt="Card image cap">
+        <img class="card-img-top" src=" /images/{{$job->user->profile_image? $job->user->profile_image: 'default.jpg'}}" alt="Card image cap">
     </div>
     <div class="cat_info">
         <div class="job-informations">
@@ -35,7 +35,7 @@
         </div>
         <div class="contacts-link">
             <div class="phone-link">
-                <a href="tel:{{ $job->phone }}" class="phone-number"><span><i class="fa-solid fa-phone fa-shake" style="color: black;"></i></span>CALL-ME</a>
+                <a href="tel:{{ $job->phone }}" class="phone-number"><span><i class="fa-solid fa-phone fa-shake" style="color: white;"></i></span>CALL-ME</a>
             </div>
             <div class="contact-me">
                 <!-- //Jean=== -->
