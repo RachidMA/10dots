@@ -38,7 +38,7 @@
     </form>
 </div>
 <div class="landing_row_3">
-    <h3>Get started</h3>
+    <h3>Why 10 dots?</h3>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas eum consectetur nostrum. Odit velit sint iure dolorem eaque impedit non at? Dolorem hic quaerat, ad possimus consequuntur dicta animi placeat, optio repellendus officiis commodi distinctio voluptate inventore modi autem eius veritatis quae quam doloremque ipsum totam expedita? Dicta nemo itaque, eos officia voluptatum ipsa architecto exercitationem placeat? Harum, sed quam!</p>
     <div class="helpout">
         <h4>Want to help out instead?</h4>
@@ -46,7 +46,7 @@
     </div>
 </div>
 <div class="landing_row_4">
-    <h3>Top tasks</h3>
+    <h3>Top Doers</h3>
     @if($featuredJobs)
     @foreach($featuredJobs as $job_review)
     <div class="landing_category">
@@ -91,25 +91,25 @@
 </div>
 
 <div class="landing_row_5">
-    <h3>The 10 Dots Process is easy</h3>
     <div class="orange_steps">
+        <h3 class = "why10dots">The 10 Dots Process is Easy!</h3>
         <div class="steps_div">
             <div class="step">
                 <span class="material-symbols-outlined">draw</span>
-                <h4>sign up</h4>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis reprehenderit culpa esse quibusdam suscipit corrupti molestias labore ut eius?</P>
+                <h4>Sign Up</h4>
+                <P>Join 10 dots today and start earning money doing the things you already do! Or need help with a certain task? Book a Doer in your area.</P>
                 <span class="material-symbols-outlined">Counter_1</span>
             </div>
             <div class="step">
                 <span class="material-symbols-outlined">group_add</span>
                 <h4>Book a Doer</h4>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis reprehenderit culpa esse quibusdam suscipit corrupti molestias labore ut eius?</P>
+                <P>Search for an available Doer in your area and schedule an appointment. We have people all over the world ready to help in a wide range of categories.</P>
                 <span class="material-symbols-outlined">Counter_2</span>
             </div>
             <div class="step">
                 <span class="material-symbols-outlined">grain</span>
-                <h4>Give your Dots</h4>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis reprehenderit culpa esse quibusdam suscipit corrupti molestias labore ut eius?</P>
+                <h4>Give Your Dots</h4>
+                <P>After your task has been completed, leave your Doer an honest review. This helps our Doers earn commission and our Users find the best help in their area.</P>
                 <span class="material-symbols-outlined">Counter_3</span>
             </div>
         </div>
