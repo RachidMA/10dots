@@ -11,7 +11,7 @@
             </div>
             <div class="job-informations">
                 <div class="job-title">
-                    <h3 class="title">Job Title: {{ $job->job_title }}</h3>
+                    <h3 class="title">{{ $job->job_title }}</h3>
                 </div>
                 <div class="job-info-text">
                     <p>{{ $job->first_name }} {{ $job->last_name }}</p>

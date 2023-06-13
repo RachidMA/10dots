@@ -3,19 +3,6 @@
 @section('title', 'content')
 
 @section('content')
-
-    @if(session('success'))
-    <div class="success-message message" id="successMessage">
-        <strong>Success! </strong>{{session('success')}}
-        <button type="button" class="close-success close-button">X</button>
-    </div>
-    @elseif(session('error'))
-    <div class="error-message message" id="errorMessage">
-        <strong>Error! </strong>{{session('error')}}
-        <button type="button" class="close-error close-button">X</button>
-    </div>
-    @endif
-
 <div class="dash_profile">
     <div class="doer_image">
         <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="">
