@@ -28,7 +28,7 @@ class DoerContactController extends Controller
         'email' => 'required|email',
         'message' => 'required|string',
         'date' => 'required|date',
-        'job_id' => 'required|exists:jobs,id', // Add validation for job_id
+        'job_id' => 'required|exists:jobs,id', 
     ]);
 
     $name = $request->input('name');
@@ -49,7 +49,7 @@ class DoerContactController extends Controller
     $contact->date = $date;
     $contact->save();
 
-    $job = Job::find($jobId); // Fetch the job from the database
+    $job = Job::find($jobId); 
 
     $mail = new ContactDoer($job->job_title, $name, $phone, $email, $message, $date, $jobId);
 
