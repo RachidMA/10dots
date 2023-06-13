@@ -24,29 +24,39 @@
     }
     .job_result {
         @include card;
-        margin-top: 2em;
+        height: fit-content;
+        min-height: 100px;
+        margin-bottom: 2em;
         display: flex;
         padding:0;
         overflow: hidden;
+        border: none;
+        *{
+            margin: 0;
+        }
+        p {
+           line-height: 2;
+        }
         .img_div {
-            background-color: aqua;
-            width: 50%;
+            // background-color: aqua;
             img{
                 object-fit: cover;
+                height: 100%;
+                width: 100%;
             }
         }
         a{
             align-self: center;
             .job_button {
                 @include orange_button;
-                width: 100%;
+                margin-top: 1em;
             }
         }
         .cat_info {
             padding: 1em;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             width: 100%;
         }
     }
