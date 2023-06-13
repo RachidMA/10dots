@@ -103,7 +103,9 @@ class JobController extends Controller
         $job = $request->job;
         $min_price = $request->min_price;
         $max_price = $request->max_price;
-
+        // Store the selected prices in the session
+        session()->put('min_price', $min_price);
+        session()->put('max_price', $max_price);
 
         $categories = Category::whereHas('jobs', function ($query) use ($city) {
             $query->where('city', '=', $city);

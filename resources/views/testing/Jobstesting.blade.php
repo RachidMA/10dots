@@ -40,17 +40,16 @@
     @foreach($searchResult as $job)
     <div class="job_result" id="{{$job->id}}">
         <div class="img_div">
-            <img class="card-img-top" src="/images/{{$job->image_url ? $job->image_url:'job_default.png'}}" alt="Card image cap">
+            <img class="" src="/images/{{$job->image_url ? $job->image_url:'job_default.png'}}" alt="Card image cap">
         </div>
         <div class="cat_info">
             <h2>{{ $job->job_title }}</h2>
             <p>name: {{$job->first_name}} {{$job->last_name}}</p>
-            <div class="">
-                <p>{{ $job->address}}</p>
-                <p>{{ $job->city}}</p>
-                <p>{{ $job->country}}</p>
-            </div>
+            <p>{{ $job->address}}</p>
+            <p>{{ $job->city}}</p>
+            <p>{{ $job->country}}</p>
             <p>2700 completed tasks | 188 Doers</p>
+            <h3>{{$job->price ? $job->price : 'No price set'}}</h3>
             <a href="{{ route('jobDetails', ['id' => $job->id]) }}">
                 <button class="job_button">Job Details</button>
             </a>

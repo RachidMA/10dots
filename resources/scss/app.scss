@@ -41,6 +41,7 @@ $grey06: #444444;
 
 @mixin card {
     box-shadow: 0 5px 3px $grey03;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
     background-color: $grey02;
     box-sizing: border-box;
     padding: 2.5em;
@@ -65,6 +66,8 @@ $grey06: #444444;
 @import 'nav';
 @import 'loreg';
 @import 'search_result';
+@import 'dashboard';
+@import 'job_details';
 
 
 
