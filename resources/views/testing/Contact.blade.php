@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-
-
 <div class="loreg_card">
     <div class="big_circ_2"></div>
 <h1>Hello, how can we help you?</h1>
@@ -14,9 +11,11 @@
         <a href="{{ route('homepage') }}" class="btn btn-primary">Home</a>
     </div>
 @endif
+
 <form action="{{ route('contact.store') }}" method="POST" class="contact-us">
 @csrf
 <div class="formInput">
+
     <input type="text" id="name" type="text" name="name" placeholder="Name" required="required">
     @if ($errors->has('name'))
         <div class="error">
@@ -32,13 +31,13 @@
         @endif
 
     <textarea name="message" id="message" placeholder="Your message here and I'll answer as soon as possible" required="required"></textarea>
-
     @if ($errors->has('message'))
         <div class="error">
             {{ $errors->first('message') }}
         </div>
         @endif
     </div>
+
     <input type="submit" value="Submit" id="input-submit">
 </form>
 </div>
