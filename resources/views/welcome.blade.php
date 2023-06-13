@@ -2,8 +2,6 @@
 
 @section('content')
 <div id="big_circ"></div>
-
-
 <div class="landing_row_1">
 
     <div class="welcome_div">
@@ -20,20 +18,10 @@
             <input type="text" id="job" name="job" placeholder="cleaner, plumber, baby-sitter"><br>
         </div>
 
-        <!-- <div>
-            <label for="country">in</label>
-            <input type="text" id="country" name="country" placeholder="Country">
-
-
-            <label for="city">in this city:</label>
-            <input type="text" id="city" name="city" placeholder="City"><br>
-        </div> -->
         <x:testing-components.countries_cities-card :countries='$countries' />
 
         <div class="Search_section">
-            <!-- <span class="material-symbols-outlined"> -->
             <input type="submit" value="search">
-            <!-- </span> -->
         </div>
     </form>
 </div>

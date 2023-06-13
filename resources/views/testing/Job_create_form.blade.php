@@ -34,10 +34,9 @@
     @error('address')
     <div class="error-message" style="color: red;">{{$message}}</div>
     @enderror
-    <!-- RACHID:COUNTRIES AND CITIES DROPDOWN -->
+
     <x:testing-components.countries_cities-card :countries='$countries' />
 
-    <!-- //RACHID: ADDED CATEGORIES LIST -->
     <select name="category" id="categories">
       <option value="">Select Category</option>
       @foreach ($categories as $category)

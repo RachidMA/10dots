@@ -2,12 +2,6 @@
 
 @section('content')
 
-<!-- If 0 result from seach bar -->
-<!-- But please fix it bcoz I get error cant display this for the moment -->
-
-<!-- IMPORT SESSION -->
-
-<!-- Access Denied Alert -->
 @if(session('error'))
 <div class="container alert alert-danger alert-dismissible fade show w-50">
     <strong>Error!</strong> {{session('error')}}.
@@ -15,7 +9,6 @@
 </div>
 @endif
 
-<!-- This is the search result from the search bar -->
 <div class="price-slider">
     <x:price_slider-card :job='$job' :city='$city' />
 </div>
@@ -23,7 +16,7 @@
 <div class="results_container">
     <h3>Search results in your area</h3>
     <ul class="categories">
-        <!-- Assuming this code is within your Blade template -->
+
         @foreach ($categories as $category)
         <h2>{{ $category->name }} jobs:</h2>
         <ul>
@@ -35,7 +28,7 @@
         </ul>
         @endforeach
     </ul>
-    <!-- Assuming this code is within your Blade template -->
+
     @if($searchResult !== null && count($searchResult) > 0)
     @foreach($searchResult as $job)
     <div class="job_result" id="{{$job->id}}">

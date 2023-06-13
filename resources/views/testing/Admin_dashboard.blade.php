@@ -4,11 +4,10 @@
 
 @section('content')
 
-<!-- RACHID:ADMIN DASHBOARD -->
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-4">
-            <!-- Profile Container -->
             <div class="card image-card">
                 <div class="card-body">
                     <h5 class="card-title">Profile:</h5>
@@ -37,7 +36,6 @@
             </div>
         </div>
         <div class="col-md-8 admin-info">
-            <!-- Search Form Container -->
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Search Form</h5>
@@ -46,7 +44,6 @@
                         <div class="doer-email">
                             <label for="email">Email</label>
                             <input type="email" class="custom-input input" name="email" id="email" placeholder="Enter email" value="{{$doer_email}}">
-                            <!-- <input type="email" name="email" id="email" placeholder="hello"> -->
                         </div>
                         <button type="submit" class="btn mt-4">Search</button>
                     </form>

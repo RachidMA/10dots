@@ -3,9 +3,6 @@
     <div class="image">
         <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="image-profile">
     </div>
-    <!-- REUSE THIS FORM TO UPLOAD JOB IMAGE 
-    IS BETTER TO HAVE USER UPLOAD IMAGE AFTER JOB IS CREATED NOT WHEN HE IS CREATING THE JOB
-    JUST MINIMIZE ISSUES -->
     <div class="upload">
         <form action="{{route('store-avatar')}}" method="POST" enctype="multipart/form-data" id="image-upload">
             @csrf
