@@ -1,12 +1,10 @@
 @extends('layout.layout')
 
 @section('content')
+
 <div class="loreg_card">
 <div class="big_circ_2"></div>
-
 <h2>register</h2>
-
-
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -35,7 +33,6 @@
         @enderror
 
         <input placeholder ="password confirm"id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-
 
         <button type="submit" class="register btn btn-primary">
                     {{ __('Register') }}
