@@ -1,10 +1,6 @@
 /*RACHID: DOER DASHBOARD */
 
 /* RACHID:ADD MESSAGE SECTION IN MAIN WELCOME PAGE */
-/* #successMessages{
-  background-color: red;
-  background-color: blue;
-} */
 .success-message, .error-message {
   position: relative;
   padding: 0.75rem 1.25rem;
@@ -13,6 +9,7 @@
   border-radius: 0.25rem;
   width: 50%;
   margin: 0 auto;
+  background-color: red;
 }
 
 .success-message {
@@ -201,6 +198,14 @@
   width: 17rem;
 }
 
+.dash_profile {
+  position: relative;
+  padding: 1rem;
+}
+.dash_profile .upload{
+  position: absolute;
+}
+
 /* ADMIN DASHBOARD PROFILE IMAGE */
 .image-card {
   background-color: rgba(128, 128, 128, 0.055);
@@ -210,7 +215,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .image-card .admin-image{
   
@@ -1096,7 +1100,7 @@ input[type = "file"]::-webkit-file-upload-button{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
 }
 
@@ -1104,7 +1108,19 @@ input[type = "file"]::-webkit-file-upload-button{
   position: absolute;
   right: 1rem;
 }
+.contacts-link .email-me{
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  margin: 0 2rem;
+  background-color: #45a049;
+  color: white;
+}
 
+.contacts-link .email-me:hover{
+  color: black;
+  text-decoration: underline;
+}
 .phone-link a {
   padding: 0;
   background-color: whitesmoke;
@@ -1121,7 +1137,7 @@ input[type = "file"]::-webkit-file-upload-button{
 }
 
 .phone-link .phone-number   {
-  font-size: larger;
+  font-size: 1.2rem;
 }
 /* ================================================== */
 /* RACHID:ADD STYLE ABOUT US PAGE CARD */
@@ -1365,7 +1381,6 @@ right: 4rem;
     .landing_category{
       background-color: blue;
       width: 20rem;
-    
     }
     .modal-content {
       width: 70%;
@@ -1432,7 +1447,29 @@ right: 4rem;
     height: 25rem;
     width: 100%;
   }
+
+  /* Style job details page for customer, doer, admin */
+  .job-informations{
+    width: 100%;
+    height: 100%;
+    text-align: start;
+  }
+  .doer-job-details-card{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .doer-job-details-card .job-image-guest{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
   
+  .doer-job-details-card .job-detail-button{
+    width: 30rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
 }
 @media (max-width: 580px) {
 .landing_row_3{
@@ -1500,5 +1537,38 @@ right: 4rem;
   background-color: red;
   height: 25rem;
   width: 100%;
+}
+
+ /* Style job details page for customer, doer, admin */
+ .job-info-text{
+  width: 20rem;
+ }
+ .job-informations{
+  width: 100%;
+  height: 100%;
+  text-align: start;
+}
+.doer-job-details-card{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.doer-job-details-card .job-image-guest{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.doer-job-details-card .job-detail-button{
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.job-detail-button a {
+  margin-left: 0;
+}
+.job-detail-button a , .job-detail-button button {
+  width: 35%;
 }
 }
