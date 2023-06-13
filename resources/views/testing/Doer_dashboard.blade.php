@@ -3,13 +3,7 @@
 @section('title', 'content')
 
 @section('content')
-    <!-- Success message -->
-    <!-- @if(session('message'))
-    <div class="container alert alert-success alert-dismissible fade show w-50">
-        <strong>Success!</strong> {{session('message')}}.
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-    @endif -->
+
     @if(session('success'))
     <div class="success-message message" id="successMessage">
         <strong>Success! </strong>{{session('success')}}
@@ -21,7 +15,7 @@
         <button type="button" class="close-error close-button">X</button>
     </div>
     @endif
-    <!-- Profile Container -->
+
 <div class="dash_profile">
     <div class="doer_image">
         <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="">
@@ -48,7 +42,7 @@
     <p class="card-text">{{$doer->jobs()->first()? $doer->jobs()->first()->country : ""}} {{$doer->jobs()->first()? $doer->jobs()->first()->city : ""}}</p>
     <p>Total Jobs: {{$doer->jobs()->get()? count($doer->jobs()->get()) : 0}}</p>
 </div>
-<!-- ============ -->
+
 @if($jobs !== null && count($jobs) > 0)
 
 <div class="results_container">
@@ -64,7 +58,7 @@
             <p>
                 2700 completed tasks | 188 Doers
             </p>
-            <!-- JEAN -->
+
             <a href="{{ route('doer-job-details', ['id' => $job->id]) }}">
                 <button class="job_button">Job Details</button>
             </a>

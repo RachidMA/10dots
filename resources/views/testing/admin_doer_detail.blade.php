@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="card-deck" id="card-deck">
-    <!-- ============ -->
     @if($job && $doer)
     <x:testing-components.job-preview-card :job="$job" :doer="$doer" />
     @else
@@ -12,10 +11,6 @@
         <p>No Doer results found.</p>
     </div>
     @endif
-
-    <!-- ============ -->
-
 </div>
-
 
 @endsection
