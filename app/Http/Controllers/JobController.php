@@ -16,15 +16,6 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 class JobController extends Controller
 {
 
-    // JEAN: This is the view of my search job form! Please do not delete
-    // public function showForm(){
-    //     return view('testing.Job_search_form');
-    // }
-    // JEAN: This is the view of my search job form! Please do not delete
-    public function showForm()
-    {
-        return view('testing.Job_search_form');
-    }
     public function search(Request $request)
     {
         $info = [
@@ -93,16 +84,17 @@ class JobController extends Controller
                 ->with(['searchResult' => $searchResult, 'categories' => $categories, 'city' => $city, 'job' => $job]);
         }
     }
-    //RACHID:THIS FUNCTION WILL FETCH JOBS BASED ON PRICE FILTER FOR THE SECOND RESULTS
-    //RACHID:GET THE PRICE RANGE
+
+    //GET THE PRICE RANGE
     public function searchByPrice(Request $request)
     {
 
-        // dump($request->all());
+
         $city = $request->city;
         $job = $request->job;
         $min_price = $request->min_price;
         $max_price = $request->max_price;
+
         // Store the selected prices in the session
         session()->put('min_price', $min_price);
         session()->put('max_price', $max_price);
@@ -117,7 +109,6 @@ class JobController extends Controller
 
         $filteredResults = [];
         if ($min_price !== null && $max_price !== null) {
-            //SAVE MIN-PRICE AND MAX-PRICEE IN THE SESSION
 
             foreach ($searchResult as $result) {
                 if ($result->price >= $min_price && $result->price < $max_price) {
@@ -143,43 +134,32 @@ class JobController extends Controller
     //JEAN ==== THIS IS FOR THE CUSTOMER TO VIEW THE JOB DETAILS FROM SEARCH RESULT AND SUGGESTED JOBS
     public function jobDetails(Request $request)
     {
-        //RACHID:ADD FETCH JOB REVIEWS
         $reviews = Review::where('job_id', $request->id)->get();
         if ($reviews) {
             //count how many reviews job has
             $reviewsCount = count($reviews);
         }
-        // dd($reviews);
+
         $job = Job::find($request->id);
-        return view('testing.Job_detail',  ['job' => $job, 'reviews' => $reviews, 'reviewsCount' => $reviewsCount]); //JEAN: for testing purpose only
+        return view('testing.Job_detail',  ['job' => $job, 'reviews' => $reviews, 'reviewsCount' => $reviewsCount]);
     }
 
-    // //RACHID:GET THE PRICE RANGE
-    // public function searchByPrice(Request $request)
-    // {
-
-    //     dd('price range', $request->all());
-    // }
-
-    //RACHID:CREATE JOB BY AUTHENTICATED USER
+    //CREATE JOB BY AUTHENTICATED USER
     public function createJob(Request $request)
     {
         //fetch all existing job categories
         $categories = Category::all();
         $countries = Country::all();
 
-        // TODO: FETCH COUNTRIES AND PASS THEM WITH VIEW FOR COUNTRIES DROPDOWN FIELD
-
-        //return create job form
         return view('testing.job_create_form')->with(['categories' => $categories, 'countries' => $countries]);
     }
-    //RACHID:STORE JOB BY AUTHENTICATED USER
+
+    //STORE JOB BY AUTHENTICATED USER
     public function storeJob(Request $request)
     {
-        //RACHID:ADD FETCHING USER
+        //ADD FETCHING USER
         $doer = Auth::user();
 
-        //Validate form data
         $request->validate([
             'first_name' => ['required'],
             'last_name' => ['required'],
@@ -197,10 +177,6 @@ class JobController extends Controller
         //GET DATA FROM REQUEST AFTER IT PASSES VALIDATION 
         $job_data = $request->all();
 
-        // ///Get the category_id based on category name(We use this method because we need to include category name in error message)
-        // $category_id = Category::where('name', $job_data['category']);
-
-
         //Check if we have uploaded image
         if ($image = $request->file('image_url')) {
             //Get File Name With Extension
@@ -214,8 +190,6 @@ class JobController extends Controller
             $job_data['image_url'] = 'default.jpg';
         }
 
-
-        //STORE THE DATA INTOR DATABASE
         Job::insert([
             'first_name' => $job_data['first_name'],
             'last_name' => $job_data['last_name'],
@@ -231,17 +205,14 @@ class JobController extends Controller
             'category_id' => $job_data['category'],
         ]);
 
-        // dd('ALL INPUTS FROM FORM', $job_data);
+        //Update doer dashboard with new list of created jobs
         $doer_jobs = $doer->jobs;
 
-        // RACHID:MODEFY THE RETURN FROM VIEW TO REDIRECT SO WE CAN DISPLAY SUCCESS AND ERROR MESSAGES
         return redirect()->route('doer-dashboard', ['id' => $doer->id])->with([
             'success' => 'The job was successfully created',
             'doer' => $doer,
             'jobs' => $doer_jobs
         ]);
-
-        // return redirect('site.userDashoard')->with('success', 'Job created successfully');
     }
 
     //RACHID: DIRECT TO DOER DASHBOARD
@@ -249,13 +220,12 @@ class JobController extends Controller
     {
         //THIS WILL GET THE AUTHENTICATED USER OBJECT
         $user = auth()->user();
-        //GET DOER ID FROM REUEST
         $doer_id = auth()->id();
         $profile_image = auth()->user()->profile_image;
 
         //FETCH JOBS THAT THE DOER CREATE FROM DATABASE 
         $jobs = Job::where('user_id', $doer_id)->get();
-        // dd($jobs);
+
         if (!$jobs) {
             return view('testing.Doer_dashboard')->with("message", "You do not have created job yet. press create to start");
         }
@@ -263,7 +233,7 @@ class JobController extends Controller
         return view('testing.Doer_dashboard', ['jobs' => $jobs, 'profile_image' => $profile_image, 'doer' => $user]);
     }
 
-    //RACHID:ADD FUNCTION TO STORE UPLOADED JOB IMAGE
+    //ADD FUNCTION TO STORE UPLOADED JOB IMAGE
     public function uploadJobImage(Request $request)
     {
         //FIND THE JOB 
@@ -290,21 +260,6 @@ class JobController extends Controller
             ]);
     }
 
-    //RACHID: THIS FUNCTION COULD BE USED TO FETCH JOBS RESULT
-    //BASED ON JOB TITLE COUNTRY AND CITY
-    //THIS FUNTION STILL NEED TO ADD CONDITIONS TO THE SEARCH QUERY
-    // DELETE THIS FUNCTION
-    public function jobs(Request $request)
-    {
-        $jobId = Job::all()->take(10);
-
-        return view('testing.jobs_all_test')->with('jobs', $jobId);
-    }
-
-    //RACHID: THIS FUNCTION WILL BE MODIFIED TO 
-    //USED IN FETCHING A JOB BASED ON JOB ID
-    //FOR DOER OR USER OR ADMIN(CONDITION ON ROLE)
-
     //Jean============//
     public function showJobDetailsCreator($id)
     {
@@ -315,23 +270,12 @@ class JobController extends Controller
         }
     }
 
-    //RACHID: THIS FUNCTION WILL BE DELETED LATER
-    public function list(Request $request)
-    {
-        $jobs = Job::all();
-        return view('testing.Job_delete_form')->with('doers', $jobs);
-        $jobs = Job::all();
-        return view('testing.Job_edit_form')->with('doers', $jobs);
-    }
-
-    //RACHID:THIS FUNCTION COULD BE USED TO FETCH A JOB 
-    //BY ID TO POPULATE EDIT FORM(AUTHENTICATED DOER ONLY)
+    //POPULATE EDIT FORM(AUTHENTICATED DOER ONLY)
     public function editJob($id)
     {
         $countries = Country::all();
-        //GET CATEGORIES
         $categories = Category::all();
-        //FIND THE JOB
+
         $job = Job::find($id);
         if ($job) {
             //RETURN THE FORM
@@ -339,6 +283,7 @@ class JobController extends Controller
         }
     }
 
+    //UPDATE JOB WITH NEW ENTERED DATA
     public function updateJob(Request $req)
     {
         //Validate form data
@@ -368,10 +313,10 @@ class JobController extends Controller
         $data->updated_at = now();
         $data->save();
 
-        //RACHID:GET THE DOER PROFILE AND HIS JOBS
+        //GET THE DOER PROFILE AND HIS JOBS
         $doer = Auth::user();
 
-        // RACHID:MODEFY THE RETURN FROM UPDATED JOB FUNCTION TO DISPLAY SUCCESS MESSAGE
+        // MODIFY THE RETURN FROM UPDATED JOB FUNCTION TO DISPLAY SUCCESS MESSAGE
         return redirect()
             ->route('doer-dashboard', ['id' => $doer->id])
             ->with([
@@ -379,7 +324,7 @@ class JobController extends Controller
             ]);
     }
 
-    //RACHID WILL KEEP THIS FUNCTION
+    //FUNCTION TO HANDLE JOB DELETE
     public function delete(Request $request)
     {
         $data = Job::find($request->id);
@@ -395,20 +340,4 @@ class JobController extends Controller
                 'error' => 'Job Was successfully Deleted'
             ]);
     }
-
-
-    //RACHID: This method handles the api call for fetching cities RACHID===================
-    //for specific country
-    // public function getCities(Request $request)
-    // {
-
-    //     $country_id = $request->country_id;
-    //     $cities = City::where('country_id', $country_id)->get();
-
-    //     // TODO: ORDER THE CITIES LIST alphabetically
-    //     if (empty($cities)) {
-    //         return response()->json(['error' => 'No cities found.'], 404);
-    //     }
-    //     return response($cities);
-    // }
 }
