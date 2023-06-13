@@ -37,7 +37,6 @@
     @enderror
     <br><br>
 
-    <!-- RACHID:COUNTRIES AND CITIES DROPDOWN -->
     <div class="country-city">
       <div>
         <label for="country">Country</label>
@@ -64,7 +63,6 @@
       <br><br>
     </div>
 
-    <!-- //RACHID: ADDED CATEGORIES LIST -->
     <div>
       <label for="categories">Category:</label>
       <select name="category" id="categories">
