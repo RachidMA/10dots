@@ -75,8 +75,10 @@
         </div>
         @endforeach
 
+        @elseif(empty($featuredJobs))
+        <h5>No Jobs. Please reload the page</h5>
         @else
-        <h5>No Jobs</h5>
+        <h5>No Jobs.</h5>
         @endif
 
     </div>

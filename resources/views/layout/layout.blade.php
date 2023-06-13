@@ -40,24 +40,6 @@
 
 <body>
     <div class="css_container">
-        <!-- IMPORT SESSION -->
-        <!-- @php
-        use Illuminate\Support\Facades\Session;
-        @endphp
-        @if(session('message'))
-       
-        <div class="container alert alert-success alert-dismissible fade show w-50">
-            <strong>Success!</strong> {{session('message')}}.
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-        
-        @elseif(session('error'))
-        <div class="container alert alert-danger alert-dismissible fade show w-50">
-            <strong>Error!</strong> {{session('error')}}.
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-        @endif -->
-
         @include("layout.header")
 
         <div class="css_wrapper">
