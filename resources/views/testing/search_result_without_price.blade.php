@@ -1,14 +1,8 @@
-<!-- RACHID:THIS IS WILL BE THE FIRST VIEW TO SHOW SEARCH Results
-PLUS THE PRICE SLIDER -->
-
-
 @extends ('layout.layout')
 
 @section('content')
 
 <h1>Jobs Search Reasults</h1>
-
-
 <div class="container-reasults">
     <div class="price-slider">
         <x:price_slider-card />
@@ -47,11 +41,10 @@ PLUS THE PRICE SLIDER -->
 
             </div>
         </div>
-
         @endforeach
     </div>
-
 </div>
+
 @elseif($searchResult !== null && count($searchResult) === 0)
 <div class="no-jobs-message">
     <p>No job results found.</p>
@@ -61,8 +54,5 @@ PLUS THE PRICE SLIDER -->
     <p>Error: Unable to fetch job results.</p>
 </div>
 @endif
-
-
-
 
 @endsection
