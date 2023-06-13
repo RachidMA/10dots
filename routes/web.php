@@ -13,6 +13,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SpamReportController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -60,9 +61,8 @@ Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.s
 Route::get('/contact/{jobId}', [DoerContactController::class, 'showContact'])->name('contact.show');
 Route::post('/contact', [DoerContactController::class, 'submitForm'])->name('contact.submitForm');
 
-
-
-//=============Routes to leave a review (ADA)==========//
+//=============RACHID:ADD ABOUT US ROUTE==========//
+Route::get('/about-us', [UserController::class, 'aboutUs'])->name('about-us');
 
 //==============Routes to get jobs (ADA)====================//
 Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');

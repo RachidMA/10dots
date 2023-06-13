@@ -78,4 +78,44 @@ class UserController extends Controller
 
         return view('testing.admin_doer_detail', ['name' => Auth::user()->name])->with(['doer' => $doer, 'job' => $job]);
     }
+
+    // RACHID:ADD ABOUT US CONTROLLER FUNCTION
+    public function aboutUs()
+    {
+
+        $admins = [
+            [
+                'fullname' => 'AZZAHIR RACHID',
+                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
+                'articleLink' => 'https://example.com/admin1-article'
+            ],
+            [
+                'fullname' => 'Admin 2',
+                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
+                'articleLink' => 'https://example.com/admin2-article'
+            ],
+            [
+                'fullname' => 'Admin 3',
+                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
+                'articleLink' => 'https://example.com/admin3-article'
+            ],
+            [
+                'fullname' => 'Admin 4',
+                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
+                'articleLink' => 'https://example.com/admin4-article'
+            ],
+            [
+                'fullname' => 'Admin 5',
+                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
+                'articleLink' => 'https://example.com/admin5-article'
+            ]
+        ];
+
+
+        if (!$admins < 0) {
+            return redirect()->back()->with('message', 'No list is available');
+        }
+        //Returen about us view
+        return view('testing.about_us')->with(['admins' => $admins]);
+    }
 }

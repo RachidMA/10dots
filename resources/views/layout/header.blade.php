@@ -40,7 +40,7 @@
             </li>
             @else
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('login', ['redirect' => route('create-job') ])}}">
+                <a class="nav-link dash" href="{{ route('login', ['redirect' => route('create-job') ])}}">
                     Become A Doer
                 </a>
             </li>
@@ -61,6 +61,12 @@
             </li>
             @endif
             @endif
+            <!-- RACHID:ADD ABOUT US LINK -->
+            <li class="nav-item">
+                <a class="nav-link dash" href="{{route('about-us')}}">
+                    About Us
+                </a>
+            </li>
             <!-- Authentication Links -->
             @guest
             @if (Route::has('login'))

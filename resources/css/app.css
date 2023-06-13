@@ -829,139 +829,7 @@ input[type = "file"]::-webkit-file-upload-button{
   text-decoration: none;
   color: #fff;
 }
-@media (max-width: 800px) {
-.landing_row_4{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
- 
-}
-.landing_row_3 .helpout{
-  width: 25rem;
-}
-.landing_row_3 p {
-  width: 20rem;
-}
-.main-list{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
 
-}
-  .landing_category{
-    background-color: blue;
-    width: 20rem;
-  
-  }
-  .modal-content {
-    width: 70%;
-  }
-
-   /* DOER PROFILE BOX */
-.profile_row{
-  width: 100%;
-  height: auto;
-  margin-left: 1rem;
-}
-.profile_row .card{
-  width: 32rem;
-  height: 100%;
-}
-.profile_row .card-body{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.card-body .image-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.card-body .image-container .upload .round{
-  left: 4rem;
-}
-.container-reasults {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
- 
-}
-.container-reasults .category{
-  width: 100%;
-}
-
-}
-@media (max-width: 580px) {
-.landing_row_3{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.landing_row_4{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-  .landing_category{
-    width: 80%;
-    height: 80%;
-    margin-bottom: .5rem;
-  }
-  .modal-content {
-    width: 80%;
-  }
-
-  /* DOER PROFILE BOX */
-.profile_row{
-  width: 55%;
-  height: 100%;
- 
-}
-.profile_row .card{
-  width: 100%;
-  height: 28rem;
-  padding: 0;
-}
-.profile_row .card-body{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.container-reasults {
-  width: 60%;
-  margin-left: 1rem;
-}
-.container-reasults .category{
-  width: 100%;
-}
-
-.profile_row .card-body .profile-text-info{
- height: 100%;
- width: 100%;
- display: flex;
- align-items: center;
- justify-content: space-around;
-}
-.card-body .image-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.card-body .image-container .upload .round{
-  left: 4rem;
-}
-}
 /* ============================================ */
 /* /* ============Jean: THIS IS THE alert ==========  */
 
@@ -1256,3 +1124,381 @@ input[type = "file"]::-webkit-file-upload-button{
   font-size: larger;
 }
 /* ================================================== */
+/* RACHID:ADD STYLE ABOUT US PAGE CARD */
+:root {
+  --background-color: #ece0e8;
+  --color-primary-light: #ca3782;
+  --color-primary-dark: #1e0b36;
+  --color-black: #000;
+  --color-gray-dark: #aaa;
+  --color-gray-light: #eee;
+  --color-white: #fff;
+}
+
+/* Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  font-size: 62.5%;
+}  */
+
+ /* body {
+  height: 100vh;
+  background-color: var(--background-color);
+} */
+
+.artboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  height: 100%;
+  position: relative;
+  flex-wrap: wrap;
+  /* font-size: 62.5%; */
+  width: 100vw;
+}
+
+.card-us {
+  flex: initial;
+  position: relative;
+  height: 32rem;
+  width: 18rem;
+  -moz-perspective: 200rem;
+  perspective: 200rem;
+  margin: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card__side {
+  height: 52rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem rgba(var(--color-black), 0.15);
+}
+
+.card__side--front {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(var(--color-primary-dark), 0.65),
+      rgba(var(--color-primary-light), 0.7)
+    ),
+    url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+    background-color: #FF7F0A;
+    height: 32rem;
+}
+
+.card__side--back {
+  transform: rotateY(180deg);
+  height: 32rem;
+  background-color: #ff800ab2;
+  text-align: center;
+}
+
+.card-us:hover .card__side--back {
+  transform: rotateY(0);
+}
+
+.card-us:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card__theme {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+
+.card__theme-box {
+  color: var(--color-white);
+  margin-bottom: 8rem;
+}
+.card__theme-box .image-box{
+  width: 100%;
+  height: 15rem;
+  margin-bottom: 1rem;
+}
+.card__theme-box .profile{
+  /* background-color: blue; */
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+.card__subject {
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 0.8rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.card__title {
+  font-family: "VT323", monospace;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.card__cover {
+  position: relative;
+  background-size: cover;
+  height: 14rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-image: linear-gradient(
+      to top right,
+      rgba(var(--color-primary-dark), 0.65),
+      rgba(var(--color-primary-light), 0.65)
+    ),
+    url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+}
+
+.card__heading {
+  text-align: center;
+  color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+}
+
+.card__heading-span {
+  font-family: "VT323", monospace;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  /* padding: 1rem 1.5rem; */
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.card__details {
+  font-family: "Inconsolata", monospace;
+  /* padding: 4rem 2rem; */
+  line-height: 2rem;
+  margin-top: -4rem;
+  color: var(--color-white);
+  position: relative;
+}
+
+.card__details ul {
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+  height: 22rem;
+}
+
+.card__details li {
+  font-size: 1.5rem;
+  letter-spacing: .6rem;
+  margin-top: 1rem;
+}
+
+.article{
+position: absolute;
+top: 18rem;
+right: 4rem;
+}
+.article a {
+  text-decoration: none;
+}
+.about-us-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.about-us-text .about-text{
+  width: 80%;
+  height: auto;
+  padding: 1rem 2rem;
+  background-color: rgba(224, 207, 207, 0.171);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* ======================================= */
+
+/* RACHID:MOVE THE MEDIA QUERY TO THE BOTTOM */
+@media (max-width: 800px) {
+  .landing_row_4{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+  .landing_row_3 .helpout{
+    width: 25rem;
+  }
+  .landing_row_3 p {
+    width: 20rem;
+  }
+  .main-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  
+  }
+    .landing_category{
+      background-color: blue;
+      width: 20rem;
+    
+    }
+    .modal-content {
+      width: 70%;
+    }
+  
+     /* DOER PROFILE BOX */
+  .profile_row{
+    width: 100%;
+    height: auto;
+    margin-left: 1rem;
+  }
+  .profile_row .card{
+    width: 32rem;
+    height: 100%;
+  }
+  .profile_row .card-body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-body .image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-body .image-container .upload .round{
+    left: 4rem;
+  }
+  .container-reasults {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+  .container-reasults .category{
+    width: 100%;
+  }
+  
+  /* RACHID:ADD RESPONSIVE TO ABOUT-US-TEXT  */
+  .card-us {
+    flex: initial;
+    position: relative;
+    height: 32rem;
+    width: 16rem;
+    -moz-perspective: 200rem;
+    perspective: 200rem;
+    margin: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .card__subject {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card__title {
+    font-size: 1.5rem;
+  }
+  
+  .about-us-text .about-text{
+    height: 25rem;
+    width: 100%;
+  }
+  
+}
+@media (max-width: 580px) {
+.landing_row_3{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.landing_row_4{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+  .landing_category{
+    width: 80%;
+    height: 80%;
+    margin-bottom: .5rem;
+  }
+  .modal-content {
+    width: 80%;
+  }
+
+  /* DOER PROFILE BOX */
+.profile_row{
+  width: 55%;
+  height: 100%;
+ 
+}
+.profile_row .card{
+  width: 100%;
+  height: 28rem;
+  padding: 0;
+}
+.profile_row .card-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.container-reasults {
+  width: 60%;
+  margin-left: 1rem;
+}
+.container-reasults .category{
+  width: 100%;
+}
+
+.profile_row .card-body .profile-text-info{
+ height: 100%;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.card-body .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body .image-container .upload .round{
+  left: 4rem;
+}
+.about-us-text .about-text{
+  background-color: red;
+  height: 25rem;
+  width: 100%;
+}
+}
