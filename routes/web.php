@@ -45,11 +45,7 @@ Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.s
 Route::get('/contact/{jobId}', [DoerContactController::class, 'showContact'])->name('contact.show');
 Route::post('/contact', [DoerContactController::class, 'submitForm'])->name('contact.submitForm');
 
-
-//=============RACHID:ADD ABOUT US ROUTE==========//
 Route::get('/about-us', [UserController::class, 'aboutUs'])->name('about-us');
-
-//==============Routes to get jobs (ADA)====================//
 
 Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
