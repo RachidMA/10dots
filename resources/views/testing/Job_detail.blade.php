@@ -28,7 +28,6 @@
                     @endif
                 </div>
                 <div class="contact-me job-detail-button">
-                    <!-- //Jean=== -->
                     <a href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at" style="color: #e2e3e9;"></i>Contact Me</a>
                     <button class="reviewButton">Leave Review</button>
                 </div>
@@ -67,9 +66,8 @@
                 </div>
                 <p>{{$review->comment}}</p>
             </div>
-            <!-- <h4>{{$review->name}}</h4>
-            <p>{{$review->comment}}</p> -->
             @endforeach
+
             @else
             <p>No Reviews Available</p>
             @endif
@@ -81,17 +79,14 @@
 </div>
 
 <div id="reviewFormContainer" class='review'>
-    <!-- RACHID:ADD THIS BUTTON TO CLOSE LEAVE REVIEW FORM WHEN CLICKED -->
     <button class="close-button">X</button>
     <form method="POST" action="{{ route ('leaveReview') }}">
         @csrf
         <h1>Leave a review</h1>
         <div class="main-review-form">
             <div class="mb-3 name-email">
-                <!-- <label for="name" class="form-label">Your Name</label> -->
                 <input type="text" name="name" placeholder="enter your name here" id="name">
 
-                <!-- <label for="name" class="form-label">Your Email</label> -->
                 <input type="email" name="email" placeholder="enter your email here" id="email">
             </div>
             <div class="mb-3">
