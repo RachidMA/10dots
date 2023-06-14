@@ -2,7 +2,7 @@
     <a class="logo navbar-brand" href="{{ url('/home') }}">
         <span class="material-symbols-outlined">grain</span>
     </a>
-    <!-- RACHID:FIX BUG IF AUTH DOER OR ADMIN -->
+
     @if(auth()->check())
     @if(auth()->user()->role==1)
     <li class="nav-item">
@@ -24,13 +24,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left Side Of Navbar -->
+
         <ul class="navbar-nav me-auto">
 
         </ul>
-        <!-- Right Side Of Navbar -->
+
         <ul class="navbar-nav ms-auto">
-            <!-- RACHID:ADD BECOME DOER LINK -->
+
             @if(Auth::check())
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('create-job')}}" style="font-weight: 700;">
@@ -61,13 +61,13 @@
             </li>
             @endif
             @endif
-            <!-- RACHID:ADD ABOUT US LINK -->
-            <li class="nav-item">
+
+            <!-- <li class="nav-item">
                 <a class="nav-link dash" href="{{route('about-us')}}">
                     About Us
                 </a>
-            </li>
-            <!-- Authentication Links -->
+            </li> -->
+
             @guest
             @if (Route::has('login'))
             <li class="nav-item">
@@ -82,7 +82,7 @@
             @endif
             @else
             <li class="nav-item dropdown">
-                <!-- RACHID:PROFILE IMAGE -->
+
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
                 </a>
