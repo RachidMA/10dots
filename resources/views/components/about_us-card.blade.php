@@ -1,4 +1,4 @@
-@props(['admin'])
+@props(['admin', 'index'])
 
 
 <div class="card-us">
@@ -14,20 +14,20 @@
                 <li>{{$language}}</li>
                 @endforeach
             </ul>
-            <h4 class="article">
-                <a href="">Blog Article</a>
-            </h4>
         </div>
-
+        <div class="contact git">
+            <i class="fa-brands fa-github" style="color: black;"></i>
+            <a href="{{$admin['GitLink'] ? $admin['GitLink'] : ''}}" target="_blank">GitHub</a>
+        </div>
     </div>
     <div class="card__side card__side--front">
         <div class="card__theme">
-            <div class="card__theme-box">
+            <div class="card__theme-box card-{{$index + 1}}">
                 <div class="image-box">
-                    <img src="/admins/{{$admin['image']}}" alt="" class="profile" />
+                    <img src="/admins/{{$admin['image']}}" alt="" class="profile-{{$index + 1}}" />
                 </div>
                 <p class="card__title">{{$admin['fullname']}}</p>
-                <p class="card__subject">Web Developer</p>
+                <p class="card__subject">{{$admin['title']}}</p>
             </div>
         </div>
     </div>
