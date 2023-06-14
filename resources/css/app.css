@@ -112,6 +112,10 @@
   text-align: center;
 }
 
+.job-title .job-category , .cat_info .job-category {
+  color: gray;
+  font-size: large;
+}
 .cat_text .address {
   /* background-color: yellow; */
   display: flex;
@@ -1449,6 +1453,7 @@ right: 4rem;
   }
 
   /* Style job details page for customer, doer, admin */
+  
   .job-informations{
     width: 100%;
     height: 100%;

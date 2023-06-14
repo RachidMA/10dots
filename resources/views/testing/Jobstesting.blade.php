@@ -36,7 +36,8 @@
             <img class="" src="/images/{{$job->image_url ? $job->image_url:'job_default.png'}}" alt="Card image cap">
         </div>
         <div class="cat_info">
-            <h2>{{ $job->job_title }}</h2>
+            <h2>{{ $job->job_title }} | <span class="job-category">{{$job->category->name}}</span> </h2>
+
             <p>name: {{$job->first_name}} {{$job->last_name}}</p>
             <p>{{ $job->address}}</p>
             <p>{{ $job->city}}</p>
