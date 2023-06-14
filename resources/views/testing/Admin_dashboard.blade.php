@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Profile:</h5>
                     <div class="admin-image">
-                        <img src="/images/{{Auth::user()->profile_image? Auth::user()->profile_image:'default.jpg'}}" class="img-fluid mb-3" alt="Profile Image">
+                        <img src="/images/{{Auth::user()->profile_image? Auth::user()->profile_image:'profile-image-defalut.png'}}" class="img-fluid mb-3" alt="Profile Image">
                     </div>
                     <div class="upload admin-upload">
                         <form action="{{route('store-avatar')}}" method="POST" enctype="multipart/form-data" id="image-upload">

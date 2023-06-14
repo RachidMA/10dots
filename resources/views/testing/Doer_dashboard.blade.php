@@ -5,7 +5,7 @@
 @section('content')
 <div class="dash_profile">
     <div class="doer_image">
-        <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="">
+        <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'profile-image-defalut.png'}}" alt="" class="">
     </div>
     <div class="upload">
         <form action="{{route('store-avatar')}}" method="POST" enctype="multipart/form-data" id="image-upload">

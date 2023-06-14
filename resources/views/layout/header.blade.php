@@ -10,13 +10,13 @@
     @if(auth()->user()->role==1)
     <li class="nav-item">
         <a href="{{route('admin-dashboard', ['name'=>auth()->user()->name])}}" class="nav-link pfimg">
-            <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="image-profile">
+            <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'profile-image-defalut.png'}}" alt="" class="image-profile">
         </a>
     </li>
     @elseif(auth()->user()->role==0)
     <li class="nav-item">
         <a href="{{route('doer-dashboard', ['id'=>auth()->user()->id])}}" class="nav-link pfimg">
-            <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'default.jpg'}}" alt="" class="image-profile">
+            <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'profile-image-defalut.png'}}" alt="" class="image-profile">
         </a>
     </li>
     @endif
