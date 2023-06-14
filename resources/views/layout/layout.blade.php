@@ -34,7 +34,7 @@
     <!-- fontawsome kit link -->
     <script src="https://kit.fontawesome.com/0b78c4645d.js" crossorigin="anonymous"></script>
     <!-- Website favicon -->
-    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/icons/DST1CrcO.ico">
     <!- <!-- Scripts -->
         @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/css/app.css'])
 
