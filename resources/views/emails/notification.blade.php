@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Booked a Job</title>
+    <title>Booked a Job</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +12,7 @@
             align-items: center;
             margin: 0;
         }
+
         .card {
             background-color: #ffffff;
             box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
@@ -22,19 +24,24 @@
             align-items: center;
             text-align: center;
         }
+
         h1 {
             color: #FF7F0A;
         }
+
         h2 {
             color: #555555;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 10px;
         }
+
         a.button {
             display: inline-block;
             background-color: #FF7F0A;
@@ -43,11 +50,13 @@
             text-decoration: none;
             border-radius: 4px;
         }
+
         p.signature {
             margin-top: 40px;
             color: #777777;
             font-style: italic;
         }
+
         p.signature:before {
             content: "";
             display: block;
@@ -56,31 +65,38 @@
             background-color: #777777;
             margin: 10px auto;
         }
+
         p.contact-info {
             margin-top: 20px;
             color: #555555;
             font-size: 14px;
         }
+
         .website-link {
             margin-top: 10px;
             color: #555555;
             font-size: 14px;
         }
+
         .social-icons {
             margin-top: 20px;
         }
+
         .social-icons a {
             margin-right: 10px;
         }
+
         .social-icons img {
             height: 24px;
             width: 24px;
         }
+
         .footer {
             margin-top: 40px;
             color: #777777;
             font-size: 12px;
         }
+
         .footer:before {
             content: "";
             display: block;
@@ -91,9 +107,10 @@
         }
     </style>
 </head>
+
 <body>
     <div class="card">
-    <h1>Your services are needed</h1>
+        <h1>Your services are needed</h1>
 
         <p>Hello,</p>
         <p>You have received this email because someone needs your services.
@@ -118,7 +135,7 @@
         <p>Click the button below to view the job details:</p>
         <a href="{{ route('jobDetails', ['id' => $jobId]) }}" target="_blank" class="button">View Job</a>
 
-        <p class="signature">Best regards,<br>10dots</p>
+        <p class="signature">Best regards,<br><br><br>10dots</p>
 
         <div class="footer">
             <p class="contact-info">
@@ -137,4 +154,5 @@
         </div>
     </div>
 </body>
+
 </html>
