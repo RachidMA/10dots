@@ -3,78 +3,66 @@
 @section('content')
 
 
-<div class="job-main-content">
-    <div class="doer-job-details">
-        <div class="doer-job-details-card">
-            <div class="job-image job-image-guest">
+<div class="detail_container">
+    <div class="job_details">
+            <div class="img_div">
                 <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'job_default.png'}}" alt="Card image cap">
             </div>
-            <div class="job-informations">
-                <div class="job-title">
-                    <h3 class="title">{{ $job->job_title }}</h3>
-                </div>
-                <div class="job-info-text">
-                    <p>{{ $job->first_name }} {{ $job->last_name }}</p>
-                    <p>Address: {{ $job->address }}</p>
-                    <div class="job-country-city">
-                        <p class="country"> {{ $job->country }}</p>
-                        <p>{{ $job->city }}</p>
-                    </div>
-                    @if($job->price)
-                    <p class="price">Price: {{$job->price}} €</p>
-                    <a href="tel:{{ $job->phone }}" class="phone-number"><span><i class="fa-solid fa-phone fa-shake" style="color: #ffc014;"></i></span>CALL ME</a>
-                    @else
-                    <p>Price: No Price Was Set</p>
-                    @endif
-                </div>
-                <div class="contact-me job-detail-button">
-                    <a href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at" style="color: #e2e3e9;"></i>Contact Me</a>
-                    <button class="reviewButton">Leave Review</button>
-                </div>
+            <div class="job-information">
+                <h3 class="title">{{ $job->job_title }}</h3>
+                <p>{{ $job->first_name }} {{ $job->last_name }}</p>
+                <p>Address: {{ $job->address }}</p>
+                <p class="country"> {{ $job->country }}</p>
+                <p>{{ $job->city }}</p>
+                @if($job->price)
+                <p class="price">Price: {{$job->price}} €</p>
+                @else
+                <p>Price: No Price Was Set</p>
+                @endif
             </div>
-        </div>
-        <div class="job-description">
-            <p>Description: {{$job->description}}</p>
-        </div>
-        <div class="reviews-container">
-            @if($reviews)
-            @foreach($reviews as $review)
-            <div class="rating review-job-detail-page ">
-                <div class="review-info">
-                    <div class="review-name-icon">
-                        <div class="icon-image">
-                            <img src="/icons/icon-{{rand(1,4)}}.png" alt="" class="icon-image-display">
-                        </div>
-                        <h4>{{$review->name}}</h4>
-                    </div>
-                    <div class="rate">
-                        <input type="radio" id="star5_{{ $review->id }}" name="rating_{{ $review->id }}" value="5" {{ $review->rating == 5 ? 'checked' : '' }} disabled />
-                        <label for="star5_{{ $review->id }}" title="text">5 dots</label>
-
-                        <input type="radio" id="star4_{{ $review->id }}" name="rating_{{ $review->id }}" value="4" {{ $review->rating == 4 ? 'checked' : '' }} disabled />
-                        <label for="star4_{{ $review->id }}" title="text">4 dots</label>
-
-                        <input type="radio" id="star3_{{ $review->id }}" name="rating_{{ $review->id }}" value="3" {{ $review->rating == 3 ? 'checked' : '' }} disabled />
-                        <label for="star3_{{ $review->id }}" title="text">3 dots</label>
-
-                        <input type="radio" id="star2_{{ $review->id }}" name="rating_{{ $review->id }}" value="2" {{ $review->rating == 2 ? 'checked' : '' }} disabled />
-                        <label for="star2_{{ $review->id }}" title="text">2 dots</label>
-
-                        <input type="radio" id="star1_{{ $review->id }}" name="rating_{{ $review->id }}" value="1" {{ $review->rating == 1 ? 'checked' : '' }} disabled />
-                        <label for="star1_{{ $review->id }}" title="text">1 dot</label>
-                    </div>
-                </div>
-                <p>{{$review->comment}}</p>
-            </div>
-            @endforeach
-
-            @else
-            <p>No Reviews Available</p>
-            @endif
-        </div>
+            <p class="description">{{$job->description}}</p>
     </div>
-    <div class="spam-button">
-        <a id="reportButton">Report Profile</a>
+    <div class="buttons">
+        <a id="reportButton" class="report">Report Profile</a>
+        <button class="reviewButton">Leave Review</button>
+        <a class="call"href="tel:{{ $job->phone }}"><span><i class="fa-solid fa-phone"></i></span>call doer</a>
+        <a class="contact"href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at"></i>Contact doer</a>
+    </div>
+    <div class="reviews-container">
+        @if($reviews)
+        @foreach($reviews as $review)
+        <div class="rating review-job-detail-page ">
+            <div class="review-info">
+                <div class="review-name-icon">
+                    <div class="icon-image">
+                        <img src="/icons/icon-{{rand(1,4)}}.png" alt="" class="icon-image-display">
+                    </div>
+                    <h4>{{$review->name}}</h4>
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5_{{ $review->id }}" name="rating_{{ $review->id }}" value="5" {{ $review->rating == 5 ? 'checked' : '' }} disabled />
+                    <label for="star5_{{ $review->id }}" title="text">5 dots</label>
+
+                    <input type="radio" id="star4_{{ $review->id }}" name="rating_{{ $review->id }}" value="4" {{ $review->rating == 4 ? 'checked' : '' }} disabled />
+                    <label for="star4_{{ $review->id }}" title="text">4 dots</label>
+
+                    <input type="radio" id="star3_{{ $review->id }}" name="rating_{{ $review->id }}" value="3" {{ $review->rating == 3 ? 'checked' : '' }} disabled />
+                    <label for="star3_{{ $review->id }}" title="text">3 dots</label>
+
+                    <input type="radio" id="star2_{{ $review->id }}" name="rating_{{ $review->id }}" value="2" {{ $review->rating == 2 ? 'checked' : '' }} disabled />
+                    <label for="star2_{{ $review->id }}" title="text">2 dots</label>
+
+                    <input type="radio" id="star1_{{ $review->id }}" name="rating_{{ $review->id }}" value="1" {{ $review->rating == 1 ? 'checked' : '' }} disabled />
+                    <label for="star1_{{ $review->id }}" title="text">1 dot</label>
+                </div>
+            </div>
+            <p>{{$review->comment}}</p>
+        </div>
+        @endforeach
+
+        @else
+        <p>No Reviews Available</p>
+        @endif
     </div>
 </div>
 
