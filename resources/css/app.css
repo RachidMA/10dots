@@ -503,18 +503,12 @@ input[type="range"]::-moz-range-thumb{
     .main-review-form #textarea{
      border: none;
      border-radius: 5px;
-      width: 30rem;
+      width: 25rem;
       height: 8rem;
     }
     #reviewFormContainer .submit-button{
-      margin-top: 4rem;
+      margin-top: 2rem;
       text-align: center;
-    }
-    .submit-button button {
-      padding: .3rem 1rem;
-      border: none;
-      border-radius: 5px;
-      background-color: orange;
     }
 
     .submit-button button:hover {
@@ -1228,7 +1222,9 @@ input[type = "file"]::-webkit-file-upload-button{
 .card__theme .image-box img{
   width: 100%;
   height: 100%;
-  object-fit:fill;
+  object-fit:cover;
+  object-position: 50% 30%;
+  overflow: hidden;
 }
 
 /* .card__theme .image-box img.profile-3{
