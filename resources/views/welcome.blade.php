@@ -5,8 +5,8 @@
 <div class="landing_row_1">
 
     <div class="welcome_div">
-        <h1 id="welcome">Help You Can trust <span>..........</span></h1>
-        <h2 id="subwelcome">Find a <span>10 Dots</span> Doer Near You <span class="material-symbols-outlined">conditions</span></h2>
+        <h1 id="welcome">Find a <span>10 Dots</span> Doer Near You <span class="material-symbols-outlined">conditions</span></h1>
+        <h2 id="subwelcome">Help You Can Trust <span>..........</span></h2>
     </div>
 </div>
 <div class="landing_row_2">
