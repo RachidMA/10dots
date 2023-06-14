@@ -86,7 +86,7 @@ class UserController extends Controller
                 'image' => 'AdaOmoji.jpg'
             ],
             [
-                'fullname' => 'Jean M Livara',
+                'fullname' => 'Jean Livara',
                 'title' => 'Backend Developer',
                 'languages' => ['PHP', 'Laravel', 'JavaScript', 'HTML', 'CSS', 'Git'],
                 'GitLink' => 'https://github.com/JeanPinay',
@@ -108,7 +108,7 @@ class UserController extends Controller
             ]
         ];
 
-
+        shuffle($admins); // Randomize the array order
         if (!$admins < 0) {
             return redirect()->back()->with('message', 'No list is available');
         }
