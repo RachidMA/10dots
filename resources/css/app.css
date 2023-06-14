@@ -26,13 +26,12 @@
 
 /* RACHID:STYLE THE WEBSITE LOGO */
 .logo-image{
-  width: 6rem;
-  height: 3.5rem;
-
+  height: 40px;
 }
 .logo-image img{
   width: 100%;
   height: 100%;
+  mix-blend-mode: multiply;
 }
 /* =============================== */
 
@@ -417,8 +416,8 @@ input[type="range"]::-moz-range-thumb{
 /* //RACHID:UPDATE IMAGE BUTTON AND ICON */
 .image-profile{
   border-radius: 50%;
-  width: 50px; 
-  height: 50px; 
+  width: 40px; 
+  height: 40px; 
 }
 .avatar {
   position: absolute;
@@ -543,7 +542,7 @@ input[type="range"]::-moz-range-thumb{
       white-space: nowrap;
       cursor: pointer;
       font-size: 30px;
-      color: #ccc;
+      color: white;
       border-radius: 50%;
       transition: color 0.3s; 
     }
@@ -555,12 +554,12 @@ input[type="range"]::-moz-range-thumb{
 
 
     .rate > input:checked ~ label {
-      color: orange;
+      color: #FF7F0A;
     }
 
     .rate:not(:checked) > label:hover,
     .rate:not(:checked) > label:hover ~ label {
-      color: #deb217;
+      color: #FF7F0A;
     }
 
     .rate > input:checked + label:hover,
@@ -568,12 +567,14 @@ input[type="range"]::-moz-range-thumb{
     .rate > input:checked ~ label:hover,
     .rate > input:checked ~ label:hover ~ label,
     .rate > label:hover ~ input:checked ~ label {
-      color: #c59b08;
+      color: #FF7F0A;
     }
 
     .rate:not(:checked) > label:hover {
       color: white;
     }
+
+
 /* ///////END CSS FOR JOB_LEAVE_REVIEW//////// */ 
   /* //Hide the submit button for profile image before its upload */
   .round button {
@@ -1022,7 +1023,7 @@ input[type = "file"]::-webkit-file-upload-button{
  /* RACHID:ADD STYLE TO RATING DIV FOR FEATURED JOBS */
  .rating .rate {
   margin: 1rem 0;
-  background-color: #964a1e3f;
+  background-color: #B8B6B6;
  }
  /* ================================================== */
 .alert .btn {
@@ -1158,7 +1159,6 @@ input[type = "file"]::-webkit-file-upload-button{
   -moz-perspective: 200rem;
   perspective: 200rem;
   margin: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card__side {
