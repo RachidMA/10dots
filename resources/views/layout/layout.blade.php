@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-...your-sha512-hash..." crossorigin="anonymous" />
     <!-- fontawsome kit link -->
     <script src="https://kit.fontawesome.com/0b78c4645d.js" crossorigin="anonymous"></script>
+    <!-- Website favicon -->
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
     <!- <!-- Scripts -->
         @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/css/app.css'])
 
