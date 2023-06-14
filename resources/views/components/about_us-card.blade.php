@@ -24,7 +24,7 @@
         <div class="card__theme">
             <div class="card__theme-box">
                 <div class="image-box">
-                    <img src="/images/default.jpg" alt="" class="profile" />
+                    <img src="/admins/cat.jpg" alt="" class="profile" />
                 </div>
                 <p class="card__title">{{$admin['fullname']}}</p>
                 <p class="card__subject">Web Developer</p>
