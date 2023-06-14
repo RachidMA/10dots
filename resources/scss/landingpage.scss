@@ -106,6 +106,7 @@
     }
 }
 
+
 .landing_row_3 {
     @include landing_row;
     P {
@@ -113,6 +114,7 @@
         grid-row: 2;
         text-align: justify;
     }
+
     .helpout {
         grid-column: 8/14;
         grid-row: 2;
