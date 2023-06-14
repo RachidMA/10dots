@@ -73,33 +73,38 @@ class UserController extends Controller
         $admins = [
             [
                 'fullname' => 'AZZAHIR RACHID',
-                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin1-article',
-                'image' => ''
+                'title' => 'Backend Developer',
+                'languages' => ['PHP', 'Laravel', 'JavaScript', 'HTML', 'CSS', 'Git'],
+                'GitLink' => 'https://github.com/RachidMA',
+                'image' => 'Rachid-3.jpeg'
             ],
             [
                 'fullname' => 'Ada Omoji',
-                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin2-article',
+                'title' => 'Backend Developer',
+                'languages' => ['PHP', 'Laravel', 'JavaScript', 'HTML', 'CSS', 'Git'],
+                'GitLink' => 'https://github.com/ada-omoji',
                 'image' => 'AdaOmoji.jpg'
             ],
             [
-                'fullname' => 'Jean Margrethe Livara',
-                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin3-article',
+                'fullname' => 'Jean M Livara',
+                'title' => 'Backend Developer',
+                'languages' => ['PHP', 'Laravel', 'JavaScript', 'HTML', 'CSS', 'Git'],
+                'GitLink' => 'https://github.com/JeanPinay',
                 'image' => 'JeanLivara (2).jpg'
             ],
             [
-                'fullname' => 'Admin 4',
-                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin4-article',
-                'image' => ''
+                'fullname' => 'Vincent Clarysse',
+                'title' => 'Frontend Developer',
+                'languages' => ['HTML', 'SCSS', 'CSS', 'Laravel', 'Git'],
+                'GitLink' => 'https://github.com/VincentClarysse',
+                'image' => 'vincent.jpg'
             ],
             [
-                'fullname' => 'Admin 5',
-                'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin5-article',
-                'image' => ''
+                'fullname' => 'Claire Pollock',
+                'title' => 'Frontend Designer',
+                'languages' => ['HTML', 'SCSS', 'CSS', 'Figma'],
+                'GitLink' => 'https://github.com/HereThereClaire',
+                'image' => 'claire.jpg'
             ]
         ];
 
