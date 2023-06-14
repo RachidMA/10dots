@@ -78,8 +78,7 @@
                 <input type="email" name="email" placeholder="enter your email here" id="email">
             </div>
             <div class="mb-3">
-                <label for="comment" class="form-label">Comments</label>
-                <textarea id="textarea" rows="3" cols="25" name="comment" id="comment"></textarea>
+                <textarea id="textarea" placeholder="your comment" rows="3" cols="25" name="comment" id="comment"></textarea>
             </div>
             <label for="rate" class="form-label">Rate</label>
             <div class="rate">
