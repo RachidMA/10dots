@@ -66,7 +66,7 @@ class UserController extends Controller
         return view('testing.admin_doer_detail', ['name' => Auth::user()->name])->with(['doer' => $doer, 'job' => $job]);
     }
 
-    // RACHID:ADD ABOUT US CONTROLLER FUNCTION
+
     public function aboutUs()
     {
 
@@ -74,27 +74,32 @@ class UserController extends Controller
             [
                 'fullname' => 'AZZAHIR RACHID',
                 'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin1-article'
+                'articleLink' => 'https://example.com/admin1-article',
+                'image' => ''
             ],
             [
                 'fullname' => 'Admin 2',
                 'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin2-article'
+                'articleLink' => 'https://example.com/admin2-article',
+                'image' => ''
             ],
             [
-                'fullname' => 'Admin 3',
+                'fullname' => 'Jean Margrethe Livara',
                 'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin3-article'
+                'articleLink' => 'https://example.com/admin3-article',
+                'image' => 'JeanLivara (2).jpg'
             ],
             [
                 'fullname' => 'Admin 4',
                 'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin4-article'
+                'articleLink' => 'https://example.com/admin4-article',
+                'image' => ''
             ],
             [
                 'fullname' => 'Admin 5',
                 'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
-                'articleLink' => 'https://example.com/admin5-article'
+                'articleLink' => 'https://example.com/admin5-article',
+                'image' => ''
             ]
         ];
 
@@ -102,7 +107,7 @@ class UserController extends Controller
         if (!$admins < 0) {
             return redirect()->back()->with('message', 'No list is available');
         }
-        //Returen about us view
+
         return view('testing.about_us')->with(['admins' => $admins]);
     }
 }
