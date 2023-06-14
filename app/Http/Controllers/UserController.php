@@ -37,7 +37,7 @@ class UserController extends Controller
         $request->validate([
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+        
         if ($avatar = $request->file('avatar')) {
             $avatar_name = time() . '-' . $avatar->getClientOriginalName();
             $avatar->move(public_path('images'), $avatar_name);
