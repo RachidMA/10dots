@@ -78,10 +78,10 @@ class UserController extends Controller
                 'image' => ''
             ],
             [
-                'fullname' => 'Admin 2',
+                'fullname' => 'Ada Omoji',
                 'languages' => ['PHP', 'LARAVEL', 'JavaScript', 'HTML', 'CSS', 'GIT'],
                 'articleLink' => 'https://example.com/admin2-article',
-                'image' => ''
+                'image' => 'AdaOmoji.jpg'
             ],
             [
                 'fullname' => 'Jean Margrethe Livara',
