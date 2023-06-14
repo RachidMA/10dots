@@ -27,7 +27,7 @@
 </div>
 <div class="landing_row_3">
     <h3>Why 10 dots?</h3>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas eum consectetur nostrum. Odit velit sint iure dolorem eaque impedit non at? Dolorem hic quaerat, ad possimus consequuntur dicta animi placeat, optio repellendus officiis commodi distinctio voluptate inventore modi autem eius veritatis quae quam doloremque ipsum totam expedita? Dicta nemo itaque, eos officia voluptatum ipsa architecto exercitationem placeat? Harum, sed quam!</p>
+    <p>When you need a helping hand, reach out to our Doers. Compare our Doers based on their reviews, prices, and location. Book a Doer at a time that works best for you. Leave a review and comment after your task. Whatever you need, our Doers have got it covered!</p>
     <div class="helpout">
         <h4>Want to help out instead?</h4>
         <button>Become a Doer</button>
