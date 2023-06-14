@@ -1,9 +1,7 @@
 <nav class="navbar navbar-expand-md">
     <a class="logo navbar-brand" href="{{ url('/home') }}">
         <!-- <span class="material-symbols-outlined">grain</span> -->
-        <div class="logo-image">
-            <img src="/icons/logo-last.png" alt="Site Logo">
-        </div>
+            <img src="/icons/10-dots-logo.png" alt="Site Logo">
     </a>
 
     @if(auth()->check())
