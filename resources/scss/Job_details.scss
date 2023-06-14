@@ -1,5 +1,122 @@
-.job_details {
+.detail_container {
     grid-column: 2/14;
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
+    @include card;
+    margin: 2em 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+    .reportdiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        // background-color: red;
+        text-align: center;
+        height: fit-content;
+        padding: 1em;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        // background-color: red;
+        text-align: center;
+        height: fit-content;
+        padding: 1em;
+        border-bottom: solid 1px $grey03;
+
+        i{
+            margin-right: 0.5em;
+        }
+
+
+        .edit {
+            
+            @include orange_button;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .call{
+            @include orange_button;
+            margin: 0.5em 0;
+            margin-left: 2em;
+            width: fit-content;
+            display: flex;
+            justify-content: space-between;
+            // flex-direction: column;
+            align-items: center
+        }
+        .contact{
+            @include orange_button;
+            margin: 0.5em 0;
+            margin-left: 2em;
+            width: fit-content;
+            display: flex;
+            // flex-direction: column;
+            align-items: center
+        }
+        .reviewButton {
+            @include orange_button;
+            margin: 0.5em 0;
+            margin-left: 2em;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .report {
+            @include orange_button;
+            margin: 0.5em 0;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(159, 27, 27);
+            margin-right: auto;
+        }
+        a{
+            padding-left: 2em;
+            color: black;
+            text-decoration: none;
+            align-self: center;
+        }
+      }
+
+.job_details {
+
+    display: flex;
+    padding: 0;
+
+    height: fit-content;
+    flex-wrap: wrap;
+    // justify-content: center;
+
+    img {
+        border-radius: 0;
+        border-bottom-right-radius: 1rem;
+        flex: 1;
+    }
+    .job-information {
+        padding-top: 1em;
+        padding-left: 1em;
+    }
+    .description {
+        flex-basis: 50%;
+        margin: 1em;
+        padding: 1em;
+        border-radius: 1rem;
+        background-color: $grey00;
+        width: 100%;
+        flex: 1;
+
+    }
+}
+.review-job-detail-page{
+    border-bottom: solid 1px $grey03;
+}
 }

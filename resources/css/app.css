@@ -154,10 +154,7 @@
   padding: 0 20px 20px;
 }
 
-.buttons {
-  background-color: red;
-  text-align: center;
-}
+
 .buttons> button {
   background: rgba(128, 128, 128, 0.596);
   border: 0;
@@ -713,20 +710,17 @@ input[type = "file"]::-webkit-file-upload-button{
 .reviews-container {
   height: auto;
   width: 100%;
-  background-color: rgba(128, 128, 128, 0.062);
 }
 
 .review-job-detail-page{
   height: auto;
   display: flex;
- align-items: start;
- justify-content: start;
- flex-direction: column;
-  border: 1px solid white;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
   line-height: 1.rem;
-  margin: 1rem 0;
   padding: 1rem;
-  background-color: rgba(128, 128, 128, 0.062);
+  
   
 }
 .reviews-container .review-name-icon{
@@ -987,10 +981,7 @@ input[type = "file"]::-webkit-file-upload-button{
   gap: 1rem;
 }
 .landing_row_4 .landing_category{
-  border: 1px solid rgba(128, 128, 128, 0.295);
   width: 20rem;
- 
-  
  }
 
 .landing_row_4 .landing_category .cat_info a {
