@@ -33,7 +33,9 @@
         </ul>
 
         <ul class="navbar-nav ms-auto">
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('homepage')}}" style="font-weight: 700;">Home</a>
+            </li>
             @if(Auth::check())
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('create-job')}}" style="font-weight: 700;">
