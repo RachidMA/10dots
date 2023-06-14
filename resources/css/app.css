@@ -24,6 +24,18 @@
   border-color: #f5c6cb;
 }
 
+/* RACHID:STYLE THE WEBSITE LOGO */
+.logo-image{
+  width: 6rem;
+  height: 3.5rem;
+
+}
+.logo-image img{
+  width: 100%;
+  height: 100%;
+}
+/* =============================== */
+
 .close-button {
   position: absolute;
   top: 0.3rem;
@@ -1252,10 +1264,14 @@ input[type = "file"]::-webkit-file-upload-button{
 .card__theme-box .image-box{
   width: 100%;
   height: 15rem;
-  margin-bottom: 1rem;
+  padding-top: 1.5rem
+}
+.card__theme .image-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .card__theme-box .profile{
-  /* background-color: blue; */
   width: 100%;
   height: 100%;
   margin-bottom: 1rem;
