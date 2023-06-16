@@ -7,6 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>DoerFinder - Find Skilled Service Providers</title>
+    <meta name="description" content="Find skilled service providers for all your needs on 10Dots. From plumbers and electricians to dog walkers and car repair experts, our platform connects you with trusted professionals in your area. Browse through our listings, read reviews, and hire the right person for the job. Simplify your search and get things done with DoerFinder.">
+    <meta name="keywords" content="DoerFinder, service providers, professionals, plumbers, electricians, dog walkers, car repair, trusted, reviews, hire, platform">
+
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
