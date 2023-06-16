@@ -30,8 +30,7 @@
     }
     .job_result {
         @include card;
-        height: fit-content;
-        min-height: 100px;
+        height: 300px;
         margin-bottom: 2em;
         display: flex;
         padding:0;
