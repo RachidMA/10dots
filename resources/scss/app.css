@@ -39,8 +39,18 @@
   color: #FF7F0A;
 }
 .landing_row_1 .material-symbols-outlined {
-  font-size: 24pt;
-  vertical-align: bottom;
+  font-size: 40pt;
+  vertical-align: middle;
+  position: relative;
+  bottom: 5px;
+}
+
+.why10dots {
+  text-align: center;
+  justify-content: center;
+  padding-top: 60pt;
+  padding-bottom: 0pt;
+  font-size: 32pt;
 }
 
 .landing_row_2 {
@@ -128,6 +138,9 @@
   margin-left: auto;
   width: 30%;
 }
+.landing_row_2 input[type=submit]:hover {
+  background-color: #FF922E;
+}
 
 .landing_row_3 {
   grid-column: 1/15;
@@ -180,6 +193,9 @@
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
+.landing_row_3 .helpout button:hover {
+  background-color: #FF922E;
+}
 
 .landing_row_4 {
   grid-column: 1/15;
@@ -225,7 +241,7 @@
   flex-direction: column;
   border-radius: 0 0 0.5em 0.5em;
 }
-.landing_row_4 .landing_category .cat_info button {
+.landing_row_4 .landing_category .cat_info a {
   background-color: #FF7F0A;
   margin: 0;
   color: white;
@@ -238,6 +254,12 @@
   white-space: nowrap;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing_row_4 .landing_category .cat_info a:hover {
+  background-color: #FF922E;
 }
 
 .landing_row_5 {
@@ -255,6 +277,10 @@
   grid-column: 2/14;
   grid-row: 1;
   margin-bottom: 1em;
+}
+.landing_row_5 h3 {
+  color: white;
+  margin-bottom: 0;
 }
 .landing_row_5 .orange_steps {
   grid-row: 2;
@@ -296,12 +322,22 @@
   width: 100vw;
   color: black;
   padding: 0.5em 1em;
+  align-items: center;
 }
 .navbar .logo {
-  font-size: 24pt;
   vertical-align: bottom;
   color: #FF7F0A;
   margin-left: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+.navbar .logo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: multiply;
+  height: 100%;
 }
 .navbar button {
   padding: 0;
@@ -416,6 +452,11 @@
 }
 .loreg_card form .country-city {
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.loreg_card form .cat_select {
+  width: 100%;
 }
 .loreg_card form textarea {
   width: 100%;
@@ -428,6 +469,10 @@
   justify-content: center;
   background-color: white;
   color: #FF922E;
+}
+.loreg_card form input[type=submit] {
+  background-color: #FF7F0A;
+  color: white;
 }
 
 .price-slider {
@@ -446,6 +491,26 @@
   height: 100%;
   border-radius: 0;
 }
+.price-slider form .wrapper-price .apply-button button {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin-top: 1em;
+  width: 50%;
+  font-size: 12pt;
+}
+.price-slider form .wrapper-price .apply-button button:hover {
+  background-color: #FF922E;
+}
 
 .results_container {
   grid-column: 5/12;
@@ -461,18 +526,27 @@
   box-sizing: border-box;
   padding: 2.5em;
   border-radius: 1em;
-  margin-top: 2em;
+  height: 300px;
+  margin-bottom: 2em;
   display: flex;
   padding: 0;
   overflow: hidden;
+  border: none;
+}
+.results_container .job_result * {
+  margin: 0;
+}
+.results_container .job_result p {
+  line-height: 2;
 }
 .results_container .job_result .img_div {
-  background-color: aqua;
-  width: 50%;
+  width: 75%;
 }
 .results_container .job_result .img_div img {
   -o-object-fit: cover;
      object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 .results_container .job_result a {
   align-self: center;
@@ -490,14 +564,256 @@
   white-space: nowrap;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  width: 100%;
+  margin-top: 1em;
+}
+.results_container .job_result a .job_button:hover {
+  background-color: #FF922E;
 }
 .results_container .job_result .cat_info {
   padding: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
+}
+
+.dash_profile {
+  grid-column: 1/4;
+  background-color: white;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+.dash_profile p {
+  padding: 0 1rem;
+}
+.dash_profile .doer_image {
+  width: 100%;
+  background-color: aqua;
+  height: 300px;
+  margin-bottom: 1em;
+}
+.dash_profile .doer_image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.detail_container {
+  grid-column: 2/14;
+  box-shadow: 0 5px 3px #B8B6B6;
+  background-color: #D9D9D9;
+  box-sizing: border-box;
+  padding: 2.5em;
+  border-radius: 1em;
+  margin: 2em 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.detail_container .reportdiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em;
+}
+.detail_container .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em;
+  border-bottom: solid 1px #B8B6B6;
+}
+.detail_container .buttons i {
+  margin-right: 0.5em;
+}
+.detail_container .buttons .edit {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.detail_container .buttons .edit:hover {
+  background-color: #FF922E;
+}
+.detail_container .buttons .call {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: 0.5em 0;
+  margin-left: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail_container .buttons .call:hover {
+  background-color: #FF922E;
+}
+.detail_container .buttons .contact {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: 0.5em 0;
+  margin-left: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.detail_container .buttons .contact:hover {
+  background-color: #FF922E;
+}
+.detail_container .buttons .reviewButton {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: 0.5em 0;
+  margin-left: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.detail_container .buttons .reviewButton:hover {
+  background-color: #FF922E;
+}
+.detail_container .buttons .report {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: 0.5em 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(159, 27, 27);
+  margin-right: auto;
+}
+.detail_container .buttons .report:hover {
+  background-color: #FF922E;
+}
+.detail_container .buttons a {
+  padding-left: 2em;
+  color: black;
+  text-decoration: none;
+  align-self: center;
+}
+.detail_container .job_details {
+  display: flex;
+  padding: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex-wrap: wrap;
+}
+.detail_container .job_details img {
+  border-radius: 0;
+  border-bottom-right-radius: 1rem;
+  flex: 1;
+}
+.detail_container .job_details .job-information {
+  padding-top: 1em;
+  padding-left: 1em;
+}
+.detail_container .job_details .description {
+  flex-basis: 50%;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1rem;
+  background-color: #F5F5F5;
+  width: 100%;
+  flex: 1;
+}
+.detail_container .review-job-detail-page {
+  border-bottom: solid 1px #B8B6B6;
+}
+
+#reviewFormContainer {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#reviewFormContainer textarea {
+  width: 80%;
+}
+#reviewFormContainer h1 {
+  text-align: center;
+}
+#reviewFormContainer .submit-button button {
+  background-color: #FF7F0A;
+  margin: 0;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  min-height: 2em;
+  padding: 0 2em;
+  white-space: nowrap;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+#reviewFormContainer .submit-button button:hover {
+  background-color: #FF922E;
 }
 
 .container {
@@ -523,17 +839,29 @@ body {
 }
 
 .footer {
-  height: 40px;
+  height: 80px;
   width: 100vw;
-  background-color: #FF7F0A;
+  background-color: #F5F5F5;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.copyright {
+  width: 100%;
+  color: #282222;
+  line-height: 40px;
+  font-size: 0.8em;
+  text-align: center;
+  bottom: 0;
+  flex-basis: 100%;
 }
 
 .css_wrapper {
   height: 100%;
   flex: 1;
+  min-height: 90vh;
   display: grid;
   grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
   position: relative;

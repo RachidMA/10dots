@@ -1,5 +1,6 @@
 // import "./bootstrap";
 
+import "../scss/app.css";
 //RACHID: ADD API TO FETCH CITIES OF A SPECIFIC COUNTRY
 // const fetch = require("node-fetch");
 //TO FETCH ALL CITIES OF A COUNTRY WE NEED COUNTRY CCA2 CODE
