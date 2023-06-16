@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md">
-    <a class="logo navbar-brand" href="{{ url('/home') }}">
+    <a class="logo navbar-brand" href="{{ url('/') }}">
         <!-- <span class="material-symbols-outlined">grain</span> -->
             <img src="/icons/10-dots-logo.png" alt="Site Logo">
     </a>
