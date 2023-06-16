@@ -5,28 +5,28 @@
 
 <div class="detail_container">
     <div class="job_details">
-            <div class="img_div">
-                <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'job_default.png'}}" alt="Card image cap">
-            </div>
-            <div class="job-information">
-                <h3 class="title">{{ $job->job_title }}</h3>
-                <p>{{ $job->first_name }} {{ $job->last_name }}</p>
-                <p>Address: {{ $job->address }}</p>
-                <p class="country"> {{ $job->country }}</p>
-                <p>{{ $job->city }}</p>
-                @if($job->price)
-                <p class="price">Price: {{$job->price}} €</p>
-                @else
-                <p>Price: No Price Was Set</p>
-                @endif
-            </div>
-            <p class="description">{{$job->description}}</p>
+        <div class="img_div">
+            <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'job.jpg'}}" alt="Card image cap">
+        </div>
+        <div class="job-information">
+            <h3 class="title">{{ $job->job_title }}</h3>
+            <p>{{ $job->first_name }} {{ $job->last_name }}</p>
+            <p>Address: {{ $job->address }}</p>
+            <p class="country"> {{ $job->country }}</p>
+            <p>{{ $job->city }}</p>
+            @if($job->price)
+            <p class="price">Price: {{$job->price}} €</p>
+            @else
+            <p>Price: No Price Was Set</p>
+            @endif
+        </div>
+        <p class="description">{{$job->description}}</p>
     </div>
     <div class="buttons">
         <a id="reportButton" class="report">Report Profile</a>
         <button class="reviewButton">Leave Review</button>
-        <a class="call"href="tel:{{ $job->phone }}"><span><i class="fa-solid fa-phone"></i></span>call doer</a>
-        <a class="contact"href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at"></i>Contact doer</a>
+        <a class="call" href="tel:{{ $job->phone }}"><span><i class="fa-solid fa-phone"></i></span>call doer</a>
+        <a class="contact" href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at"></i>Contact doer</a>
     </div>
     <div class="reviews-container">
         @if($reviews)

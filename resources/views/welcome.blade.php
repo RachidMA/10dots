@@ -42,7 +42,7 @@
         @foreach($featuredJobs as $job_review)
         <div class="landing_category">
             <div class="cat_img">
-                <img src="/images/{{$job_review[0]->job->image_url ? $job_review[0]->job->image_url : 'default-image.jpg'}}" alt="">
+                <img src="/images/{{$job_review[0]->job->image_url ? $job_review[0]->job->image_url : 'job.jpg'}}" alt="">
             </div>
             <div class="cat_info">
                 <h4>

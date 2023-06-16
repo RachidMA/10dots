@@ -34,18 +34,15 @@
 
 <div class="results_container">
     @foreach($jobs as $job)
-    <div class="job_result" id="{{$job->id}}">
-        <div class="img_div">
-            <img class="" src="/images/{{$job->image_url ? $job->image_url:'job_default.png'}}" alt="Card image cap">
+    <div class="job_result doer-dashboard" id="{{$job->id}}">
+        <div class="img_div" id="img_div">
+            <img class="card-img" src="/images/{{$job->image_url ? $job->image_url:'job.jpg'}}" alt="Card image cap">
         </div>
         <div class="cat_info">
             <h5>
                 {{$job->job_title}}
             </h5>
-            <p>
-                2700 completed tasks | 188 Doers
-            </p>
-
+            <p>{{$job->category ? $job->category->name : 'No Category'}} | {{$job->city}}</p>
             <a href="{{ route('doer-job-details', ['id' => $job->id]) }}">
                 <button class="job_button">Job Details</button>
             </a>
