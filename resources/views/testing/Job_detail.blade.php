@@ -4,7 +4,7 @@
 
 
 <div class="detail_container">
-    <div class="job_details">
+    <div class="job_details customer-job-details">
         <div class="img_div">
             <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'job.jpg'}}" alt="Card image cap">
         </div>
