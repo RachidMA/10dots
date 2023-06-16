@@ -40,7 +40,7 @@
     <!-- Website favicon -->
     <link rel="icon" type="image/x-icon" href="/icons/DST1CrcO.ico">
     <!- <!-- Scripts -->
-        @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/css/app.css'])
+        @vite(['resources/js/app.js'])
 
 </head>
 
