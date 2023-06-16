@@ -500,6 +500,7 @@ input[type="range"]::-moz-range-thumb{
       border: none;
       border-radius: 5px;
       padding: .2rem .4rem;
+  
     }
 
     .main-review-form #textarea{
@@ -507,6 +508,7 @@ input[type="range"]::-moz-range-thumb{
      border-radius: 5px;
       width: 25rem;
       height: 8rem;
+  
     }
     #reviewFormContainer .submit-button{
       margin-top: 2rem;
@@ -878,6 +880,9 @@ input[type = "file"]::-webkit-file-upload-button{
 .alert h4 {
   margin: 0;
   color: rgba(0, 0, 0, 0.623);
+}
+.contact-us .text-area{
+  padding: .5rem;
 }
 #alert-message .success-ok{
   background-color: orange;

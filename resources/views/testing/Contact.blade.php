@@ -30,7 +30,7 @@
             </div>
             @endif
 
-            <textarea name="message" id="message" placeholder="Your message here and I'll answer as soon as possible" required="required"></textarea>
+            <textarea name="message" id="message" placeholder="Your message here and I'll answer as soon as possible" required="required" class="text-area"></textarea>
             @if ($errors->has('message'))
             <div class="error">
                 {{ $errors->first('message') }}
