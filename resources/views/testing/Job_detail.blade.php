@@ -97,8 +97,7 @@
                 <input type="radio" id="star1" name="rating" value="1" />
                 <label for="star1" title="text">1 dot</label>
             </div>
-            <input type="hidden" name="job_id" id="job_id" value="6">
-
+            <input type="hidden" name="job_id" id="job_id" value="{{$job->id}}">
             <div class="submit-button">
                 <button type="submit" name="submit" id="submit">Submit</button>
             </div>

@@ -10,7 +10,8 @@ use Illuminate\Contracts\Mail\Mailable;
 
 class ContactController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('testing.Contact');
     }
     public function store(Request $request)
@@ -20,15 +21,12 @@ class ContactController extends Controller
             'email' => 'required|email',
             'message' => 'required'
         ]);
-    
-        $contact = Contact::create($request->all());
-    
-        Mail::to($request->email)->send(new ContactMail($contact));
-        
-    
-        return redirect()->back()->with('success', 'Thank you for contacting us. We will get back to you soon.');
-    }
-    
-    
-}
 
+        $contact = Contact::create($request->all());
+
+        Mail::to($request->email)->send(new ContactMail($contact));
+
+
+        return redirect()->route('homepage')->with('success', 'Thank you for contacting us. We will get back to you soon.');
+    }
+}
