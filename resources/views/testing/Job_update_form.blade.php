@@ -4,7 +4,7 @@
 
 <div class="loreg_card">
 <div class = "big_circ_2"></div>
-<h1>Update your details</h1></br>
+<h2>Update your details</h2></br>
   <div class="big_circ_2"></div>
   <form action="{{ route ('updateJob', [ 'id'=>$job->id ]) }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -50,7 +50,6 @@
       @error('country')
       <div class="error-message">{{$message}}</div>
       @enderror
-      <br><br>
       <div>
         <label for="city">City</label>
         <select name="city" id="city">
@@ -60,10 +59,9 @@
       @error('city')
       <div class="error-message">{{$message}}</div>
       @enderror
-      <br><br>
     </div>
 
-    <div>
+    <div class= cat_select>
       <label for="categories">Category:</label>
       <select name="category" id="categories">
         <option value="">Select Category</option>
@@ -75,7 +73,7 @@
       @error('category')
       <div class="error-message" style="color: red;">{{$message}}</div>
       @enderror
-    </div></br>
+    </div>
 
     <label for="job_title">Job Title:</label>
     <input type="text" id="job_title" name="job_title" placeholder="Change your job" value="{{ $job->job_title }}">

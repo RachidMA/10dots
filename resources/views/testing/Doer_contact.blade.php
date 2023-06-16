@@ -18,6 +18,7 @@
             <input type="text" name="name" id="name" required="required" placeholder="Your Name" />
             <input type="email" name="email" id="email" required="required" placeholder="Email"  />
             <input type="phone" name="phone" id="phone" required="required" placeholder="Phone Number" />
+            <label for="date">Hire doer for this date:</label>
             <input type="date" name="date" id="date" required="required" />
             <textarea name="message" id="message" placeholder="Your message here and I'll answer as soon as possible" required="required"></textarea>
         
