@@ -19,7 +19,7 @@
                     </div>
                 </form>
             </div>
-            <img class="card-img-top" src="/images/{{$job->image_url ? $job->image_url:'job.jpg'}}" alt="Card image cap">
+            <img class="card-img-top job-image-doer" src="/images/{{$job->image_url ? $job->image_url:'job.jpg'}}" alt="Card image cap">
         </div>
         <div class="job-information">
             <h3 class="title">{{ $job->job_title }}</h3>
@@ -35,7 +35,7 @@
         </div>
         <p class="description">{{$job->description}}</p>
     </div>
-    <div class="buttons">
+    <div class="buttons doer-job">
         <a class="edit" href="{{ route('editJob', ['id' => $job->id]) }}">Edit</a>
         <a class="delete" href="{{ route('deleteJob', ['id' => $job->id]) }}" class="delete">Delete</a>
     </div>

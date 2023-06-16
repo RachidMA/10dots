@@ -328,6 +328,16 @@ class JobController extends Controller
     public function delete(Request $request)
     {
         $data = Job::find($request->id);
+        //Image url
+        $image_url = Job::find($request->id)->image_url;
+
+        //Delete image from public/images folder
+        $image_path = public_path('images/') . $image_url;
+
+        //Check if image exist in folder
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
         $data->delete();
 
         // RETURN TO DOER DASHBOARD
