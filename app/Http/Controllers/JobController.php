@@ -187,7 +187,7 @@ class JobController extends Controller
             $job_data['image_url'] = $image_name;
         } else {
             //Store a default image in public/images
-            $job_data['image_url'] = 'default.jpg';
+            $job_data['image_url'] = '';
         }
 
         Job::insert([
@@ -337,7 +337,7 @@ class JobController extends Controller
         return redirect()
             ->route('doer-dashboard', ['id' => $doer->id])
             ->with([
-                'error' => 'Job Was successfully Deleted'
+                'success' => 'Job Was successfully Deleted'
             ]);
     }
 }
