@@ -11,6 +11,12 @@
         width: 100%;
         height: 100%;
         border-radius: 0;
+        .apply-button button {
+            @include orange_button;
+            margin-top: 1em;
+            width: 50%;
+            font-size: 12pt;
+        }
     }
     }
 }
@@ -38,7 +44,7 @@
            line-height: 2;
         }
         .img_div {
-            // background-color: aqua;
+            width: 75%;
             img{
                 object-fit: cover;
                 height: 100%;

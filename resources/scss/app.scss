@@ -59,6 +59,10 @@ $grey06: #444444;
     padding: 0 2em;
     white-space: nowrap;
     min-width: fit-content;
+
+    &:hover{
+        background-color: $light_orange;
+    }
 }
 
 @import 'landingpage';
