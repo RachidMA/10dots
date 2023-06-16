@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::prefix('/')->group(function () {
+Route::prefix('/home')->group(function () {
     Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
 });
 
