@@ -42,6 +42,12 @@
 
 <body>
     <div class="css_container">
+        @if (\Session::has('success'))
+        <div class="alert" id="alert-message">
+            <h4>{!! \Session::get('success') !!}</h4>
+            <button class="btn btn-primary success-ok">OK</button>
+        </div>
+        @endif
         @include("layout.header")
 
         <div class="css_wrapper">

@@ -269,3 +269,11 @@ if (errorButton) {
 function closeMessage(element) {
     element.style.display = "none";
 }
+
+//SUCCESS MESSAGE BOX
+const alert_box = document.querySelector("#alert-message");
+const ok_button = document.querySelector(".success-ok");
+
+ok_button.addEventListener("click", () => {
+    alert_box.classList.add("hide");
+});
