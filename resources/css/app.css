@@ -223,7 +223,10 @@
   position: absolute;
   left: 1.3rem;
 }
-
+.results_container .cat_info{
+  text-align: center;
+  line-height: 1.5rem;
+}
 /* ADMIN DASHBOARD PROFILE IMAGE */
 .image-card {
   background-color: rgba(128, 128, 128, 0.055);
@@ -460,7 +463,6 @@ input[type="range"]::-moz-range-thumb{
     margin-bottom: 2rem;
   }
 
-
 /* /////THIS IS THE CSS FOR THE LEAVE A REVIEW FORM IN JOB DETAILS///// */
     #reviewFormContainer {
       display: none;
@@ -592,6 +594,22 @@ input[type = "file"]::-webkit-file-upload-button{
 }
 
 /* RACHID:STYLING DOER JOB DETAILS */
+/* ************************** */
+.job-image {
+  height: 100%;
+  position: relative;
+}
+#job-detail-round .round{
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  z-index: 1;
+}
+.img_div img{
+  height: 100%;
+  object-fit:contain;
+}
+/* *********************** */
 .job-main-content{
   width: 100vw;
   height: auto;
@@ -618,13 +636,13 @@ input[type = "file"]::-webkit-file-upload-button{
   width: 35%;
 }
 .job-informations{
-  width: 50%;
+  width: 100%;
   height: 100%;
   text-align: start;
   padding: 0 5rem;
 }
 .doer-job-details img{
-  width: 100%;
+  width: 50%;
   height: 10rem;
   margin-right: 1rem;
   border: 1px solid black;
@@ -1013,6 +1031,7 @@ input[type = "file"]::-webkit-file-upload-button{
   position : absolute;
   bottom: 3rem;
   left: 2rem;
+ 
  }
  /* RACHID:ADD STYLE TO RATING DIV FOR FEATURED JOBS */
  .rating .rate {
