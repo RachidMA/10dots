@@ -17,7 +17,8 @@ async function getCountryCode(countryName) {
 }
 
 //AND WE NEED THAT CODE TO FETCH CITIES
-async function get_cities(countryName) {
+async function cities_fetch(countryName) {
+    console.log("fetching cities");
     const countryCode = await getCountryCode(countryName);
 
     const overpass_url = "https://overpass-api.de/api/interpreter";
@@ -61,7 +62,8 @@ if (country) {
         //FETCH ONLY IF THERE IS COUNTRY NAME AS VALUE (PROVENT ERROR IF USER CLICKS ON THIS TAG: <option value="">Select Country</option>)
         if (!selected_country == "") {
             // const selected_country = "United States Of America";
-            const cities = await get_cities(selected_country);
+            // RACHID:RENAME FUNCTION get_cities -> cities
+            const cities = await cities_fetch(selected_country);
             // Sort cities alphabetically
             cities.sort();
 
@@ -275,6 +277,8 @@ function closeMessage(element) {
 const alert_box = document.querySelector("#alert-message");
 const ok_button = document.querySelector(".success-ok");
 
-ok_button.addEventListener("click", () => {
-    alert_box.classList.add("hide");
-});
+if (ok_button) {
+    ok_button.addEventListener("click", () => {
+        alert_box.classList.add("hide");
+    });
+}
