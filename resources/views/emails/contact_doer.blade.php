@@ -22,14 +22,13 @@
             text-align: center;
         }
 
-        .button {
+        a.button {
             display: inline-block;
-            padding: 0.75rem 1rem;
-            background-color: rgba(0, 0, 0, 0.555);
-            color: #fff;
+            background-color: #FF7F0A;
+            color: white;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 4px;
         }
 
         .button:hover {

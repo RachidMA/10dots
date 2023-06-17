@@ -517,10 +517,37 @@
   grid-column: 5/12;
   margin-top: 2em;
 }
+/* RACHID:ADD STYLE TO MORE CATEGORIES IN THE AREA */
 .results_container .categories {
   padding: 0;
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: .3rem;
+  background-color: rgba(128, 128, 128, 0.11);
+  padding: 1rem;
+  border-radius: 1em;
 }
+.results_container .categories .category-card {
+  background-color: rgba(203, 219, 228, 0.349);
+  border: 0.5px solid rgba(0, 0, 0, 0.096);
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 1em;
+  min-width: 12rem;
+}
+
+.results_container .categories .category-card h6{
+  color: rgba(0, 0, 0, 0.678);
+}
+
+.results_container .categories .category-card li{
+  list-style: none;
+}
+.results_container .categories .category-card a {
+  color: rgba(0, 0, 128, 0.582);
+}
+/* ============================= */
 .results_container .job_result {
   box-shadow: 0 5px 3px #B8B6B6;
   background-color: #D9D9D9;
