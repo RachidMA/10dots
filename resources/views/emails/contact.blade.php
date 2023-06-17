@@ -13,22 +13,26 @@
             margin: 0;
         }
 
-        .card {
-            background-color: #ffffff;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
-            height: 600px;
-            /* max-width: 500px;
-            width: 100% !important; */
+        .email-container {
             display: flex;
-            /* flex-direction: column; */
-            /* align-items: center;
-            text-align: center; */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            line-height: 1.5rem;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
         }
 
         h1 {
-            color: #FF7F0A;
+            color: #ff7f0a;
         }
 
         h2 {
@@ -46,7 +50,7 @@
 
         a.button {
             display: inline-block;
-            background-color: #FF7F0A;
+            background-color: #ff7f0a;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -77,22 +81,32 @@
 </head>
 
 <body>
-    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <h1>Hi there,</h1>
+    <div class="email-container">
+        <div class="card" style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        ">
+            <h1>Hi there,</h1>
 
-        <p>Thank you for contacting us. We have received your message and will get back to you soon.</p>
+            <p>
+                Thank you for contacting us. We have received your message and will
+                get back to you soon.
+            </p>
 
-        <h2>Details:</h2>
-        <ul>
-            <li><strong>Name:</strong> {{ $contact->name }}</li>
-            <li><strong>Email:</strong> {{ $contact->email }}</li>
-            <li><strong>Message:</strong> {{ $contact->message }}</li>
-        </ul>
-        <p class="signature">Best regards,<br><br><br>10dots</p>
-        <p class="website-link">
-            Visit our website: <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
-        </p>
-
+            <h2>Details:</h2>
+            <ul>
+                <li><strong>Name:</strong> {{ $contact->name }}</li>
+                <li><strong>Email:</strong> {{ $contact->email }}</li>
+                <li><strong>Message:</strong> {{ $contact->message }}</li>
+            </ul>
+            <p class="signature">Best regards,<br /><br /><br />10dots</p>
+            <p class="website-link">
+                Visit our website:
+                <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
+            </p>
+        </div>
     </div>
 </body>
 

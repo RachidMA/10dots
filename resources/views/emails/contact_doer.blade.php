@@ -1,147 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!-- fontawsome kit link -->
-    <script src="https://kit.fontawesome.com/0b78c4645d.js" crossorigin="anonymous"></script>
-    <title>Booking in Progress</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+        /* CSS styles go here */
+        .email-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;
+            height: 100vh;
+            font-family: sans-serif;
+            line-height: 1.5rem;
         }
 
         .card {
-            background-color: #ffffff;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
-            height: 600px;
-            /* max-width: 500px;
-            width: 100% !important; */
-            display: flex;
-            /* flex-direction: column; */
-            /* align-items: center;
-            text-align: center; */
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
         }
 
-        h1 {
-            color: #4CAF50;
-        }
-
-        h2 {
-            color: #555555;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        a.button {
+        .button {
             display: inline-block;
-            background-color: #FF7F0A;
-            color: white;
-            padding: 10px 20px;
+            padding: 0.75rem 1rem;
+            background-color: #4f46e5;
+            color: #fff;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        p.signature {
-            margin-top: 40px;
-            color: #777777;
-            font-style: italic;
+        .button:hover {
+            background-color: #4338ca;
         }
 
-        p.signature:before {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 2px;
-            background-color: #777777;
-            margin: 10px auto;
+        .signature {
+            margin-top: 2rem;
         }
 
-        p.contact-info {
-            margin-top: 20px;
-            color: #555555;
-            font-size: 14px;
+        .contact-info {
+            margin-bottom: 1rem;
         }
 
         .website-link {
-            margin-top: 10px;
-            color: #555555;
-            font-size: 14px;
-        }
-
-        .social-icons {
-            margin-top: 20px;
+            margin-top: 1rem;
         }
 
         .social-icons a {
-            margin-right: 10px;
+            margin-right: 0.5rem;
+            color: #4f46e5;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .social-icons img {
-            height: 24px;
-            width: 24px;
-        }
-
-        .footer {
-            margin-top: 40px;
-            color: #777777;
-            font-size: 12px;
-        }
-
-        .footer:before {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 1px;
-            background-color: #777777;
-            margin: 10px auto;
+        .social-icons a:hover {
+            color: #4338ca;
         }
     </style>
 </head>
 
 <body>
-    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <h1>You have booked a doer</h1>
+    <div class="email-container">
+        <div class="card">
+            <h1>You have booked a doer</h1>
 
-        <p>Hello,</p>
-        <p>Thank you for booking a doer with us. We have received your message and will get back to you as soon as possible.</p>
-
-        <h2>Message Details:</h2>
-        <ul>
-            <li><strong>Job Title:</strong> {{ $jobTitle }}</li>
-        </ul>
-
-        <p>Click the button below to go back to the job details:</p>
-        <a href="{{ route('jobDetails', ['id' => $jobId]) }}" target="_blank" class="button">Go to Job</a>
-
-        <p class="signature">Best regards,<br><br><br>10dots</p>
-
-        <div class="footer" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <p class="contact-info">
-                Phone: +123456789<br>
-                Email: contact.10dots@gmail.com<br>
-                Address: 189 Aluwiz, 9000 Gent
+            <p>Hello,</p>
+            <p>
+                Thank you for booking a doer with us. We have received your message
+                and will get back to you as soon as possible.
             </p>
-            <p class="website-link">
-                Visit our website: <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
-            </p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
+            <h2>Message Details:</h2>
+            <!-- <ul>
+          <li><strong>Job Title:</strong> {{ $jobTitle }}</li>
+        </ul> -->
+            <h4><strong>Job Title:</strong> {{ $jobTitle }}</h4>
+            <p>Click the button below to go back to the job details:</p>
+            <a href="{{ route('jobDetails', ['id' => $jobId]) }}" target="_blank" class="button">Go to Job</a>
+
+            <p class="signature">Best regards,<br /><br /><br />10dots</p>
+
+            <div class="footer">
+                <p class="contact-info">
+                    Phone: +123456789<br />
+                    Email: contact.10dots@gmail.com<br />
+                    Address: 189 Aluwiz, 9000 Gent
+                </p>
+                <p class="website-link">
+                    Visit our website:
+                    <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </div>
