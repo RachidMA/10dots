@@ -25,6 +25,7 @@
         }
 
         .email-container {
+            display: flex;
             max-width: 600px;
             margin: 0 auto;
             background-color: #fff;
@@ -40,11 +41,11 @@
 </head>
 
 <body>
-    <div class="email-container">
+    <div class="email-container" style="flex-direction: column;">
         <h1>Account Delete <span>
                 <p>Date: <span id="current-date">{{ now()->format('Y-m-d') }}</span></p>
             </span></h1>
-        <p>Dear {{$data['user']->name}},</p>
+        <p>Doer {{$data['user']->name}},</p>
         <p>We regret to inform you that your account has been removed due to multiple spam reports.</p>
         <p>At our organization, we have a zero-tolerance policy towards spammers to maintain a safe and reliable environment for our users.</p>
         <p>If you believe this action has been taken in error, please feel free to contact us at {{$data['admin_email']}} for further assistance.</p>
