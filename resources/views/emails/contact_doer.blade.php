@@ -23,8 +23,8 @@
             width: 100% !important;
             display: flex;
             /* flex-direction: column; */
-            align-items: center;
-            text-align: center;
+            /* align-items: center;
+            text-align: center; */
         }
 
         h1 {
@@ -111,7 +111,7 @@
 </head>
 
 <body>
-    <div class="card" style="flex-direction: column;">
+    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h1>You have booked a doer</h1>
 
         <p>Hello,</p>
@@ -127,7 +127,7 @@
 
         <p class="signature">Best regards,<br><br><br>10dots</p>
 
-        <div class="footer">
+        <div class="footer" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
             <p class="contact-info">
                 Phone: +123456789<br>
                 Email: contact.10dots@gmail.com<br>
