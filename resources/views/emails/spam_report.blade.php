@@ -27,6 +27,7 @@
         .email-container {
             /* max-width: 600px; */
             width: 100%;
+            height: 600px;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
