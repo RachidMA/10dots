@@ -20,7 +20,7 @@
             max-width: 500px;
             width: 100% !important;
             display: flex;
-            flex-direction: column;
+            /* flex-direction: column; */
             align-items: center;
             text-align: center;
         }
@@ -75,7 +75,7 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card" style="flex-direction: column;">
         <h1>Hi there,</h1>
 
         <p>Thank you for contacting us. We have received your message and will get back to you soon.</p>

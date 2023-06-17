@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <!-- fontawsome kit link -->
+    <script src="https://kit.fontawesome.com/0b78c4645d.js" crossorigin="anonymous"></script>
     <title>Booked a Job</title>
     <style>
         body {
@@ -20,7 +22,7 @@
             max-width: 500px;
             width: 100% !important;
             display: flex;
-            flex-direction: column;
+            /* flex-direction: column; */
             align-items: center;
             text-align: center;
         }
@@ -109,7 +111,7 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card" style="flex-direction: column;">
         <h1>Your services are needed</h1>
 
         <p>Hello,</p>
@@ -147,9 +149,9 @@
                 Visit our website: <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
             </p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/yourprofile" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="https://www.twitter.com/yourprofile" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </div>
