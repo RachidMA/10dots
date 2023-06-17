@@ -19,8 +19,9 @@
             background-color: #ffffff;
             box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            max-width: 500px;
-            width: 100% !important;
+            width: 100%;
+            /* max-width: 500px;
+            width: 100% !important; */
             display: flex;
             /* flex-direction: column; */
             /* align-items: center;
