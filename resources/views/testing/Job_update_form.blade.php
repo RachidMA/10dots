@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="loreg_card">
-<div class = "big_circ_2"></div>
-<h2>Update your details</h2></br>
   <div class="big_circ_2"></div>
-  <form action="{{ route ('updateJob', [ 'id'=>$job->id ]) }}" method="POST" enctype="multipart/form-data">
+  <h2>Update your details</h2></br>
+  <div class="big_circ_2"></div>
+  <form action="{{ route ('updateJob', [ 'id'=>$job->id ]) }}" method="POST" enctype="multipart/form-data" class="edit-job-form">
     @csrf
 
     <label for="first_name">First Name:</label>
@@ -61,7 +61,7 @@
       @enderror
     </div>
 
-    <div class= cat_select>
+    <div class=cat_select>
       <label for="categories">Category:</label>
       <select name="category" id="categories">
         <option value="">Select Category</option>

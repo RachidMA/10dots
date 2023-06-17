@@ -26,35 +26,27 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::prefix('/home')->group(function () {
+Route::prefix('/')->group(function () {
     Route::get('/', [HomepageController::class, 'showFeaturedJobs'])->name("homepage");
+    Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
+    Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
+    Route::post('/search-job/price-range', [JobController::class, 'searchByPrice'])->name('price-range');
+    Route::get('/search-by-link', [JobController::class, 'searchByLink'])->name('search-by-link');
+    Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
+    Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
+    Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+    Route::get('/contact/{jobId}', [DoerContactController::class, 'showContact'])->name('contact.show');
+    Route::post('/contact', [DoerContactController::class, 'submitForm'])->name('contact.submitForm');
+    Route::get('/about-us', [UserController::class, 'aboutUs'])->name('about-us');
+    Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
+    Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
+    Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
+    Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
+    Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
 });
 
 
-Route::get('/search-form', [JobController::class, 'showForm'])->name('search-form');
-Route::post('/search-job', [JobController::class, 'search'])->name('search-result');
-Route::post('/search-job/price-range', [JobController::class, 'searchByPrice'])->name('price-range');
-Route::get('/search-by-link', [JobController::class, 'searchByLink'])->name('search-by-link');
-Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
 
-
-Route::get('/contact-us', [ContactController::class, 'create'])->name('contact.create');
-Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
-
-
-Route::get('/contact/{jobId}', [DoerContactController::class, 'showContact'])->name('contact.show');
-Route::post('/contact', [DoerContactController::class, 'submitForm'])->name('contact.submitForm');
-
-Route::get('/about-us', [UserController::class, 'aboutUs'])->name('about-us');
-
-Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
-Route::get('/jobs/{id}', [JobController::class, 'jobDetails'])->name('jobDetails');
-
-Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
-Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
-
-
-Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
 
 
 Route::prefix('/user')->middleware(['auth'])->group(function () {
