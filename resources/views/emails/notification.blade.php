@@ -140,7 +140,7 @@
 
 
             <p>Click the button below to view the job details:</p>
-            <a href="{{ route('jobDetails', ['id' => $jobId]) }}" target="_blank" class="button">View Job</a>
+            <a href="{{ route('doer-job-details', ['id' => $jobId]) }}" target="_blank" class="button">View Job</a>
 
             <p class="signature">Best regards,<br><br><br>10dots</p>
 
