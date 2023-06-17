@@ -36,7 +36,7 @@
     @foreach($jobs as $job)
     <div class="job_result doer-dashboard" id="{{$job->id}}">
         <div class="img_div" id="img_div">
-            <img class="card-img" src="/images/{{$job->image_url ? $job->image_url:'job.jpg'}}" alt="Card image cap">
+            <img class="card-img" src="/images/{{$job->image_url ? $job->image_url:'doer_job_defualt.png'}}" alt="Card image cap">
         </div>
         <div class="cat_info">
             <h5>

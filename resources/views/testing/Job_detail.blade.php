@@ -6,7 +6,7 @@
 <div class="detail_container">
     <div class="job_details customer-job-details">
         <div class="img_div">
-            <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'job.jpg'}}" alt="Card image cap">
+            <img class="card-img-top" src=" /images/{{$job->image_url ? $job->image_url: 'doer_job_defualt.png'}}" alt="Card image cap">
         </div>
         <div class="job-information">
             <h3 class="title">{{ $job->job_title }}</h3>
@@ -81,7 +81,7 @@
                 <textarea id="textarea" placeholder="your comment" rows="3" cols="25" name="comment" id="comment"></textarea>
             </div>
             <label for="rate" class="form-label">Rate</label>
-            <div class="rate">
+            <div class="rate" id="rate-welcome">
                 <input type="radio" id="star5" name="rating" value="5" />
                 <label for="star5" title="text">5 dots</label>
 

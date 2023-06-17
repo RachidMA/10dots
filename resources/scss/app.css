@@ -2020,6 +2020,15 @@ input[type=file]::-webkit-file-upload-button {
   margin: 1rem 0;
   background-color: #B8B6B6;
 }
+.rating #rate-welcome , #rate-welcome {
+  margin: 1rem 0;
+  height: 3rem;
+  background-color: #35333346;
+}
+.rating #rate-welcome label, .main-review-form #rate-welcome label {
+  height: 2.5rem;
+  margin-top: 0;
+}
 
 /* ================================================== */
 .alert .btn {

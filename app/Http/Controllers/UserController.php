@@ -37,7 +37,7 @@ class UserController extends Controller
         $request->validate([
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-        
+
         if ($avatar = $request->file('avatar')) {
             $avatar_name = time() . '-' . $avatar->getClientOriginalName();
             $avatar->move(public_path('images'), $avatar_name);
@@ -76,7 +76,7 @@ class UserController extends Controller
                 'title' => 'Backend Developer',
                 'languages' => ['PHP', 'Laravel', 'JavaScript', 'HTML', 'CSS', 'Git'],
                 'GitLink' => 'https://github.com/RachidMA',
-                'image' => 'Rachid-3.jpeg'
+                'image' => 'Rachid-3.jpg'
             ],
             [
                 'fullname' => 'Ada Omoji',
