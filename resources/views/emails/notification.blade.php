@@ -22,6 +22,7 @@
             /* max-width: 500px;
             width: 100% !important; */
             width: 100%;
+            height: 600px;
             display: flex;
             /* flex-direction: column; */
             /* align-items: center;

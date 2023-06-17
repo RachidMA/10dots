@@ -18,6 +18,7 @@
             box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             width: 100%;
+            height: 600px;
             /* max-width: 500px;
             width: 100% !important; */
             display: flex;
