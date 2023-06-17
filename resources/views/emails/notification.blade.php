@@ -2,8 +2,6 @@
 <html>
 
 <head>
-    <!-- fontawsome kit link -->
-    <script src="https://kit.fontawesome.com/0b78c4645d.js" crossorigin="anonymous"></script>
     <title>Booked a Job</title>
     <style>
         body {
@@ -118,7 +116,7 @@
 
 <body>
     <div class="email-container">
-        <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="card">
             <h1>Your services are needed</h1>
 
             <p>Hello,</p>
