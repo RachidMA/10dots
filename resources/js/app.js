@@ -20,7 +20,7 @@ async function getCountryCode(countryName) {
 async function get_cities(countryName) {
     const countryCode = await getCountryCode(countryName);
 
-    const overpass_url = "http://overpass-api.de/api/interpreter";
+    const overpass_url = "https://overpass-api.de/api/interpreter";
     const overpass_query = `
     [out:json];
     area["ISO3166-1"="${countryCode}"]->.country;
