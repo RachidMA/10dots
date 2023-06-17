@@ -23,8 +23,8 @@
             width: 100% !important;
             display: flex;
             /* flex-direction: column; */
-            align-items: center;
-            text-align: center;
+            /* align-items: center;
+            text-align: center; */
         }
 
         h1 {
@@ -111,7 +111,7 @@
 </head>
 
 <body>
-    <div class="card" style="flex-direction: column;">
+    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h1>Your services are needed</h1>
 
         <p>Hello,</p>

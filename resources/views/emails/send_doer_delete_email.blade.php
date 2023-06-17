@@ -41,7 +41,7 @@
 </head>
 
 <body>
-    <div class="email-container" style="flex-direction: column;">
+    <div class="email-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h1>Account Delete <span>
                 <p>Date: <span id="current-date">{{ now()->format('Y-m-d') }}</span></p>
             </span></h1>
