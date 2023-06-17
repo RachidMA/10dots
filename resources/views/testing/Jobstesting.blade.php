@@ -13,22 +13,25 @@
     <x:price_slider-card :job='$job' :city='$city' />
 </div>
 
-<div class="results_container">
-    <h3>Search results in your area</h3>
-    <ul class="categories">
 
-        @foreach ($categories as $category)
-        <h2>{{ $category->name }} jobs:</h2>
-        <ul>
-            @foreach ($category->jobs()->where('city', $city)->get() as $job)
-            <li>
-                <a href="{{route('search-by-link', ['job_title'=>$job->job_title, 'city'=>$city])}}" class="category-job-link">{{$job->job_title}}</a>
-            </li>
+<div class="results_container">
+    <div class="featured-side-bar">
+        <h5>More Categories In Your Area</h5>
+        <ul class="categories">
+            @foreach ($categories as $category)
+            <div class="category-card">
+                <h6>{{ $category->name }} jobs:</h6>
+                <ul>
+                    @foreach ($category->jobs()->where('city', $city)->get() as $job)
+                    <li>
+                        <a href="{{route('search-by-link', ['job_title'=>$job->job_title, 'city'=>$city])}}" class="category-job-link">- {{$job->job_title}}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
             @endforeach
         </ul>
-        @endforeach
-    </ul>
-
+    </div>
     @if($searchResult !== null && count($searchResult) > 0)
     @foreach($searchResult as $job)
     <div class="job_result" id="{{$job->id}}">
