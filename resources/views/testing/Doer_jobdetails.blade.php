@@ -19,7 +19,7 @@
                     </div>
                 </form>
             </div>
-            <img class="card-img-top job-image-doer" src="/images/{{$job->image_url ? $job->image_url:'job.jpg'}}" alt="Card image cap">
+            <img class="card-img-top job-image-doer" src="/images/{{$job->image_url ? $job->image_url:'doer_job_defualt.png'}}" alt="Card image cap">
         </div>
         <div class="job-information">
             <h3 class="title">{{ $job->job_title }}</h3>

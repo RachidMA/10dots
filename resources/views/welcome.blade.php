@@ -42,7 +42,7 @@
         @foreach($featuredJobs as $job_review)
         <div class="landing_category">
             <div class="cat_img">
-                <img src="/images/{{$job_review[0]->job->image_url ? $job_review[0]->job->image_url : 'job.jpg'}}" alt="">
+                <img src="/images/{{$job_review[0]->job->image_url ? $job_review[0]->job->image_url : 'doer_job_defualt.png'}}" alt="">
             </div>
             <div class="cat_info">
                 <h4>
@@ -50,7 +50,7 @@
                 </h4>
                 <h6>{{$job_review[0]->job->job_title}}</h6>
                 <div class="rating">
-                    <div class="rate">
+                    <div class="rate" id="rate-welcome">
                         <input type="radio" id="star5_{{ $job_review[0]->job->id }}" name="rating_{{ $job_review[0]->job->id }}" value="5" {{ $job_review[0]->rating == 5 ? 'checked' : '' }} />
                         <label for="star5_{{ $job_review[0]->job->id }}" title="text">5 dots</label>
 
