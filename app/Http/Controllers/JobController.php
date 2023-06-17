@@ -151,7 +151,7 @@ class JobController extends Controller
         $categories = Category::all();
         $countries = Country::all();
 
-        return view('testing.job_create_form')->with(['categories' => $categories, 'countries' => $countries]);
+        return view('testing.Job_create_form')->with(['categories' => $categories, 'countries' => $countries]);
     }
 
     //STORE JOB BY AUTHENTICATED USER
@@ -279,7 +279,7 @@ class JobController extends Controller
         $job = Job::find($id);
         if ($job) {
             //RETURN THE FORM
-            return view('testing.job_update_form', ['job' => $job, 'countries' => $countries, 'categories' => $categories]);
+            return view('testing.Job_update_form', ['job' => $job, 'countries' => $countries, 'categories' => $categories]);
         }
     }
 
