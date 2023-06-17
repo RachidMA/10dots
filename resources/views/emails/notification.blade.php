@@ -15,18 +15,22 @@
             margin: 0;
         }
 
-        .card {
-            background-color: #ffffff;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            /* max-width: 500px;
-            width: 100% !important; */
-            width: 100%;
-            height: 600px;
+        .email-container {
             display: flex;
-            /* flex-direction: column; */
-            /* align-items: center;
-            text-align: center; */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            line-height: 1.5rem;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
         }
 
         h1 {
@@ -113,50 +117,54 @@
 </head>
 
 <body>
-    <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <h1>Your services are needed</h1>
+    <div class="email-container">
+        <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <h1>Your services are needed</h1>
 
-        <p>Hello,</p>
-        <p>You have received this email because someone needs your services.
-            Good luck!
-        </p>
-
-        <h2>Job Details:</h2>
-        <ul>
-            <li><strong>{{ $jobTitle }}<strong></li>
-        </ul>
-
-        <h2>Contact Information:</h2>
-        <ul>
-            <li><strong>Name:</strong> {{ $name }}</li>
-            <li><strong>Phone:</strong> {{ $phone }}</li>
-            <li><strong>Email:</strong> {{ $email }}</li>
-            <li><strong>Date:</strong> {{ $date }}</li>
-        </ul>
-
-
-
-        <p>Click the button below to view the job details:</p>
-        <a href="{{ route('jobDetails', ['id' => $jobId]) }}" target="_blank" class="button">View Job</a>
-
-        <p class="signature">Best regards,<br><br><br>10dots</p>
-
-        <div class="footer">
-            <p class="contact-info">
-                Phone: +123456789<br>
-                Email: contact.10dots@gmail.com<br>
-                Address: 189 Aluwiz, 9000 Gent
+            <p>Hello,</p>
+            <p>You have received this email because someone needs your services.
+                Good luck!
             </p>
-            <p class="website-link">
-                Visit our website: <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
-            </p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
+            <h2>Job Details:</h2>
+            <ul>
+                <li><strong>{{ $jobTitle }}<strong></li>
+            </ul>
+
+            <h2>Contact Information:</h2>
+            <ul>
+                <li><strong>Name:</strong> {{ $name }}</li>
+                <li><strong>Phone:</strong> {{ $phone }}</li>
+                <li><strong>Email:</strong> {{ $email }}</li>
+                <li><strong>Date:</strong> {{ $date }}</li>
+            </ul>
+
+
+
+            <p>Click the button below to view the job details:</p>
+            <a href="{{ route('jobDetails', ['id' => $jobId]) }}" target="_blank" class="button">View Job</a>
+
+            <p class="signature">Best regards,<br><br><br>10dots</p>
+
+            <div class="footer">
+                <p class="contact-info">
+                    Phone: +123456789<br>
+                    Email: contact.10dots@gmail.com<br>
+                    Address: 189 Aluwiz, 9000 Gent
+                </p>
+                <p class="website-link">
+                    Visit our website: <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
+
     </div>
+
 </body>
 
 </html>
