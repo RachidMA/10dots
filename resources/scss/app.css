@@ -1520,6 +1520,10 @@ input[type=range]::-moz-range-thumb {
   padding: 0 0.5rem;
 }
 
+/* RACHID: ADD STYLE TO CONTACT DOER FORM ADD SOME PADDING TO INPUT */
+.doer-contact-form input{
+  padding-left: .5rem;
+}
 /* ///////END CSS FOR JOB_LEAVE_REVIEW//////// */
 /* //Hide the submit button for profile image before its upload */
 .round button {
