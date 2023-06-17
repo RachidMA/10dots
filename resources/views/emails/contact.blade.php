@@ -82,12 +82,7 @@
 
 <body>
     <div class="email-container">
-        <div class="card" style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        ">
+        <div class="card">
             <h1>Hi there,</h1>
 
             <p>
