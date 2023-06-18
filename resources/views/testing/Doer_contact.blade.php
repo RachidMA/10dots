@@ -11,7 +11,7 @@
         <a href="{{ route('jobDetails', ['id' => $jobId]) }}" class="btn btn-primary">Back to the job details</a>
     </div>
     @endif
-    <form action="{{ route('contact.submitForm') }}" method="POST" class="contact">
+    <form action="{{ route('contact.submitForm') }}" method="POST" class="contact doer-contact-form">
         @csrf
         <input type="hidden" name="job_id" value="{{ $jobId }}">
 
