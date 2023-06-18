@@ -76,7 +76,7 @@ class UserController extends Controller
                 'title' => 'Backend Developer',
                 'languages' => ['PHP', 'Laravel', 'JavaScript', 'HTML', 'CSS', 'Git'],
                 'GitLink' => 'https://github.com/RachidMA',
-                'image' => 'Rachid.jpg'
+                'image' => 'rachid.jpg'
             ],
             [
                 'fullname' => 'Ada Omoji',
