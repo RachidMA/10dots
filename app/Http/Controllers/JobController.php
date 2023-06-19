@@ -334,8 +334,10 @@ class JobController extends Controller
         //Delete image from public/images folder
         $image_path = public_path('images/') . $image_url;
 
+        // $image_url = ""; means job has default page from website
+
         //Check if image exist in folder
-        if (file_exists($image_path)) {
+        if (file_exists($image_path && !$image_url !== '')) {
             unlink($image_path);
         }
         $data->delete();
