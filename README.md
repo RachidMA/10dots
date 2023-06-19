@@ -26,7 +26,7 @@ During the course of this project, each member had the opportunity to write a te
 [Jean](https://github.com/JeanPinay) - Backend Developer</br>
         [Using mailtrap in Laravel](https://dev.to/jeanpinay/using-mailtrap-in-laravel-5bj4)</br></br>
 [Vincent](https://github.com/VincentClarysse) - Frontend Developer</br>
-[Vincent article here]</br></br>
+        [CSS/SCSS tips and tricks](https://dev.to/vincentclarysse/cssscss-tips-and-tricks-1lji)</br></br>
 [Claire](https://github.com/HereThereClaire) - Frontend Designer</br>
 
 ## ⚒️Languages and tools: 
