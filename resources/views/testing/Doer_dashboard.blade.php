@@ -52,6 +52,9 @@
 </div>
 @elseif($jobs !== null && count($jobs) === 0)
 <div class="no-jobs-message">
+    <div class="no-jobs-container">
+
+    </div>
     <p>No job results found.</p>
 </div>
 @else
