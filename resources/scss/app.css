@@ -2046,6 +2046,9 @@ input[type=file]::-webkit-file-upload-button {
   left: 2rem;
 }
 
+.no-jobs-message p{
+ width: 10rem;
+}
 /* RACHID:ADD STYLE TO RATING DIV FOR FEATURED JOBS */
 .rating .rate {
   margin: 1rem 0;
