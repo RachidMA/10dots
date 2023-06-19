@@ -6,7 +6,7 @@
 🟠'Doers' are able to create a task in 3 categories: Music, Art, History</br>
 🟠'Users' can search for help in different countries (Australia, Belgium, Canada, Germany, USA, and the UK)</br></br>
 
-👀 Take a look at our finished project [here](https://10-dots.com/)
+### 👀 Take a look at our finished project [here](https://10-dots.com/)
 
 ## Features
 - 📋 Login/registration system
