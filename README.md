@@ -1,7 +1,7 @@
 ![Header](10dots-welcome.png)
 
 # What is 10 Dots?
-10 dots is a web application that allows users to connect with service providers in their area. After a task is completed, users can rate the service based on a dots review system. Created using the Laravel framework due to its security, ease of use when implementing code into blade templates</br></br>
+10 dots is a web application that allows users to connect with service providers in their area. After a task is completed, users can rate the service based on a dots review system. Created using the Laravel framework due to its security, and ease of use when implementing code into blade templates</br></br>
 
 🟠'Doers' are able to create a task in 3 categories: Music, Art, History</br>
 🟠'Users' can search for help in different countries (Australia, Belgium, Canada, Germany, USA, and the UK)</br></br>
