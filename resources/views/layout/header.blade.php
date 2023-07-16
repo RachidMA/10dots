@@ -16,6 +16,15 @@
         <a href="{{route('doer-dashboard', ['id'=>auth()->user()->id])}}" class="nav-link pfimg">
             <img src="/images/{{Auth()->user()->profile_image ? Auth()->user()->profile_image : 'profile-image-defalut.png'}}" alt="" class="image-profile">
         </a>
+        <!-- RACHID: ADD THE NOTIFICATIONS ICON -->
+        <div class="notification-icon">
+            <a href="{{route('testing.notifications')}}" class="notification">
+                <img src="/icons/jingle-bell.png" alt="" class="Notification-Icon">
+                @if(auth()->user()->notifications->count() > 0 && auth()->user()->notifications->where('status', 0)->count())
+                <p class="notification-count">{{ auth()->user()->notifications->where('status', 0)->count()}}</p>
+                @endif
+            </a>
+        </div>
     </li>
     @endif
     @endif

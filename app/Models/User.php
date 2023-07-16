@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Job::class);
     }
+
+    //ADD USER HAS MANY NOTIFICATIONS
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 }

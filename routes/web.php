@@ -8,9 +8,11 @@ use App\Http\Controllers\JobController;
 // use app\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SpamReportController;
 use App\Http\Controllers\UserController;
+use App\Models\Notification;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,6 +68,10 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
     Route::post('upload-job-image', [JobController::class, 'uploadJobImage'])->name('upload-job-image');
 
     Route::post('/logout', [LogoutController::class, 'perform'])->name('logout-route');
+
+    //RACHID:ADD ROUTES FOR NOTIFICATIONS AND FOR CONFIMING PENDING BOOKINGS
+    Route::get('/notifications/all', [NotificationController::class, 'readAll'])->name('testing.notifications');
+    Route::get('/notifications/{id}', [NotificationController::class, 'readSingleNotification'])->name('testing.singleNotification');
 });
 
 
