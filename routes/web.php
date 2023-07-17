@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContactController;
@@ -45,6 +46,7 @@ Route::prefix('/')->group(function () {
     Route::get('/review', [ReviewController::class, 'review'])->name('leaveReview');
     Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
     Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
+    Route::post('/book-doer', [BookingController::class, 'bookDoer'])->name('book-doer');
 });
 
 

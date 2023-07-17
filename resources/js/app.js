@@ -282,3 +282,108 @@ if (ok_button) {
         alert_box.classList.add("hide");
     });
 }
+// RACHID:BOOK NOW FEATURE
+//BOOK NOW FORM DISPLAY NONE WHEN close-form CLICKED
+const errorMessageBook = document.querySelector(".error-message-email");
+const formCloseBtn = document.querySelector(".close-form");
+const bookMainContainer = document.querySelector(".book-main-container");
+//MAKE SURE CUSTOMER ENTERS EMAIL TO BOOK DOER
+const form = document.querySelector(".book-form");
+const emailInput = document.querySelector(".customer-email");
+const phoneInput = document.querySelector(".customer_number");
+
+const bookNow = document.querySelector(".book-now");
+if (bookNow) {
+    bookNow.addEventListener("click", () => {
+        //make sure email input is empty
+        emailInput.value = "";
+        bookMainContainer.classList.remove("hide");
+        bookMainContainer.classList.add("show");
+    });
+}
+
+if (formCloseBtn && bookMainContainer) {
+    formCloseBtn.addEventListener("click", () => {
+        bookMainContainer.classList.remove("show");
+        bookMainContainer.classList.toggle("hide");
+        errorMessageBook.style.visibility = "hidden";
+
+        //clear email input after closing the form
+        emailInput.value = "";
+    });
+}
+
+//WHEN THE FORM IS AVAILABLE
+if (form) {
+    form.addEventListener("submit", function (event) {
+        const emailInput = document.querySelector(".customer-email");
+        const phoneInput = document.querySelector(".customer-number");
+        const nameInput = document.querySelector(".customer-name");
+        const errorMessageBook = document.querySelector(".error-message-email");
+
+        if (
+            !isValidEmail(emailInput.value) ||
+            !isValidPhone(phoneInput.value) ||
+            !isValidName(nameInput.value)
+        ) {
+            event.preventDefault(); // Prevent form submission
+            errorMessageBook.style.visibility = "visible"; // Display error message
+        }
+    });
+}
+
+//CHECK IF EMAIL IS VALID
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+//CHECK IF PHONE NUMBER IS CORRECT
+function isValidPhone(number) {
+    const phoneNumberRegex = /^\d{10}$/;
+
+    return phoneNumberRegex.test(number);
+}
+function isValidName(name) {
+    if (name !== "") {
+        let nameRegEx = /^[a-zA-Z\s]+$/;
+        console.log("checking name");
+        return nameRegEx.test(name.trim());
+    }
+    return false;
+}
+
+// ---------BOOK NOW JAVASCRIPT ENDS HERE-------------
+// document
+//     .getElementById("show-form-button")
+//     .addEventListener("click", function () {
+//         document.getElementById("form-container").style.display = "block";
+//     });
+
+// document.querySelector(".close-form").addEventListener("click", function () {
+//     document.getElementById("form-container").style.display = "none";
+// });
+
+//THIS IS FOR BOOKING IMPORTMATION BOX
+
+const inputList = document.querySelectorAll(".input");
+
+if (inputList) {
+    inputList.forEach((input) => {
+        input.addEventListener("focus", () => {
+            input.placeholder = "";
+        });
+    });
+    inputList.forEach((input) => {
+        input.addEventListener("blur", () => {
+            if (input.classList.contains("customer-name")) {
+                input.placeholder = "Enter Your Name";
+            } else if (input.classList.contains("customer-number")) {
+                input.placeholder = "Enter Your Number";
+            } else if (input.classList.contains("customer-email")) {
+                input.placeholder = "Enter Your Email";
+            }
+        });
+    });
+}
+//============BOOKING FEATURE ENDS HERE================

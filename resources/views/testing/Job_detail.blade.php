@@ -1,7 +1,21 @@
 @extends ('layout.layout')
 
 @section('content')
-
+<div class="book-main-container">
+    <div class="book-now-container">
+        <p>BOOK YOU DOER</p>
+        <p class="close-form">X</p>
+        <form action="{{route('book-doer')}}" method='post' class="book-form" enctype="multipart/form-data">
+            @csrf
+            <input type="text" name="customer-name" class="customer-name input" placeholder="Enter Name">
+            <input type="text" name="customer-number" class="customer-number input" placeholder="Enter Phone Number">
+            <input type="email" name="customer-email" class="customer-email input" placeholder="Enter Email">
+            <div class="error-message-email">Name, Phone Number, Email are required.</div>
+            <input type="hidden" name="job-id" value="{{$job->id}}">
+            <input type="submit" value="Submit" class="submit" required>
+        </form>
+    </div>
+</div>
 
 <div class="detail_container">
     <div class="job_details customer-job-details">
@@ -27,6 +41,8 @@
         <button class="reviewButton">Leave Review</button>
         <a class="call" href="tel:{{ $job->phone }}"><span><i class="fa-solid fa-phone"></i></span>call doer</a>
         <a class="contact" href="{{ route('contact.show', ['jobId' => $job->id]) }}" class="email-me"><i class="fa-solid fa-at"></i>Contact doer</a>
+        <!-- RACHID: ADD BOOK DOER NOW FEATURE -->
+        <button class="book-now" id="{{$job->id}}">BOOK NOW</button>
     </div>
     <div class="reviews-container">
         @if($reviews)
