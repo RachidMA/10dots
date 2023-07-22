@@ -47,6 +47,10 @@ Route::prefix('/')->group(function () {
     Route::post('/review', [ReviewController::class, 'saveReview'])->name('saveReview');
     Route::post('/report-spam', [SpamReportController::class,  'reportSpam'])->name('report-spam');
     Route::post('/book-doer', [BookingController::class, 'bookDoer'])->name('book-doer');
+
+    //CUSTOMER HERE CAN CONFIRM IF THE DOER HAS THE JOB DONE BY REPLYING THROUGH EMAIL 
+    //SENT WHEN DOER PRESSES THE BUTTON "YES" FOR PENDING WORK PAGE
+    Route::get('/confirm-work-done', [BookingController::class, 'confirmWorkDone'])->name('confirm-work-done');
 });
 
 
@@ -74,6 +78,15 @@ Route::prefix('/user')->middleware(['auth'])->group(function () {
     //RACHID:ADD ROUTES FOR NOTIFICATIONS AND FOR CONFIMING PENDING BOOKINGS
     Route::get('/notifications/all', [NotificationController::class, 'readAll'])->name('testing.notifications');
     Route::get('/notifications/{id}', [NotificationController::class, 'readSingleNotification'])->name('testing.singleNotification');
+
+    //RACHID:ADD ROUTES FOR PENDING BOOKING REQUEST AND BOOKED JOBS PAGE
+    Route::get('/pending-booking-request/{id}', [BookingController::class, 'showAllBooking'])->name('pending-booking-request');
+    Route::get('/pending-work-page', [BookingController::class, 'pendingWorkPage'])->name('pending-work-page');
+    Route::post('/confirm-booking', [BookingController::class, 'confirmBooking'])->name('confirm-booking');
+    Route::post('/decline-booking', [BookingController::class, 'declineBooking'])->name('decline-booking');
+    //DELETE BOOKED JOB REQUEST DELETE AFTER JOB IS DONE OR WHEN DOER DECIDED TO DELETE THE JOB
+    Route::post('/booked-job-completed', [BookingController::class, 'bookedJobCompleted'])->name('booked-job-completed');
+    Route::post('/booked-job-by-doer-delete', [BookingController::class, 'bookedJobByDoerDelete'])->name(('booked-job-by-doer-delete'));
 });
 
 

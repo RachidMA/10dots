@@ -28,6 +28,12 @@
     <p class="card-text">Address: {{$doer->jobs()->first() ? $doer->jobs()->first()->address: ""}}</p>
     <p class="card-text">{{$doer->jobs()->first()? $doer->jobs()->first()->country : ""}} {{$doer->jobs()->first()? $doer->jobs()->first()->city : ""}}</p>
     <p>Total Jobs: {{$doer->jobs()->get()? count($doer->jobs()->get()) : 0}}</p>
+
+    <!-- THIS SECTION IS RESPONSIBLE FOR THE PENDING JOBS AND REQUEST(BOOKING) -->
+    <div class="booking-container">
+        <a href="{{route('pending-booking-request', ['id'=>Auth::user()->id])}}" class="booking">Booking Requests</a>
+        <a href="{{route('pending-work-page', ['id'=>Auth::user()->id])}}">pinding jobs</a>
+    </div>
 </div>
 
 @if($jobs !== null && count($jobs) > 0)

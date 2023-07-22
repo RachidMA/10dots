@@ -12,7 +12,7 @@
             You have a new booking request.
         </p>
         <div class="booking-request-page">
-            <a href="">GO BOOKING REQUEST PAGE</a>
+            <a href="{{route('pending-booking-request', ['id'=>Auth::user()->id])}}">GO BOOKING REQUEST PAGE</a>
         </div>
     </div>
 </div>

@@ -2762,6 +2762,7 @@ padding-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  width: 100vw;
  }
  .doer-booking-list .notifications-container-booking{
  background-color: rgba(245, 222, 179, 0.397);

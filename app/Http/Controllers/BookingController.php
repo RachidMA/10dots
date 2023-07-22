@@ -83,7 +83,10 @@ class BookingController extends Controller
                 'jobBookingList' => null
             ]);
         }
-
+        // WE USE THE METHOD BELLOW IS BECAUSE A DOER CAN HAVE POSTED JOB WITH 
+        // DIFFERENT CATOGORIES. EX: DOER COULD BE PLUMBER AND TRUCK DRIVER
+        // SO WE HAVE TO COLLECT ALL PENDING JOBS FROM BOTH CATEGORIES 
+        // AND PUT THEM IN ONE LIST
         $jobBookingList = [];
         foreach ($doerJobList as $doerJob) {
             $pendingRequests = Booking::where('job_id', $doerJob->id)->where('pending', '0')->get();
@@ -135,7 +138,7 @@ class BookingController extends Controller
         //GET THE BOOKING ID
         $bookingId = $request->booking_id;
         //DELETE THE BOOKING OBJECT
-        $bookingObject = Booking::find($bookingId)->delete();
+        Booking::find($bookingId)->delete();
 
         return redirect()->back();
     }
@@ -156,7 +159,10 @@ class BookingController extends Controller
                 'jobsPendingList' => null
             ]);
         }
-
+        // WE USE THE METHOD BELLOW IS BECAUSE A DOER CAN HAVE POSTED JOB WITH 
+        // DIFFERENT CATOGORIES. EX: DOER COULD BE PLUMBER AND TRUCK DRIVER
+        // SO WE HAVE TO COLLECT ALL PENDING JOBS FROM BOTH CATEGORIES 
+        // AND PUT THEM IN ONE LIST
         $jobsPendingList = [];
         foreach ($doerJobList as $doerJob) {
             $jobsPending = Booking::where('job_id', $doerJob->id)->where('pending', '1')->get();
@@ -218,7 +224,7 @@ class BookingController extends Controller
     {
 
         //DELETE BOOKED JOB
-        Booking::find($request->booked_job_id)->delte();
+        Booking::find($request->booked_job_id)->delete();
         return redirect()->back()->with([
             'success' => 'The job has been deleted successfully.'
         ]);
