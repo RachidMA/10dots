@@ -42,8 +42,8 @@
                     <form action="{{ route('admin-find-doer', ['name' => Auth::user()->name]) }}" method="post">
                         @csrf
                         <div class="doer-email">
-                            <label for="email">Email</label>
-                            <input type="email" class="custom-input input" name="email" id="email" placeholder="Enter email" value="{{$doer_email}}">
+                            <label for="email">Find Doer</label>
+                            <input type="email" class="custom-input input" name="email" id="email" placeholder="Enter email" value="">
                         </div>
                         <button type="submit" class="btn mt-4">Search</button>
                     </form>

@@ -36,8 +36,12 @@ class SpamReportController extends Controller
                 ];
 
                 if ($spamReportCount == 2) {
+                    //SEND THE DOER A WARNING NOTIFICATION
                     Mail::to($user->email)->send(new SpamReportEmail($data));
+                    //SEND THE DOER DASHBOARD NOTIFICATION
+                    //TODO: CREATE THE SPAM NOTIFICATION
 
+                    //SEND WEBSITE ADMIN A SPAM NOTIFICATION WITH DOER INFORMATION
                     Notification::route('mail', $data['admin_email'])->notify(new SpamReportNotification($data));
                 } elseif ($spamReportCount >= 5) {
 
