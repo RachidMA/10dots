@@ -20,16 +20,17 @@ class UserController extends Controller
     }
     public function adminDashboard(Request $request)
     {
-
+        //INITIALIZING DOER EMAIL TO HOLD EMPTY VALUE
         $doer_email = $request->session()->get('doer_email') ?  $request->session()->get('doer_email') : null;
 
-        $job = null;
-        $admin_id = Auth::id();
         $admin = Auth::user();
 
-        $countries = Country::all();
-
-        return view('testing.Admin_dashboard')->with(['admin' => $admin, 'countries' => $countries, 'job' => $job, 'doer_email' => $doer_email]);
+        //CLEAR THE SESSION 
+        if ($request->session()->has("doer_email")) {
+            //CLEAR SESSION: SO SEARCH FORM WILL UPLOAD EMPTY IF USING OTHER ROUTES
+            session()->forget(['doer_email']);
+        }
+        return view('testing.Admin_dashboard')->with(['admin' => $admin, 'doer_email' => $doer_email]);
     }
 
     public function StoreAvatar(Request $request)
@@ -55,7 +56,9 @@ class UserController extends Controller
     public function adminFindDoer(Request $request)
     {
 
+
         $doer = User::where('email', $request->email)->first();
+
 
         if (!$doer) {
             return redirect()->back()->with('message', 'Doer not found');

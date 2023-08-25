@@ -43,7 +43,7 @@
                         @csrf
                         <div class="doer-email">
                             <label for="email">Find Doer</label>
-                            <input type="email" class="custom-input input" name="email" id="email" placeholder="Enter email" value="">
+                            <input type="email" name="email" id="email" class="custom-input input" placeholder="Enter Email" value="{{$doer_email ? $doer_email : ''}}">
                         </div>
                         <button type="submit" class="btn mt-4">Search</button>
                     </form>
