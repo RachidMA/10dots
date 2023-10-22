@@ -119,7 +119,7 @@
             <p class="signature">Best regards,<br /><br /><br />10dots</p>
             <p class="website-link">
                 Visit our website:
-                <a href="https://www.10dots.be" target="_blank">www.10dots.be</a>
+                <a href="https://www.10-dots.com/" target="_blank">www.10-dots.com/</a>
             </p>
         </div>
     </div>
