@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Notification::class);
     }
+
+    public function completedWork()
+    {
+        return $this->hasOne(Work::class);
+    }
 }

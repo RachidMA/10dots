@@ -239,6 +239,7 @@ class BookingController extends Controller
         // Increment the user finished jobs column in the finished jobs table
         $bookedJob = Booking::find($booked_job_id);
         $doerObject = $bookedJob->job->user;
+
         $worksDoneObject = Work::where('user_id', '=', $doerObject->id)->first();
 
         // Increment worksCount by one
@@ -257,6 +258,16 @@ class BookingController extends Controller
             $userFinishedJobs->updated_at = Carbon::now();
             $userFinishedJobs->save();
         }
+
+        //SEND A NOTIFICATION THAT THE CUSTOMER CONFORMED THAT THE JOB DONE
+        //CREATE A NOTIFICATION FOR THE DOER TO READ
+        Notification::create([
+            'title' => 'New Job Completed',
+            'message' => 'Your customer confirmed that you have completed the job succefully',
+            'user_id' => $doerObject->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
 
         // Delete the instance
         Booking::where('id', '=', $booked_job_id)->delete();

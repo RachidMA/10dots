@@ -22,6 +22,9 @@ class SpamReportController extends Controller
         $job = Job::find($jobId);
         $doer_id = $job->user_id;
 
+        //GET ADMIN EMAIL
+        $adminEmail = User::where('role', 1)->first()->email;
+
         if ($job) {
             $user = User::find($doer_id);
 
@@ -29,7 +32,7 @@ class SpamReportController extends Controller
                 $user->increment('spam_reports');
                 $spamReportCount = $user->spam_reports;
                 $data = [
-                    "admin_email" => "10dots@gmail.com",
+                    "admin_email" => $adminEmail,
                     "admin_name" => "10dots Admin",
                     "user" => $user,
                     "spamReportCount" => $spamReportCount

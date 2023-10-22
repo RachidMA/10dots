@@ -23,6 +23,12 @@
     <p class="notification-title">{{$notification->title}}</p>
     <p class="notification-message">{{$notification->message}}</p>
 </div>
+@if($totalJobsCompleted)
+<!-- Completed Jobs -->
+<h5>YOU HAVE COMPLETED : {{$totalJobsCompleted}}</h5>
+@else
+You haven't completed any job yet!
+@endif
 @endif
 
 @endsection
